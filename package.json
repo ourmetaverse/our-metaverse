@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "CHAIN_ID=mainnet umi dev",
+    "start:local": "CHAIN_ID=local umi dev",
+    "start:rinkeby": "CHAIN_ID=rinkeby umi dev",
+    "build": "CHAIN_ID=mainnet umi build",
+    "build:rinkeby": "CHAIN_ID=rinkeby umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@walletconnect/web3-provider": "^1.7.3",
+    "antd": "^4.18.9",
+    "ethers": "^5.5.4",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.21",
+    "web3modal": "^1.9.5"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.21",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "react-markdown": "^8.0.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

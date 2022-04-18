@@ -1,3 +1,15 @@
-# OurMetaverse
+# OurMetaverse DAO NFT
 
-http://our-metaverse.xyz/
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
