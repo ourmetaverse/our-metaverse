@@ -2,6 +2,7 @@ export default {
   novel_name: 'Our Metaverse: Genesis',
   lang_switch: '中文',
   wihte_paper: 'White Paper',
+  read: 'Read',
   reward: 'Reward',
   community: 'Community',
   connect_tip: 'Please connect wallet first',

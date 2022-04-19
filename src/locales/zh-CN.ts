@@ -1,7 +1,8 @@
 export default {
   novel_name: '《我们的元宇宙·开端》',
   lang_switch: 'English',
-  wihte_paper: '白皮书',
+  wihte_paper: '宇宙观',
+  read: '创世小说',
   reward: '奖金',
   community: '社区',
   connect_tip: '请先连接钱包',
