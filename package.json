@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "dev": "CHAIN_ID=mainnet umi dev",
     "start": "CHAIN_ID=mainnet umi dev",
     "start:local": "CHAIN_ID=local umi dev",
     "start:rinkeby": "CHAIN_ID=rinkeby umi dev",
