@@ -1,5 +1,3 @@
-# 白皮书
-
 通过以太坊智能合约，科幻小说《我们的元宇宙·开端》(`our-metaverse.md` SHA256 Hash `C73F914CBFD8E9BF6CF3FE3E9A3488E1524CC777779035E01975778BAD1D971C`) 被铸造为 NFT。合约地址为 `0xEcd0D12E21805803f70de03B72B1C162dB0898d9`，由地址 `0x9C3C27d5bADb93fC2468f4cb12056b8C0C228ad8` (后面使用 `our-metaverse.eth` 替代) 发布。本项目 NFT 一共发行 3000 份。其中 2998 份为基础 NFT，铸造需要 0.01ETH，每个地址最多铸造 10 个 NFT，拥有它代表拥有如下权益和义务：
 
 1. 获得 OurMetaverseDAO 成员的身份。
