@@ -17,8 +17,8 @@ const CommonLayout: React.FC = ({ children }) => {
             margin: 0 auto;
           `}
         >
-          <a
-            href="/"
+          <Link
+            to="/"
             className={css`
               float: left;
               height: 31px;
@@ -30,7 +30,7 @@ const CommonLayout: React.FC = ({ children }) => {
             `}
           >
             OurMetaverseDAO
-          </a>
+          </Link>
           <Menu
             theme="dark"
             mode="horizontal"
