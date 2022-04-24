@@ -8,7 +8,7 @@ import { Divider } from 'antd';
 export default () => {
   return (
     <div>
-      <Markdown zh={preface} en={enpreface} aiTip></Markdown>
+      <Markdown zh={preface} en={enpreface}></Markdown>
       <Divider />
       <Markdown zh={ourmetaverse} en={enourmetaverse}></Markdown>
     </div>

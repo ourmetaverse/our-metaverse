@@ -26,4 +26,4 @@ For specific instructions, please refer to the project [whitepaper](./whitepaper
 
 In addition to the above risks, the content in the novel *Our Metaverse - The Beginning* is a fantasy and a certain setting for the future, not a prediction, and does not represent the author's opinion, so please do not use it as investment advice. The opinions and actions of the characters in the text are for story effect only and do not represent the author's own views. In particular, some of the flirtations in the novel are more of a tribute as well as a setting from the character's point of view, so please do not take them personally. The author himself is a technical optimist and hopes that this project will make a small contribution to the development of Web3.
 
-Here is the creation of *Our Metaverse*, *Our Metaverse - Genesis*, have fun reading it.
+Here is the creation of *Our Metaverse*, *Our Metaverse - Genesis*, have fun reading it. [Read it on Mirror](https://mirror.xyz/our-metaverse.eth/242i0PPjm-wHmH809w3aUMcPjCvG9lPW3_tTRTroPVI).
