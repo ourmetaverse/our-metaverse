@@ -20,11 +20,11 @@ export default {
   not_started: 'Not started.',
   erc721m: 'About ERC721M',
   price_tip:
-    'Price：{commonPrice} ETH per Token, each address mint limit: {maxMintPerAddr}.',
+    'Price：{commonPrice} ETH per Token, each address mint limit: {maxMintPerAddr}. PFP still in design.',
   mint_book_token: 'Mint Book Token',
   mint_movie_token: 'Mint Movie Token',
   mint_game_token: 'Mint Game Token',
-  mint_now: 'Mint now!',
+  mint_now: 'Go To Mint Now!',
   mint_tip: 'Mint {mintAmount} Token',
   minting: 'Miniting...',
   mint_failed: 'Mint failed',
