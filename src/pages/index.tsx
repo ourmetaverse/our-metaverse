@@ -10,7 +10,7 @@ export default () => {
   const { formatMessage } = useIntl();
   return (
     <div>
-      <Space wrap>
+      <Space wrap style={{ justifyContent: 'center', width: '100%' }}>
         <Button
           target="_blank"
           href={formatMessage({ id: 'read_link' })}

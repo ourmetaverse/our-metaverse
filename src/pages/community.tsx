@@ -7,7 +7,6 @@ import {
   TwitterOutlined,
   NotificationOutlined,
 } from '@ant-design/icons';
-// import DiscordIcon from '@/components/DiscordIcon';
 import React, { useEffect, useState } from 'react';
 
 export default () => {
@@ -55,14 +54,26 @@ export default () => {
     //   link: 'https://discord.gg/ku4rPFcr',
     // },
     {
-      title: 'Email',
-      icon: <MailOutlined />,
-      link: 'mailto:our-metaverse@protonmail.com',
-    },
-    {
       title: 'Twitter',
       icon: <TwitterOutlined />,
       link: 'https://twitter.com/OurMetaverseDAO',
+    },
+    {
+      title: 'JiKe',
+      icon: (
+        <img
+          width={16}
+          height={16}
+          style={{ marginTop: '-5px', marginLeft: '-2px' }}
+          src="https://m.okjike.com/favicon-16x16.png"
+        />
+      ),
+      link: 'https://okjk.co/4o6WHD',
+    },
+    {
+      title: 'Email',
+      icon: <MailOutlined />,
+      link: 'mailto:our-metaverse@protonmail.com',
     },
     {
       title: 'Blog',
