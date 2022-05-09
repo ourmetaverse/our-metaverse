@@ -87,7 +87,6 @@ const CommonLayout: React.FC = ({ children }) => {
           className={css`
             max-width: ${maxWidth}px;
             margin: 16px auto;
-            background: rgba(255, 255, 255, 0.3);
           `}
         >
           {children}
