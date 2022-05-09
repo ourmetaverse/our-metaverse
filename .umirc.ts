@@ -9,6 +9,9 @@ export default defineConfig({
   antd: {
     dark: true, // 开启暗色主题
   },
+  theme: {
+    'primary-color': '#1443FF',
+  },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,
   },
