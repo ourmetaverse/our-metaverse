@@ -9,6 +9,7 @@ import {
   contractAddress,
 } from '@/constants';
 import MintButton from '@/components/MintButton';
+import ConnectWallet from './ConnectWallet';
 
 const Component: React.FC = () => {
   const { formatMessage } = useIntl();
@@ -56,7 +57,7 @@ const Component: React.FC = () => {
   }, [contract]);
 
   if (!contract) {
-    return <Spin />;
+    return <ConnectWallet />;
   }
 
   for (let i = 0; i < maxMintPerAddr; i++) {
@@ -116,11 +117,7 @@ const Component: React.FC = () => {
   }
 
   return (
-    <div
-      className={css`
-        color: blue;
-      `}
-    >
+    <div className={css``}>
       {mintButton}
       <MintButton
         type="book"

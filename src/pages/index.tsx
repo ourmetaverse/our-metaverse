@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import IntroBanner from '@/components/IntroBanner';
-import MintBanner from '@/components/MintBanner';
+import BenefitBanner from '@/components/BenefitBanner';
 import RoadMap from '@/components/RoadMap';
 
 export default () => {
@@ -16,7 +16,7 @@ export default () => {
           }
         `)}
       >
-        <MintBanner />
+        <BenefitBanner />
         <RoadMap />
       </div>
     </div>

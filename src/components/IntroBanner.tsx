@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, Button, Space } from 'antd';
 import { css } from '@emotion/css';
+import { Link } from 'umi';
+import MintModal from './MintModal';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
-  const [text, setText] = useState<string>('hello');
   return (
     <Row>
       <Col span={12}>
@@ -25,6 +26,14 @@ const Component: React.FC<Props> = () => {
             艺术头像外还拥有《我们的元宇宙》全套作品的部分著作权，可以获取系列作品的数字改编权以及未来项目出售图书改编权和影视改编权的分层权益。
           </Paragraph>
         </Typography>
+        <Space>
+          <MintModal>
+            <Button type="primary">即刻 Mint</Button>
+          </MintModal>
+          <Link to="/read">
+            <Button>阅读创世小说</Button>
+          </Link>
+        </Space>
       </Col>
       <Col span={12}>
         <img
