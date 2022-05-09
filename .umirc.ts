@@ -6,6 +6,9 @@ export default defineConfig({
   },
   fastRefresh: {},
   locale: {},
+  antd: {
+    dark: true, // 开启暗色主题
+  },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,
   },
