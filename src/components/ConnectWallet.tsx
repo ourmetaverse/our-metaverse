@@ -7,34 +7,33 @@ function ConnectWallet() {
   const { formatMessage } = useIntl();
   if (address && !loading) {
     return (
-      <Popconfirm title={formatMessage({
-        id: 'disconnect_confirm'
-      })} onConfirm={async () => {
-        await disconnect();
-      }}>
-        <Button
-          title={address}
-          color="blue"
-          shape="round"
+      <div style={{ position: 'relative' }}>
+        <Popconfirm
+          title={formatMessage({
+            id: 'disconnect_confirm',
+          })}
+          onConfirm={async () => {
+            await disconnect();
+          }}
         >
-          {formatAddress(address)}</Button>
-      </Popconfirm>
+          <Button title={address} color="blue" shape="round">
+            {formatAddress(address)}
+          </Button>
+        </Popconfirm>
+      </div>
     );
   }
 
   return (
     <div style={{ position: 'relative' }}>
-      <Button
-        color="blue"
-        shape="round"
-        type="primary"
-        onClick={connect}
-      >
-        {loading ? formatMessage({
-          id: 'connecting'
-        }) : formatMessage({
-          id: 'connect_wallet'
-        })}
+      <Button color="blue" shape="round" type="primary" onClick={connect}>
+        {loading
+          ? formatMessage({
+              id: 'connecting',
+            })
+          : formatMessage({
+              id: 'connect_wallet',
+            })}
       </Button>
     </div>
   );

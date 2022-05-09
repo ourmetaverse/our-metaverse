@@ -11,6 +11,7 @@ export default defineConfig({
   },
   theme: {
     'primary-color': '#1443FF',
+    'menu-dark-item-active-bg': 'transparent',
   },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,

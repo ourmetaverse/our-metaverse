@@ -2,6 +2,7 @@ import { Layout, Menu, Divider } from 'antd';
 import { contractAddress } from '@/constants';
 import { Link, useIntl, setLocale, getLocale } from 'umi';
 import { css } from '@emotion/css';
+import ConnectWallet from '@/components/ConnectWallet';
 
 const { Header, Content, Footer } = Layout;
 const maxWidth = 1440;
@@ -10,34 +11,47 @@ const CommonLayout: React.FC = ({ children }) => {
   const { formatMessage } = useIntl();
   return (
     <Layout>
-      <Header>
+      <Header
+        className={css`
+          height: 87px;
+          line-height: 87px;
+        `}
+      >
         <div
           className={css`
             max-width: ${maxWidth}px;
             margin: 0 auto;
+            display: flex;
           `}
         >
           <Link
             to="/"
             className={css`
-              float: left;
-              height: 31px;
-              line-height: 31px;
-              margin: 16px 24px 16px 0;
               cursor: pointer;
               font-size: 28px;
+              margin-top: -3px;
               color: white;
             `}
           >
-            OurMetaverseDAO
+            OurMetaverse
           </Link>
           <Menu
             theme="dark"
             mode="horizontal"
             className={css`
-              float: right;
+              .ant-menu-item-selected a {
+                border-bottom: 5px solid #1443ff;
+                padding-bottom: 6px;
+              }
             `}
           >
+            <Menu.Item key="index">
+              <Link to="/">
+                {formatMessage({
+                  id: '首页',
+                })}
+              </Link>
+            </Menu.Item>
             <Menu.Item key="read">
               <Link to="/read">
                 {formatMessage({
@@ -76,6 +90,7 @@ const CommonLayout: React.FC = ({ children }) => {
               </a>
             </Menu.Item>
           </Menu>
+          <ConnectWallet />
         </div>
       </Header>
       <Content
