@@ -1,4 +1,5 @@
 export default {
+  index: 'OURM',
   novel_name: 'Our Metaverse: Genesis',
   lang_switch: '中文',
   wihte_paper: 'White Paper',

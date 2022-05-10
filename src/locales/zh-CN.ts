@@ -1,4 +1,5 @@
 export default {
+  index: '首页',
   novel_name: '《我们的元宇宙·开端》',
   lang_switch: 'English',
   wihte_paper: '宇宙观',
