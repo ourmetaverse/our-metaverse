@@ -12,10 +12,16 @@ const Component: React.FC<Props> = () => {
       className={css(`
         width:100%;
         height: 900px;
-        background-image:url('/index-bg-1.png')
+        background-image:url('/index-bg-1.png');
+        background-size:100% 100%;
       `)}
     >
-      <Col span={12}>
+      <Col
+        span={12}
+        className={css(`
+        padding-left:104px;
+      `)}
+      >
         <Typography>
           <div
             className={css(`
@@ -94,6 +100,7 @@ const Component: React.FC<Props> = () => {
               font-size:20px;
               letter-spacing:0.06px;
               font-family: 苹方-简;
+              margin-right:40px;
               display:flex;
               align-items:center;
               justify-content:center;
