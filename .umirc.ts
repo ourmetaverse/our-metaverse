@@ -1,4 +1,5 @@
 import { defineConfig } from 'umi';
+import { primaryColor } from './src/utils/css';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -10,12 +11,16 @@ export default defineConfig({
     dark: true, // 开启暗色主题
   },
   theme: {
-    'primary-color': '#1443FF',
+    'primary-color': primaryColor,
     'menu-dark-item-active-bg': 'transparent',
   },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,
   },
+  styles: [
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+  ],
   exportStatic: {},
   favicon: '/favicon.png',
   metas: [

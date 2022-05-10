@@ -4,10 +4,9 @@ import { Link, useIntl, setLocale, getLocale, IRouteComponentProps } from 'umi';
 import { css } from '@emotion/css';
 import ConnectWallet from '@/components/ConnectWallet';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { mobile } from '@/utils/css';
+import { mobile, primaryColor, maxWidth } from '@/utils/css';
 
 const { Header, Content, Footer } = Layout;
-const maxWidth = 1440;
 
 const CommonLayout: React.FC<IRouteComponentProps> = ({
   children,
@@ -28,7 +27,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
       >
         <div
           className={css`
-            max-width: ${maxWidth}px;
+            max-width: ${maxWidth};
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -73,7 +72,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 width: ${isCN ? 218 : 209}px;
               }
               .ant-menu-item-selected a {
-                border-bottom: 5px solid #1443ff;
+                border-bottom: 5px solid ${primaryColor};
                 padding-bottom: 6px;
               }
             `}
@@ -129,14 +128,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
         </div>
       </Header>
       <Content>
-        <div
-          className={css`
-            max-width: ${maxWidth}px;
-            margin: 16px auto;
-          `}
-        >
-          {children}
-        </div>
+        <div>{children}</div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         <a href={`https://etherscan.io/address/${contractAddress}`}>Contract</a>
