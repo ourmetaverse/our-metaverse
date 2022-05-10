@@ -14,14 +14,10 @@ const Component: React.FC<Props> = () => {
         height: 900px;
         background-image:url('/index-bg-1.png');
         background-size:100% 100%;
+        padding:0 104px;
       `)}
     >
-      <Col
-        span={12}
-        className={css(`
-        padding-left:104px;
-      `)}
-      >
+      <Col span={12}>
         <Typography>
           <div
             className={css(`
@@ -138,7 +134,8 @@ const Component: React.FC<Props> = () => {
           className={css`
             width: 620px;
             height: 606px;
-            margin: 58px 0 148px 0;
+            margin: 58px auto 148px auto;
+            display: block;
           `}
           src="/roles.png"
           alt="OURM"
