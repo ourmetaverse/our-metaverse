@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row, Col, Typography, Space } from 'antd';
 import { css } from '@emotion/css';
-import { Link } from 'umi';
+import { Link, useIntl } from 'umi';
 import MintModal from './MintModal';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
+  const { formatMessage } = useIntl();
   return (
     <Row
       className={css(`
@@ -53,9 +54,9 @@ const Component: React.FC<Props> = () => {
               font-weight:bold;
             `)}
           >
-            这不仅仅是 NFT，
+            {formatMessage({ id: 'index_intro_title_1' })}
             <br />
-            更是 Web3 创作者经济的梦想之旅。
+            {formatMessage({ id: 'index_intro_title_2' })}
           </div>
           <div
             className={css(`
@@ -76,11 +77,7 @@ const Component: React.FC<Props> = () => {
               margin-bottom: 55px
             `)}
           >
-            OurMetaverse 以科幻小说《我们的元宇宙·开端》为起点，是 Web3
-            创作者经济的一次革命。它在 ERC721
-            合约的基础上添加了版权授权、权益分成的逻辑，拥有 NFT 除了拥有对应的
-            PFP
-            头像外还拥有全套小说作品的部分著作权，数字改编权以及图书改编、影视改编的分成权益。
+            {formatMessage({ id: 'index_intro_content' })}
           </div>
         </Typography>
         <Space>
@@ -103,7 +100,7 @@ const Component: React.FC<Props> = () => {
               cursor:pointer;
             `)}
             >
-              即刻 Mint
+              {formatMessage({ id: 'index_intro_mint' })}
             </div>
           </MintModal>
           <Link to="/read">
@@ -124,7 +121,7 @@ const Component: React.FC<Props> = () => {
               cursor:pointer;
             `)}
             >
-              阅读创世小说
+              {formatMessage({ id: 'index_intro_read' })}
             </div>
           </Link>
         </Space>
@@ -152,7 +149,7 @@ const Component: React.FC<Props> = () => {
             opacity: 0.6;
           `}
         >
-          *图为小说人物角色设定非最终NFT
+          *{formatMessage({ id: 'index_intro_tips' })}
         </div>
       </Col>
     </Row>

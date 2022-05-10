@@ -28,30 +28,8 @@ const ColorConfig = {
   },
 };
 
-const StepContent = [
-  {
-    name: '第一阶段',
-    content: ['发布项目', '开始铸造'],
-  },
-  {
-    name: '第二阶段',
-    content: ['项目翻译', '网站优化', '代码开源'],
-  },
-  {
-    name: '第三阶段',
-    content: ['NFT设计', 'NFT开图'],
-  },
-  {
-    name: '第四阶段',
-    content: ['开展科幻小说', '征文大赛'],
-  },
-  {
-    name: '第五阶段',
-    content: ['完善IP内容', '完善图书版权', '影视版权的铸造'],
-  },
-];
-
 const Step = (props: StepProps) => {
+  const { formatMessage } = useIntl();
   const { name, content, current, index } = props;
   const status =
     current === index ? 'Progress' : index < current ? 'Finished' : 'Waiting';
@@ -79,8 +57,8 @@ const Step = (props: StepProps) => {
         <div
           className={css(`
           position:absolute;
-          top:40px;
-          width:59px;
+          top: 40px;
+          width: 69px;
           height: 18px;
           border-radius:18px;
           background: linear-gradient(to bottom right, #2863A8,#3366B8);
@@ -93,7 +71,7 @@ const Step = (props: StepProps) => {
           align-items:center;
         `)}
         >
-          进行中
+          {formatMessage({ id: 'index_roadmap_in_progress' })}
         </div>
       )}
       <div
@@ -129,7 +107,7 @@ const Step = (props: StepProps) => {
       </div>
       <div
         className={css(`
-          width:150px;
+          width:180px;
           height: 126px;
           background: linear-gradient(to bottom right, ${ColorConfig[status].block[0]}, ${ColorConfig[status].block[1]});
           border-radius:12px;
@@ -153,6 +131,45 @@ const Step = (props: StepProps) => {
 
 export default () => {
   const { formatMessage } = useIntl();
+  const StepContent = [
+    {
+      name: formatMessage({ id: 'index_roadmap_step_one' }),
+      content: [
+        formatMessage({ id: 'index_roadmap_step_one_1' }),
+        formatMessage({ id: 'index_roadmap_step_one_2' }),
+      ],
+    },
+    {
+      name: formatMessage({ id: 'index_roadmap_step_two' }),
+      content: [
+        formatMessage({ id: 'index_roadmap_step_two_1' }),
+        formatMessage({ id: 'index_roadmap_step_two_2' }),
+        formatMessage({ id: 'index_roadmap_step_two_3' }),
+      ],
+    },
+    {
+      name: formatMessage({ id: 'index_roadmap_step_three' }),
+      content: [
+        formatMessage({ id: 'index_roadmap_step_three_1' }),
+        formatMessage({ id: 'index_roadmap_step_three_2' }),
+      ],
+    },
+    {
+      name: formatMessage({ id: 'index_roadmap_step_four' }),
+      content: [
+        formatMessage({ id: 'index_roadmap_step_four_1' }),
+        formatMessage({ id: 'index_roadmap_step_four_2' }),
+      ],
+    },
+    {
+      name: formatMessage({ id: 'index_roadmap_step_five' }),
+      content: [
+        formatMessage({ id: 'index_roadmap_step_five_1' }),
+        formatMessage({ id: 'index_roadmap_step_five_2' }),
+        formatMessage({ id: 'index_roadmap_step_five_3' }),
+      ],
+    },
+  ];
   return (
     <div
       className={css(`
@@ -181,7 +198,7 @@ export default () => {
               margin-top:80px;
             `)}
         >
-          项目路线图
+          {formatMessage({ id: 'index_roadmap_title' })}
         </div>
         <div
           className={css(`
