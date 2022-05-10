@@ -128,14 +128,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           </Menu>
         </div>
       </Header>
-      <Content
-        className={css`
-          padding: 0 50px;
-          ${mobile} {
-            padding: 0 16px;
-          }
-        `}
-      >
+      <Content>
         <div
           className={css`
             max-width: ${maxWidth}px;
