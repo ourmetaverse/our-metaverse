@@ -122,7 +122,7 @@ const Step = (props: StepProps) => {
         `)}
       >
         {content.map((item) => (
-          <div>{item}</div>
+          <div key={item}>{item}</div>
         ))}
       </div>
     </div>
@@ -234,6 +234,7 @@ export default () => {
                 index={index + 1}
                 name={item.name}
                 content={item.content}
+                key={item.name}
               ></Step>
             );
           })}
