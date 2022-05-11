@@ -1,18 +1,19 @@
 import React from 'react';
 import { Typography } from 'antd';
 import { css } from '@emotion/css';
-import { primaryColor, maxWidth } from '@/utils/css';
+import { primaryColor, maxWidth, navHeight } from '@/utils/css';
 
 interface Props {}
 
-const { Title, Paragraph } = Typography;
+const { Paragraph } = Typography;
 
 const Component: React.FC<Props> = () => {
   return (
     <div
       className={css`
         background-color: ${primaryColor};
-        height: 680px;
+        height: 767px;
+        padding-top: ${navHeight};
       `}
     >
       <div

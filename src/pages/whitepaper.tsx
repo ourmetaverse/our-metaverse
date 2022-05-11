@@ -5,6 +5,7 @@ import enpreface from '@/docs/en/preface.md';
 import preface from '@/docs/preface.md';
 import Markdown from '@/components/Markdown';
 import { css } from '@emotion/css';
+import { maxWidth, navHeight } from '@/utils/css';
 
 const { Link } = Anchor;
 const { Title } = Typography;
@@ -14,7 +15,10 @@ export default () => {
     <div
       className={css`
         display: flex;
+        padding-top: ${navHeight};
+        max-width: ${maxWidth};
         flex-direction: row;
+        margin: 0 auto;
       `}
     >
       <Anchor

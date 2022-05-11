@@ -4,16 +4,17 @@ import { primaryColor } from '@/utils/css';
 
 interface Props {
   width?: number;
+  left?: boolean;
 }
 
-const Component: React.FC<Props> = ({ width = 120 }) => {
+const Component: React.FC<Props> = ({ width = 120, left }) => {
   return (
     <div
       className={css`
         width: ${width}px;
         background-color: ${primaryColor};
         height: 11px;
-        margin: 0 auto;
+        margin: 0 ${left ? '' : 'auto'};
         margin-top: 16px;
         margin-bottom: 64px;
       `}

@@ -4,7 +4,7 @@ import { Link, useIntl, setLocale, getLocale, IRouteComponentProps } from 'umi';
 import { css } from '@emotion/css';
 import ConnectWallet from '@/components/ConnectWallet';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { mobile, primaryColor, maxWidth } from '@/utils/css';
+import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
 
 const { Header, Content, Footer } = Layout;
 
@@ -18,14 +18,29 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
     <Layout>
       <Header
         className={css`
-          height: 87px;
-          line-height: 87px;
-          background-color: #000;
+          height: ${navHeight};
+          line-height: ${navHeight};
+          background: transparent;
+          z-index: 10;
           ${mobile} {
             padding: 0 16px;
           }
         `}
       >
+        <div
+          className={css`
+            background: linear-gradient(
+              rgba(0, 0, 0, 0.88),
+              rgba(0, 0, 0, 0.68)
+            );
+            opacity: 0.5;
+            height: ${navHeight};
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          `}
+        ></div>
         <div
           className={css`
             max-width: ${maxWidth};
@@ -40,6 +55,12 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               cursor: pointer;
               font-size: 28px;
               color: white;
+              z-index: 2;
+              opacity: 0.9;
+              &:hover {
+                opacity: 1;
+                color: white;
+              }
             `}
           >
             <img
@@ -49,6 +70,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 margin-right: 8px;
                 border-radius: 50%;
                 margin-top: -5px;
+                opacity: 1;
               `}
             />
             <span
@@ -68,7 +90,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             overflowedIndicator={<MenuUnfoldOutlined />}
             defaultSelectedKeys={[location.pathname]}
             style={{
-              backgroundColor: '#000',
+              backgroundColor: 'transparent',
             }}
             className={css`
               width: ${isCN ? 610 : 800}px;
@@ -132,8 +154,12 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           </Menu>
         </div>
       </Header>
-      <Content>
-        <div>{children}</div>
+      <Content
+        className={css`
+          margin-top: -${navHeight};
+        `}
+      >
+        {children}
       </Content>
       <Footer
         className={css`
