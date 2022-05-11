@@ -1,48 +1,156 @@
-import React, { useState } from 'react';
-import { Row, Col, Typography, Button, Space } from 'antd';
+import React from 'react';
+import { Row, Col, Typography, Space } from 'antd';
 import { css } from '@emotion/css';
-import { Link } from 'umi';
+import { Link, useIntl } from 'umi';
 import MintModal from './MintModal';
-
-const { Title, Paragraph, Text } = Typography;
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
+  const { formatMessage } = useIntl();
   return (
-    <Row>
+    <Row
+      className={css(`
+        width:100%;
+        height: 900px;
+        background-image:url('/index-bg-1.png');
+        background-size:100% 100%;
+        padding:0 104px;
+      `)}
+    >
       <Col span={12}>
         <Typography>
-          <Title>Our Metaverse, Our Dream!</Title>
-          <Paragraph>
-            OurMetaverse 这不仅仅是 NFT，更是关于 Web3 创作者经济的梦想之旅。
-          </Paragraph>
-          <Paragraph>
-            OurMetaverse
-            是以一篇关于元宇宙的科幻小说《我们的元宇宙·开端》为起点的 Web3
-            创作者经济革命。它在 ERC721
-            合约的基础上添加了版权授权、权益分成的逻辑，拥有一份 OurMetaverseDAO
-            NFT 除了拥有对应的 PFP
-            艺术头像外还拥有《我们的元宇宙》全套作品的部分著作权，可以获取系列作品的数字改编权以及未来项目出售图书改编权和影视改编权的分层权益。
-          </Paragraph>
+          <div
+            className={css(`
+              color: #1443FF;
+              font-size:70px;
+              letter-spacing:0.22px;
+              line-height:80px;
+              font-family: Impact;
+              margin-top: 88px;
+            `)}
+          >
+            Our Metaverse ,
+          </div>
+          <div
+            className={css(`
+              color: #1443FF;
+              font-size:70px;
+              letter-spacing:0.22px;
+              line-height:80px;
+              font-family: Impact;
+              margin-bottom: 16px;
+            `)}
+          >
+            Our Dream !
+          </div>
+          <div
+            className={css(`
+              font-size:20px;
+              letter-spacing:0.06px;
+              line-height:40px;
+              font-family: 苹方-简;
+              margin-bottom: 16px;
+              font-weight:bold;
+            `)}
+          >
+            {formatMessage({ id: 'index_intro_title_1' })}
+            <br />
+            {formatMessage({ id: 'index_intro_title_2' })}
+          </div>
+          <div
+            className={css(`
+              width:119px;
+              height:11px;
+              background-color:#1443FF;
+              margin: 20px 0 40px 0;
+            `)}
+          ></div>
+          <div
+            className={css(`
+              width:556px;
+              font-size:16px;
+              letter-spacing:0.05px;
+              line-height:36px;
+              font-family: 苹方-简;
+              opacity:0.5;
+              margin-bottom: 55px
+            `)}
+          >
+            {formatMessage({ id: 'index_intro_content' })}
+          </div>
         </Typography>
         <Space>
           <MintModal>
-            <Button type="primary">即刻 Mint</Button>
+            <div
+              className={css(`
+              width:215px;
+              height:64px;
+              border-radius:39px;
+              border:4px solid #1443FF;
+              color:#fff;
+              background-color: rgba(20,67,255,0.29);
+              font-size:20px;
+              letter-spacing:0.06px;
+              font-family: 苹方-简;
+              margin-right:40px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              cursor:pointer;
+            `)}
+            >
+              {formatMessage({ id: 'index_intro_mint' })}
+            </div>
           </MintModal>
           <Link to="/read">
-            <Button>阅读创世小说</Button>
+            <div
+              className={css(`
+              width:215px;
+              height:64px;
+              border-radius:39px;
+              border:4px solid #1443FF;
+              color:#fff;
+              background-color: rgba(20,67,255,0.29);
+              font-size:20px;
+              letter-spacing:0.06px;
+              font-family: 苹方-简;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              cursor:pointer;
+            `)}
+            >
+              {formatMessage({ id: 'index_intro_read' })}
+            </div>
           </Link>
         </Space>
       </Col>
       <Col span={12}>
         <img
           className={css`
-            width: 100%;
+            width: 620px;
+            height: 606px;
+            margin: 58px auto 148px auto;
+            display: block;
           `}
-          src="https://user-images.githubusercontent.com/101242724/164154760-480018d4-f6e5-4bfd-8181-4c4cca6dbab5.png"
+          src="/roles.png"
           alt="OURM"
         />
+        <div
+          className={css`
+            position: absolute;
+            right: 56px;
+            bottom: 40px;
+            font-size: 14px;
+            letter-spacing: 0.04px;
+            line-height: 20px;
+            font-family: 苹方-简;
+            opacity: 0.6;
+          `}
+        >
+          *{formatMessage({ id: 'index_intro_tips' })}
+        </div>
       </Col>
     </Row>
   );
