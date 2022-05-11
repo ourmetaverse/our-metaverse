@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import { maxWidth } from '@/utils/css';
 import { css } from '@emotion/css';
 import { primaryColor } from '@/utils/css';
+import { roles } from '@/constants';
 
 interface Props {}
 
@@ -45,7 +46,7 @@ const Component: React.FC<Props> = () => {
       <Slider
         {...settings}
         className={css`
-          height: 400px;
+          height: 600px;
           .ourm-role {
             img {
               border-radius: 10px;
@@ -55,6 +56,10 @@ const Component: React.FC<Props> = () => {
               margin-top: 65px;
               margin-left: 85px;
             }
+            .ourm-role-detail {
+              display: none;
+              text-align: center;
+            }
           }
           .slick-center {
             .ourm-role {
@@ -63,6 +68,17 @@ const Component: React.FC<Props> = () => {
                 height: 340px;
                 margin-top: 30px;
                 margin-left: 45px;
+              }
+            }
+            .ourm-role-detail {
+              display: block;
+              .ourm-role-name {
+                font-size: 30px;
+                margin-top: 50px;
+              }
+              .ourm-role-desc {
+                opacity: 0.4;
+                font-size: 20px;
               }
             }
           }
@@ -86,27 +102,17 @@ const Component: React.FC<Props> = () => {
           }
         `}
       >
-        <div className="ourm-role">
-          <img src="/peter.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/alita.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/hiro.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/leader.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/xuanwu.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/girl.png" alt="peter" />
-        </div>
-        <div className="ourm-role">
-          <img src="/wangqiang.png" alt="peter" />
-        </div>
+        {roles.map((item) => {
+          return (
+            <div className="ourm-role">
+              <img src={item.img} alt={item.name} />
+              <div className="ourm-role-detail">
+                <div className="ourm-role-name">{item.name}</div>
+                <div className="ourm-role-desc">{item.desc}</div>
+              </div>
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

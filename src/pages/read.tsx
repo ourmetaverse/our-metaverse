@@ -17,7 +17,35 @@ export default () => {
           margin: 0 auto;
         `}
       >
-        <Markdown zh={ourmetaverse} en={enourmetaverse}></Markdown>
+        <div
+          className={css`
+            font-size: 50px;
+            line-height: 108px;
+            margin-bottom: 53px;
+            color: #fff;
+            img {
+              height: 108px;
+              margin-top: -10px;
+            }
+          `}
+        >
+          <img src="/read-start-ball.png" />
+          我们的元宇宙·开端
+        </div>
+        <div
+          className={css`
+            h2 {
+              font-size: 40px;
+              opacity: 0.9;
+            }
+            p {
+              font-size: 20px;
+              opacity: 0.7;
+            }
+          `}
+        >
+          <Markdown zh={ourmetaverse} en={enourmetaverse}></Markdown>
+        </div>
       </div>
     </div>
   );

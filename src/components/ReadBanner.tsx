@@ -33,17 +33,25 @@ const Component: React.FC<Props> = () => {
               flex: 1;
             `}
           >
-            <Title>我们的元宇宙</Title>
-            <Title style={{ marginTop: 16 }}>
-              开端{' '}
-              <span
-                className={css`
-                  color: gray;
-                `}
-              >
-                //
-              </span>
-            </Title>
+            <div
+              className={css`
+                font-size: 70px;
+              `}
+            >
+              <div>我们的元宇宙</div>
+              <div style={{ marginTop: 16 }}>
+                开端{' '}
+                <span
+                  className={css`
+                    font-size: 40px;
+                    color: #d8d8d8;
+                    opacity: 0.3;
+                  `}
+                >
+                  / /
+                </span>
+              </div>
+            </div>
             <Paragraph
               className={css`
                 margin-top: 64px;
@@ -52,7 +60,7 @@ const Component: React.FC<Props> = () => {
               我们有一个梦想：创造一个精彩纷呈的宇宙。
             </Paragraph>
             <Paragraph>
-              这个项目叫做“我们的元宇宙”，它是这个项目的名字，也是一篇小说的名字。基于对元宇宙的未来幻想，我构想了一个新宇宙，我叫它“我们的元宇宙”，写了两万多字的小说。但是我想它只是开始，我希望它可以延展开来，成为一个充满无限可能的宇宙。
+              这个项目叫做“我们的元宇宙”，它是这个项目的名字，也是一篇小说的名字。基于对元宇宙的未来幻想，我们构想了一个新宇宙，我们叫它“我们的元宇宙”，写了两万多字的小说。但是我们想它只是开始，我希望它可以延展开来，成为一个充满无限可能的宇宙。
             </Paragraph>
             <Paragraph>
               我们通过在以太坊上发行一个智能合约来管理这个 IP

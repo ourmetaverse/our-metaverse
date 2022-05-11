@@ -37,3 +37,41 @@ export const contentHash =
   'C73F914CBFD8E9BF6CF3FE3E9A3488E1524CC777779035E01975778BAD1D971C';
 
 export const wechatLink = 'https://our-metaverse.xyz/404/assets/wechat.png';
+
+export const roles = [
+  {
+    name: '彼得',
+    img: '/peter.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '阿丽塔',
+    img: '/alita.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '弘',
+    img: '/hiro.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '首领',
+    img: '/leader.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '玄武',
+    img: '/xuanwu.png',
+    desc: '喜欢看古时候的电影，坚毅并有探索精神。',
+  },
+  {
+    name: '发卡女孩',
+    img: '/girl.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '汪强',
+    img: '/wangqiang.png',
+    desc: 'TODOTODO',
+  },
+];
