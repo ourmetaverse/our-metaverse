@@ -69,7 +69,7 @@ export default () => {
     <div
       className={css`
         background: linear-gradient(#000, ${primaryColor});
-        padding: 73px 8px;
+        padding: 150px 8px;
       `}
     >
       <div
