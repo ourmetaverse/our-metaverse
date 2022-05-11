@@ -65,7 +65,7 @@ const Component: React.FC<Props> = () => {
               flex: 1;
             `}
           >
-            <img src="" alt="" />
+            <img src="/read-banner.png" alt="" />
           </div>
         </div>
       </div>

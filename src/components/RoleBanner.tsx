@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { maxWidth } from '@/utils/css';
 import { css } from '@emotion/css';
+import { primaryColor } from '@/utils/css';
 
 interface Props {}
 
@@ -11,7 +12,8 @@ const Component: React.FC<Props> = () => {
     className: 'center',
     centerMode: true,
     infinite: true,
-    centerPadding: '60px',
+    initialSlide: 3,
+    centerPadding: '50px',
     slidesToShow: 3,
     speed: 500,
   };
@@ -22,25 +24,88 @@ const Component: React.FC<Props> = () => {
         margin: 0 auto;
       `}
     >
-      <h2>小说主要角色</h2>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
+      <h2
+        className={css`
+          font-size: 40px;
+          text-align: center;
+          margin-top: 110px;
+        `}
+      >
+        小说主要角色
+      </h2>
+      <div
+        className={css`
+          width: 120px;
+          background-color: ${primaryColor};
+          height: 11px;
+          margin: 0 auto;
+          margin-bottom: 64px;
+        `}
+      ></div>
+      <Slider
+        {...settings}
+        className={css`
+          height: 400px;
+          .ourm-role {
+            img {
+              border-radius: 10px;
+              width: 270px;
+              height: 270px;
+              box-shadow: 0 2px 30px #fff;
+              margin-top: 65px;
+              margin-left: 85px;
+            }
+          }
+          .slick-center {
+            .ourm-role {
+              img {
+                width: 340px;
+                height: 340px;
+                margin-top: 30px;
+                margin-left: 45px;
+              }
+            }
+          }
+          .slick-prev {
+            margin-left: -30px;
+          }
+          .slick-next {
+            margin-right: -30px;
+          }
+          .slick-arrow {
+            margin-top: -18px;
+          }
+          .slick-prev:before {
+          }
+          .slick-next:before {
+          }
+          .slick-next:before,
+          .slick-prev:before {
+            font-size: 60px;
+            opacity: 0.3;
+          }
+        `}
+      >
+        <div className="ourm-role">
+          <img src="/peter.png" alt="peter" />
         </div>
-        <div>
-          <h3>2</h3>
+        <div className="ourm-role">
+          <img src="/alita.png" alt="peter" />
         </div>
-        <div>
-          <h3>3</h3>
+        <div className="ourm-role">
+          <img src="/hiro.png" alt="peter" />
         </div>
-        <div>
-          <h3>4</h3>
+        <div className="ourm-role">
+          <img src="/leader.png" alt="peter" />
         </div>
-        <div>
-          <h3>5</h3>
+        <div className="ourm-role">
+          <img src="/xuanwu.png" alt="peter" />
         </div>
-        <div>
-          <h3>6</h3>
+        <div className="ourm-role">
+          <img src="/girl.png" alt="peter" />
+        </div>
+        <div className="ourm-role">
+          <img src="/wangqiang.png" alt="peter" />
         </div>
       </Slider>
     </div>
