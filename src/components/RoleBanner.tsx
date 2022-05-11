@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { maxWidth } from '@/utils/css';
 import { css } from '@emotion/css';
-import { primaryColor } from '@/utils/css';
+import BlueLine from '@/components/BlueLine';
 import { roles } from '@/constants';
 
 interface Props {}
@@ -34,15 +34,7 @@ const Component: React.FC<Props> = () => {
       >
         小说主要角色
       </h2>
-      <div
-        className={css`
-          width: 120px;
-          background-color: ${primaryColor};
-          height: 11px;
-          margin: 0 auto;
-          margin-bottom: 64px;
-        `}
-      ></div>
+      <BlueLine />
       <Slider
         {...settings}
         className={css`
@@ -89,7 +81,7 @@ const Component: React.FC<Props> = () => {
             margin-right: -30px;
           }
           .slick-arrow {
-            margin-top: -18px;
+            margin-top: -118px;
           }
           .slick-prev:before {
           }

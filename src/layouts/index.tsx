@@ -20,6 +20,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
         className={css`
           height: 87px;
           line-height: 87px;
+          background-color: #000;
           ${mobile} {
             padding: 0 16px;
           }
@@ -66,8 +67,12 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             mode="horizontal"
             overflowedIndicator={<MenuUnfoldOutlined />}
             defaultSelectedKeys={[location.pathname]}
+            style={{
+              backgroundColor: '#000',
+            }}
             className={css`
               width: ${isCN ? 610 : 800}px;
+
               ${mobile} {
                 width: ${isCN ? 218 : 209}px;
               }

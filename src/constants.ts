@@ -45,13 +45,8 @@ export const roles = [
     desc: 'TODOTODO',
   },
   {
-    name: '阿丽塔',
-    img: '/alita.png',
-    desc: 'TODOTODO',
-  },
-  {
-    name: '弘',
-    img: '/hiro.png',
+    name: '汪强',
+    img: '/wangqiang.png',
     desc: 'TODOTODO',
   },
   {
@@ -70,8 +65,13 @@ export const roles = [
     desc: 'TODOTODO',
   },
   {
-    name: '汪强',
-    img: '/wangqiang.png',
+    name: '弘',
+    img: '/hiro.png',
+    desc: 'TODOTODO',
+  },
+  {
+    name: '阿丽塔',
+    img: '/alita.png',
     desc: 'TODOTODO',
   },
 ];

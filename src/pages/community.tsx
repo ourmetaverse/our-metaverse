@@ -1,18 +1,15 @@
-import { List, Image, message } from 'antd';
+import { message, Modal, Image, Spin, Typography } from 'antd';
 import { useIntl, useModel } from 'umi';
 import { wechatLink } from '@/constants';
-import {
-  WechatOutlined,
-  MailOutlined,
-  TwitterOutlined,
-  NotificationOutlined,
-} from '@ant-design/icons';
-// import DiscordIcon from '@/components/DiscordIcon';
+import BlueLine from '@/components/BlueLine';
 import React, { useEffect, useState } from 'react';
+import { css } from '@emotion/css';
+import { primaryColor } from '@/utils/css';
 
 export default () => {
   const { formatMessage } = useIntl();
   const { contract, address } = useModel('user');
+  const [modal, contextHolder] = Modal.useModal();
   const [isOwner, setIsOwner] = useState<boolean>(false);
 
   useEffect(() => {
@@ -31,68 +28,141 @@ export default () => {
   const data = [
     {
       title: formatMessage({ id: 'wechat' }),
-      icon: <WechatOutlined />,
-      tip: contract && isOwner ? '' : formatMessage({ id: 'wechat_tip' }),
+      icon: '/wechat.png',
+      hoverIcon: '/wechat-hover.png',
+      tip: formatMessage({ id: 'wechat_tip' }),
       img: contract && isOwner ? wechatLink : '',
     },
     {
       title: 'Telegram',
-      icon: (
-        <img
-          width={16}
-          height={16}
-          style={{ marginTop: '-2px', marginLeft: '-2px' }}
-          src="/telegram.png"
-        />
-      ),
-      tip: contract && isOwner ? '' : formatMessage({ id: 'wechat_tip' }),
-      link: contract && isOwner ? 'https://t.me/+Bq8C7dclNGs5Y2Q9' : '',
+      icon: '/telegram.png',
+      hoverIcon: '/telegram-hover.png',
+      tip: formatMessage({ id: 'wechat_tip' }),
+      daoLink: contract && isOwner ? 'https://t.me/+Bq8C7dclNGs5Y2Q9' : '',
     },
-    // 先不加
-    // {
-    //   title: 'Discord',
-    //   icon: <DiscordIcon />,
-    //   link: 'https://discord.gg/ku4rPFcr',
-    // },
     {
-      title: 'Email',
-      icon: <MailOutlined />,
-      link: 'mailto:our-metaverse@protonmail.com',
+      title: 'Discord',
+      icon: '/discord.png',
+      hoverIcon: '/discord-hover.png',
+      link: 'https://discord.gg/ku4rPFcr',
     },
     {
       title: 'Twitter',
-      icon: <TwitterOutlined />,
+      icon: '/twitter.png',
+      hoverIcon: '/twitter-hover.png',
       link: 'https://twitter.com/OurMetaverseDAO',
     },
     {
+      title: 'OpenSea',
+      icon: '/opensea.png',
+      hoverIcon: '/opensea-hover.png',
+      link: 'https://opensea.io/collection/our-metaverse',
+    },
+    {
       title: 'Blog',
-      icon: <NotificationOutlined />,
+      icon: '/blog.png',
+      hoverIcon: '/blog-hover.png',
       link: 'https://mirror.xyz/our-metaverse.eth',
     },
   ];
   return (
-    <List
-      itemLayout="horizontal"
-      dataSource={data}
-      renderItem={(item) => {
-        let content: React.ReactNode = item.tip;
-        if (item.link) {
-          content = <a href={item.link}>{item.link}</a>;
-        }
-        if (item.img) {
-          content = <Image style={{ maxHeight: 400 }} src={item.img} />;
-        }
-
-        return (
-          <List.Item>
-            <List.Item.Meta
-              avatar={item.icon}
-              title={<a href={item.link}>{item.title}</a>}
-              description={content}
-            />
-          </List.Item>
-        );
-      }}
-    />
+    <div
+      className={css`
+        background: linear-gradient(#000, ${primaryColor});
+        padding: 73px 8px;
+      `}
+    >
+      <div
+        className={css`
+          font-size: 40px;
+          text-align: center;
+        `}
+      >
+        加入社区，成为家人
+      </div>
+      <BlueLine />
+      <div>
+        {data.map((item) => {
+          return (
+            <a
+              target="_blank"
+              href={item.link || '#'}
+              className={css`
+                color: #fff;
+                opacity: 0.8;
+                display: block;
+                max-width: 900px;
+                margin: 24px auto;
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 87px;
+                line-height: 87px;
+                opacity: 0.8;
+                &:hover {
+                  color: #fff;
+                  opacity: 1;
+                }
+              `}
+              onClick={(e) => {
+                if (!item.link) {
+                  e.preventDefault();
+                } else {
+                  return;
+                }
+                let content: React.ReactNode = item.tip;
+                if (item.img) {
+                  content = <Image src={item.img} placeholder={<Spin />} />;
+                } else if (item.daoLink) {
+                  content = (
+                    <Typography.Text copyable>{item.daoLink}</Typography.Text>
+                  );
+                }
+                modal.info({
+                  title: item.title,
+                  content,
+                });
+              }}
+            >
+              <div
+                className={css`
+                  display: flex;
+                  justify-content: center;
+                  .ourm-iconimg {
+                    background-image: url(${item.icon});
+                    width: 60px;
+                    height: 60px;
+                    margin-top: 13px;
+                  }
+                  &:hover {
+                    .ourm-iconimg {
+                      background-image: url(${item.hoverIcon});
+                    }
+                  }
+                `}
+              >
+                <div
+                  className={css`
+                    display: inline-block;
+                    margin-right: 34px;
+                    font-size: 50px;
+                  `}
+                >
+                  <div className="ourm-iconimg" />
+                </div>
+                <div
+                  className={css`
+                    display: inline-block;
+                    font-size: 24px;
+                    width: 130px;
+                  `}
+                >
+                  {item.title}
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      {contextHolder}
+    </div>
   );
 };
