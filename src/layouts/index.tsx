@@ -130,10 +130,44 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
       <Content>
         <div>{children}</div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        <a href={`https://etherscan.io/address/${contractAddress}`}>Contract</a>
-        <Divider />
-        OurMetaverseDAO ©2022
+      <Footer
+        className={css`
+          padding-top: 114px;
+          a {
+            color: white;
+            width: 184px;
+            display: inline-block;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          .ant-divider {
+            background-color: #d8d8d8;
+          }
+        `}
+        style={{ textAlign: 'center' }}
+      >
+        <div>
+          <a href={`https://etherscan.io/address/${contractAddress}`}>
+            Etherscan
+          </a>
+          <Divider type="vertical" />
+          <a href={`https://www.our-metaverse.xyz`}>Website</a>
+          <Divider type="vertical" />
+          <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
+          <Divider type="vertical" />
+          <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
+          <Divider type="vertical" />
+          <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>
+        </div>
+        <div
+          className={css`
+            margin-top: 78px;
+            color: #979797;
+          `}
+        >
+          OurMetaverse ©2022 Created By OurMetaverseDAO
+        </div>
       </Footer>
     </Layout>
   );
