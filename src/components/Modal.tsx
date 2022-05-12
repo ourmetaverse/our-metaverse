@@ -7,6 +7,7 @@ interface Props extends ModalProps {}
 const Component: React.FC<Props> = (props) => {
   return (
     <Modal
+      footer={null}
       className={css`
         top: 20%;
         .ant-modal-close {

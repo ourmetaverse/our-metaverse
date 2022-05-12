@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'antd';
+import Modal from '@/components/Modal';
 import MintBanner from './MintBanner';
 
 const Component: React.FC = ({ children }) => {
@@ -19,12 +19,7 @@ const Component: React.FC = ({ children }) => {
   return (
     <>
       <div onClick={showModal}>{children}</div>
-      <Modal
-        title="即刻 Mint"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
+      <Modal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <MintBanner />
       </Modal>
     </>
