@@ -5,6 +5,7 @@ import { css } from '@emotion/css';
 import ConnectWallet from '@/components/ConnectWallet';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
+import { useResponsive } from 'ahooks';
 
 const { Header, Content, Footer } = Layout;
 
@@ -13,6 +14,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
   location,
 }) => {
   const { formatMessage } = useIntl();
+  const { pc } = useResponsive();
   const isCN = getLocale() === 'zh-CN';
   return (
     <Layout>
@@ -190,7 +192,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             <a href={`https://www.our-metaverse.xyz`}>Website</a>
             <Divider type="vertical" />
             <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
-            <br />
+            {pc ? <Divider type="vertical" /> : <br />}
             <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
             <Divider type="vertical" />
             <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>
