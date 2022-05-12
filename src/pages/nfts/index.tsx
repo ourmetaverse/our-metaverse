@@ -1,20 +1,25 @@
-import { Space, Select } from 'antd';
+import { Space, Pagination } from 'antd';
 import { useState } from 'react';
 import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, navHeight, primaryColor } from '@/utils/css';
 
-const Option = Select.Option;
+const defaultPageSize = 15;
 
 export default () => {
   const nfts = [];
-  const [range, setRange] = useState(0);
-  for (let i = range * 500; i < range * 500 + 500 && i < totalSupply; i++) {
+  const [current, setCurrent] = useState(0);
+  for (
+    let i = current * defaultPageSize;
+    i < current * defaultPageSize + defaultPageSize && i < totalSupply;
+    i++
+  ) {
     nfts.push(
       <div
         className={css`
           margin-right: 24px;
+          margin-bottom: 24px;
         `}
       >
         <img
@@ -30,6 +35,7 @@ export default () => {
           className={css`
             text-align: center;
             font-size: 24px;
+            margin-top: 8px;
           `}
         >
           #{i}
@@ -53,38 +59,36 @@ export default () => {
       >
         <div
           className={css`
-            display: flex;
-            justify-content: space-between;
+            width: 200px;
+            font-size: 50px;
           `}
         >
-          <div
-            className={css`
-              width: 200px;
-              font-size: 50px;
-            `}
-          >
-            <div>NFT画廊</div>
-            <BlueLine left />
-          </div>
-          <Select
-            style={{ width: '200px' }}
-            className={css`
-              margin-top: 60px;
-            `}
-            value={String(range)}
-            onChange={(value) => {
-              setRange(parseInt(value));
-            }}
-          >
-            <Option value="0">0~499</Option>
-            <Option value="1">500~999</Option>
-            <Option value="2">1000~1499</Option>
-            <Option value="3">1500~1999</Option>
-            <Option value="4">2000~2499</Option>
-            <Option value="5">2500~2999</Option>
-          </Select>
+          <div>NFT画廊</div>
+          <BlueLine left />
         </div>
-        <Space wrap>{nfts}</Space>
+        <Space
+          className={css`
+            justify-content: space-between;
+          `}
+          wrap
+        >
+          {nfts}
+        </Space>
+        <div
+          className={css`
+            margin-top: 24px;
+          `}
+        >
+          <Pagination
+            showSizeChanger={false}
+            current={current - 1}
+            defaultPageSize={defaultPageSize}
+            onChange={(c) => {
+              setCurrent(c - 1);
+            }}
+            total={3000}
+          />
+        </div>
       </div>
     </div>
   );

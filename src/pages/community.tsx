@@ -47,6 +47,12 @@ export default () => {
       link: 'https://discord.gg/ku4rPFcr',
     },
     {
+      title: formatMessage({ id: 'jike' }),
+      icon: '/jike.png',
+      hoverIcon: '/jike-hover.png',
+      link: 'https://okjk.co/4o6WHD',
+    },
+    {
       title: 'Twitter',
       icon: '/twitter.png',
       hoverIcon: '/twitter-hover.png',

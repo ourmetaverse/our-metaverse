@@ -51,9 +51,10 @@ export default {
     'Direct transfer to the contract can donate to all members of OurMetaverseDAO',
   donate: 'Donate to OurMetaverseDAO',
   ai_translate_tip: 'Notice: This document is translate with AI.',
-  wechat: 'Wechat Group',
+  wechat: 'Wechat',
   wechat_tip:
     'Only OurMetaverseDAO members can join the group, connect for verify.',
+  jike: 'JiKe',
   mint_banner:
     "The project promises that 20ETH of Mint's proceeds will be used for OurMetaverse DAO's future development. For example, image artwork design, essay contest, etc. Every Mint is a great support to this project!Click the button below to mint now!",
   index_intro_title_1: "It's not just NFT,",
