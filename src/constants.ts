@@ -42,36 +42,36 @@ export const roles = [
   {
     name: '彼得',
     img: '/peter.png',
-    desc: 'TODOTODO',
+    desc: '一个原俄罗斯人的名字，鲁莽的革命军人。',
   },
   {
     name: '汪强',
     img: '/wangqiang.png',
-    desc: 'TODOTODO',
+    desc: '冷静做事果断的革命军人。',
   },
   {
     name: '首领',
     img: '/leader.png',
-    desc: 'TODOTODO',
+    desc: '年迈的革命军女领导者，一个有故事的古代人。',
   },
   {
     name: '玄武',
     img: '/xuanwu.png',
-    desc: '喜欢看古时候的电影，坚毅并有探索精神。',
+    desc: '玄武在“真实世界”元宇宙中是一名飞船修理师，在工作中邂逅了神秘的发卡女孩。他们之间发生了什么故事呢？',
   },
   {
     name: '发卡女孩',
     img: '/girl.png',
-    desc: 'TODOTODO',
+    desc: '发卡女孩在创世小说中出场并不多，但是无疑她是小说的女主。温柔羞涩，十七八岁的少女。她是否是幕后大佬的千金？她和玄武之间又有什么关联？',
   },
   {
     name: '弘',
     img: '/hiro.png',
-    desc: 'TODOTODO',
+    desc: '一个喜欢把弄武士刀的搞笑胖子',
   },
   {
     name: '阿丽塔',
     img: '/alita.png',
-    desc: 'TODOTODO',
+    desc: '一个喜欢东亚文化的西方人，灵动的妹纸。',
   },
 ];
