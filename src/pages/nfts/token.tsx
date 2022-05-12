@@ -1,25 +1,17 @@
 import { useEffect, useState } from 'react';
 import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
 import { useModel, useIntl } from 'umi';
-import {
-  Button,
-  Divider,
-  Input,
-  List,
-  message,
-  Space,
-  Typography,
-  Image,
-} from 'antd';
+import { Button, Input, List, message, Space, Typography } from 'antd';
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
+import { css } from '@emotion/css';
+import ImageIcon from '@/components/ImageIcon';
 
 export default (props: { token: number }) => {
   const { token } = props;
   const [rewardBalance, setRewardBalance] = useState<number>(0);
   const [grants, setGrants] = useState<string[]>([]);
   const [grantStr, setGrantStr] = useState<string>('');
-  const [tokenURI, setTokenURI] = useState<string>('');
   const { contract, ConnectTip, address, contractWithSigner } =
     useModel('user');
   const { formatMessage } = useIntl();
@@ -54,9 +46,8 @@ export default (props: { token: number }) => {
         .catch((e: any) => {
           message.error(e.data?.message || e.message);
         });
-      contract.tokenURI(token).then(setTokenURI);
     }
-  }, [contract]);
+  }, [contract, token]);
 
   if (!contract || !contractWithSigner) {
     return <ConnectTip />;
@@ -64,27 +55,56 @@ export default (props: { token: number }) => {
 
   return (
     <div>
-      Owner：{owner}
+      <div
+        className={css`
+          font-size: 24px;
+          opacity: 0.5;
+          margin-top: -10px;
+        `}
+      >
+        OurMetaverse
+      </div>
+      <div
+        className={css`
+          font-size: 50px;
+          color: white;
+        `}
+      >
+        # {token}
+      </div>
+      <Space
+        className={css`
+          margin-bottom: 12px;
+        `}
+      >
+        <a
+          target="_blank"
+          title="OpenSea"
+          href={`https://opensea.io/assets/0xecd0d12e21805803f70de03b72b1c162db0898d9/${token}`}
+        >
+          <ImageIcon type="opensea" />
+        </a>
+      </Space>
       <Space>
-        <div>
-          {formatMessage({ id: 'available_reward' })}：
-          {rewardBalance / gweiPerETH} ETH
-        </div>
         {rewardBalance > 0 && address === owner ? (
-          <Button
-            onClick={() => {
-              contractWithSigner
-                .receiveRewardBalanceWithToken(token)
-                .then(() => {
-                  message.success(formatMessage({ id: 'withdraw_succeed' }));
-                })
-                .catch((e: any) => {
-                  message.error(e.data?.message || e.message);
-                });
-            }}
-          >
-            {formatMessage({ id: 'withdraw_now' })}
-          </Button>
+          <>
+            <Button
+              onClick={() => {
+                contractWithSigner
+                  .receiveRewardBalanceWithToken(token)
+                  .then(() => {
+                    message.success(formatMessage({ id: 'withdraw_succeed' }));
+                  })
+                  .catch((e: any) => {
+                    message.error(e.data?.message || e.message);
+                  });
+              }}
+            >
+              {formatMessage({ id: 'available_reward' })}：
+              {rewardBalance / gweiPerETH} ETH{' '}
+              {formatMessage({ id: 'withdraw_now' })}
+            </Button>
+          </>
         ) : null}
       </Space>
       <List
@@ -93,7 +113,7 @@ export default (props: { token: number }) => {
           address === owner ? (
             <Input.Group compact>
               <Input
-                style={{ width: 'calc(100% - 200px)' }}
+                style={{ width: 'calc(100% - 150px)' }}
                 value={grantStr}
                 onChange={(e) => {
                   setGrantStr(e.target.value);

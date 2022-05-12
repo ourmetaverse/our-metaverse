@@ -125,22 +125,6 @@ export default (props: IRouteProps) => {
             />
           </Col>
           <Col span={12}>
-            <div
-              className={css`
-                font-size: 24px;
-                opacity: 0.5;
-              `}
-            >
-              OurMetaverse
-            </div>
-            <div
-              className={css`
-                font-size: 50px;
-                color: white;
-              `}
-            >
-              # {current}
-            </div>
             <div>{current !== null ? <Token token={current} /> : null}</div>
           </Col>
         </Row>

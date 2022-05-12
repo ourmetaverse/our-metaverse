@@ -40,7 +40,7 @@ export default {
   empty_token_tip: '没有 {token} 这个 NFT！',
   available_reward: '未提取资金',
   withdraw_now: '立刻提取',
-  grant_list: '授权列表',
+  grant_list: '该 NFT 通过 ERC721M 授权的作品列表',
   withdraw_succeed: '提取成功，请稍后查看。',
   grant_required: '授权内容必填',
   grant_limit: '授权内容不得大于 {grantLimitLength}',
