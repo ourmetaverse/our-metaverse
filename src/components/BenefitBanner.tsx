@@ -63,7 +63,7 @@ const Component: React.FC<Props> = () => {
       ></div>
       <Row gutter={[32, 32]}>
         {bannerBlockData.map((item) => (
-          <Col span={12}>
+          <Col span={12} key={item.title}>
             <div
               className={css(`
               width:100%;
