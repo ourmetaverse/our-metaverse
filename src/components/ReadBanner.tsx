@@ -97,7 +97,10 @@ const Component: React.FC<Props> = () => {
               ${mobile} {
                 position: absolute;
                 top: 0;
+                right: 0;
                 opacity: 0.3;
+                overflow: hidden;
+                width: 420px;
               }
             `}
           >

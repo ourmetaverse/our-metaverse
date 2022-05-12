@@ -15,7 +15,7 @@ const Component: React.FC<Props> = () => {
     className: 'center',
     centerMode: pc,
     infinite: true,
-    initialSlide: pc ? 3 : 1,
+    initialSlide: 3,
     centerPadding: '50px',
     slidesToShow: pc ? 3 : 1,
     speed: 500,
@@ -27,6 +27,10 @@ const Component: React.FC<Props> = () => {
         height: 900px;
         padding-top: 110px;
         background-image: url(/rolebgimg.png);
+        ${mobile} {
+          width: 100%;
+          overflow: hidden;
+        }
       `}
     >
       <div
@@ -114,14 +118,13 @@ const Component: React.FC<Props> = () => {
                 opacity: 1;
               }
             }
-            .slick-prev:before {
-            }
-            .slick-next:before {
-            }
             .slick-next:before,
             .slick-prev:before {
               font-size: 60px;
               opacity: 0.3;
+              ${mobile} {
+                display: none;
+              }
             }
           `}
         >
