@@ -15,18 +15,53 @@
 
     gtag('config', 'G-73FP3ELCZN');
   </script>
+  <style>
+    body {
+      background: black;
+    }
+
+    .ourm-loading-text {
+      font-size: 14px;
+      max-width: 400px;
+      margin: 120px auto;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, black 0%, white 50%, black 100%);
+      background-size: 80%;
+      background-repeat: no-repeat;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-animation: shining 3s linear infinite;
+      animation: shining 3s linear infinite;
+    }
+
+    @-webkit-keyframes shining {
+      from {
+        background-position: -500%;
+      }
+
+      to {
+        background-position: 500%;
+      }
+    }
+
+    @keyframes shining {
+      from {
+        background-position: -500%;
+      }
+
+      to {
+        background-position: 500%;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div id="root">
-    <div style="padding: 8px;">
-      <p>
-        <em>OurMetaverse</em> is an exciting web3 NFT experiment for creator economy.
-      </p>
-      <p>
-        Loading...
-      </p>
-    </div>
+    <p class="ourm-loading-text">
+      OurMetaverseDAO NFT Loading...
+    </p>
   </div>
 </body>
 
