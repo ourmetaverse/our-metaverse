@@ -4,7 +4,7 @@ import Markdown from '@/components/Markdown';
 import ReadBanner from '@/components/ReadBanner';
 import RoleBanner from '@/components/RoleBanner';
 import { css } from '@emotion/css';
-import { maxWidth } from '@/utils/css';
+import { maxWidth, mobile } from '@/utils/css';
 
 export default () => {
   return (
@@ -27,6 +27,14 @@ export default () => {
               height: 108px;
               margin-top: -10px;
             }
+            ${mobile} {
+              font-size: 32px;
+              img {
+                width: 42px;
+                height: 42px;
+                margin-left: 8px;
+              }
+            }
           `}
         >
           <img src="/read-start-ball.png" />
@@ -37,10 +45,16 @@ export default () => {
             h2 {
               font-size: 40px;
               opacity: 0.9;
+              ${mobile} {
+                font-size: 24px;
+              }
             }
             p {
               font-size: 20px;
               opacity: 0.7;
+            }
+            ${mobile} {
+              padding: 0 16px;
             }
           `}
         >

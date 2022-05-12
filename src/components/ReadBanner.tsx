@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from 'antd';
 import { css } from '@emotion/css';
-import { primaryColor, maxWidth, navHeight } from '@/utils/css';
+import { primaryColor, maxWidth, navHeight, mobile } from '@/utils/css';
 
 interface Props {}
 
@@ -13,6 +13,9 @@ const Component: React.FC<Props> = () => {
       className={css`
         background-color: ${primaryColor};
         height: 767px;
+        ${mobile} {
+          height: auto;
+        }
         padding-top: ${navHeight};
       `}
     >
@@ -22,11 +25,17 @@ const Component: React.FC<Props> = () => {
           margin: 0 auto;
           padding-top: 128px;
           flex: 1;
+          ${mobile} {
+            padding: 42px 16px;
+          }
         `}
       >
         <div
           className={css`
             display: flex;
+            ${mobile} {
+              flex-direction: column;
+            }
           `}
         >
           <div
@@ -37,16 +46,29 @@ const Component: React.FC<Props> = () => {
             <div
               className={css`
                 font-size: 70px;
+                ${mobile} {
+                  font-size: 40px;
+                }
               `}
             >
               <div>我们的元宇宙</div>
-              <div style={{ marginTop: 16 }}>
+              <div
+                className={css`
+                  margin-top: 16px;
+                  ${mobile} {
+                    margin-top: 0;
+                  }
+                `}
+              >
                 开端{' '}
                 <span
                   className={css`
                     font-size: 40px;
                     color: #d8d8d8;
                     opacity: 0.3;
+                    ${mobile} {
+                      font-size: 20px;
+                    }
                   `}
                 >
                   / /
@@ -72,6 +94,11 @@ const Component: React.FC<Props> = () => {
           <div
             className={css`
               flex: 1;
+              ${mobile} {
+                position: absolute;
+                top: 0;
+                opacity: 0.3;
+              }
             `}
           >
             <img src="/read-banner.png" alt="" />

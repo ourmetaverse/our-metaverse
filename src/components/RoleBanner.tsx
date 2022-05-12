@@ -1,21 +1,23 @@
 import React from 'react';
 // https://react-slick.neostack.com/docs/example/center-mode
 import Slider from 'react-slick';
-import { maxWidth } from '@/utils/css';
+import { maxWidth, mobile, desktop } from '@/utils/css';
 import { css } from '@emotion/css';
 import BlueLine from '@/components/BlueLine';
 import { roles } from '@/constants';
+import { useResponsive } from 'ahooks';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
+  const { pc } = useResponsive();
   const settings = {
     className: 'center',
-    centerMode: true,
+    centerMode: pc,
     infinite: true,
-    initialSlide: 3,
+    initialSlide: pc ? 3 : 1,
     centerPadding: '50px',
-    slidesToShow: 3,
+    slidesToShow: pc ? 3 : 1,
     speed: 500,
     focusOnSelect: true,
   };
@@ -58,6 +60,24 @@ const Component: React.FC<Props> = () => {
               .ourm-role-detail {
                 display: none;
                 text-align: center;
+              }
+
+              ${mobile} {
+                img {
+                  margin: 65px auto;
+                }
+                .ourm-role-detail {
+                  display: block;
+                  .ourm-role-name {
+                    font-size: 30px;
+                    margin-top: 50px;
+                  }
+                  .ourm-role-desc {
+                    opacity: 0.4;
+                    font-size: 20px;
+                    padding: 0 8px;
+                  }
+                }
               }
             }
             .slick-center {
