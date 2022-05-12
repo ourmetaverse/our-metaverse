@@ -172,6 +172,9 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               &:hover {
                 opacity: 0.7;
               }
+              ${mobile} {
+                width: 80px;
+              }
             }
             .ant-divider {
               background-color: #d8d8d8;
@@ -187,7 +190,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             <a href={`https://www.our-metaverse.xyz`}>Website</a>
             <Divider type="vertical" />
             <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
-            <Divider type="vertical" />
+            <br />
             <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
             <Divider type="vertical" />
             <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>

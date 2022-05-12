@@ -4,7 +4,7 @@ import { wechatLink } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/css';
-import { primaryColor } from '@/utils/css';
+import { primaryColor, mobile } from '@/utils/css';
 
 export default () => {
   const { formatMessage } = useIntl();
@@ -75,13 +75,16 @@ export default () => {
     <div
       className={css`
         background: linear-gradient(#000, ${primaryColor});
-        padding: 150px 8px;
+        padding: 150px 16px;
       `}
     >
       <div
         className={css`
           font-size: 40px;
           text-align: center;
+          ${mobile} {
+            font-size: 24px;
+          }
         `}
       >
         加入社区，成为家人
