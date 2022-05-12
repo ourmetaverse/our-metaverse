@@ -1,16 +1,20 @@
-import { Space, Pagination, Modal } from 'antd';
+import { Space, Col, Row, Pagination } from 'antd';
 import { useState } from 'react';
 import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, primaryColor } from '@/utils/css';
+import Modal from '@/components/Modal';
+import { IRouteProps } from 'umi';
+import Token from './token';
 
 const pageSize = 10;
 
-export default () => {
+export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
   const [current, setCurrent] = useState<number | null>(null);
+
   for (
     let i = (page - 1) * pageSize;
     i < page * pageSize && i < totalSupply;
@@ -96,21 +100,50 @@ export default () => {
       </div>
       <Modal
         visible={current !== null}
-        title={`#${current}`}
+        width="1000px"
         onCancel={() => {
           setCurrent(null);
         }}
         footer={false}
       >
-        <img
+        <Row
+          gutter={60}
           className={css`
-            box-shadow: 0px 2px 30px #3e3e3e;
+            padding: 70px;
           `}
-          width={400}
-          height={400}
-          src="/xuanwu.png"
-          alt=""
-        />
+        >
+          <Col span={12}>
+            <img
+              className={css`
+                box-shadow: 0px 2px 30px #1443ff;
+                border-radius: 10px;
+              `}
+              width={400}
+              height={400}
+              src="/xuanwu.png"
+              alt=""
+            />
+          </Col>
+          <Col span={12}>
+            <div
+              className={css`
+                font-size: 24px;
+                opacity: 0.5;
+              `}
+            >
+              OurMetaverse
+            </div>
+            <div
+              className={css`
+                font-size: 50px;
+                color: white;
+              `}
+            >
+              # {current}
+            </div>
+            <div>{current !== null ? <Token token={current} /> : null}</div>
+          </Col>
+        </Row>
       </Modal>
     </div>
   );

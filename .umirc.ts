@@ -13,6 +13,7 @@ export default defineConfig({
   theme: {
     'primary-color': primaryColor,
     'menu-dark-item-active-bg': 'transparent',
+    'modal-content-bg': '#0C1742',
   },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,

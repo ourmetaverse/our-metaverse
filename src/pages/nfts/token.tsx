@@ -14,12 +14,8 @@ import {
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
 
-export default (props: {
-  location: {
-    query: { token: string };
-  };
-}) => {
-  const token: number = parseInt(props.location.query.token);
+export default (props: { token: number }) => {
+  const { token } = props;
   const [rewardBalance, setRewardBalance] = useState<number>(0);
   const [grants, setGrants] = useState<string[]>([]);
   const [grantStr, setGrantStr] = useState<string>('');
@@ -68,17 +64,7 @@ export default (props: {
 
   return (
     <div>
-      <h3>#{token}</h3>
-      <Image
-        width={300}
-        height={300}
-        src="https://ourmetaverse.github.io/our-metaverse-dao.png"
-      />
-      <Divider />
-      tokenURI:{tokenURI}
-      <Divider />
       Owner：{owner}
-      <Divider />
       <Space>
         <div>
           {formatMessage({ id: 'available_reward' })}：
@@ -101,7 +87,6 @@ export default (props: {
           </Button>
         ) : null}
       </Space>
-      <Divider />
       <List
         header={<div>{formatMessage({ id: 'grant_list' })}</div>}
         footer={
