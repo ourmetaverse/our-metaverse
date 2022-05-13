@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
-import { maxWidth, primaryColor } from '@/utils/css';
+import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
-import { IRouteProps } from 'umi';
+import { IRouteProps, history } from 'umi';
+const { useResponsive } = require('ahooks');
 import Token from './token';
 
 const pageSize = 10;
@@ -14,6 +15,7 @@ export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
   const [current, setCurrent] = useState<number | null>(null);
+  const { pc } = useResponsive();
 
   for (
     let i = (page - 1) * pageSize;
@@ -23,21 +25,26 @@ export default (props: IRouteProps) => {
     nfts.push(
       <div
         className={css`
-          margin-right: 24px;
           margin-bottom: 24px;
         `}
       >
         <img
           className={css`
+            width: 220px;
             box-shadow: 0px 2px 30px #3e3e3e;
             cursor: pointer;
+            ${mobile} {
+              width: ${document.body.clientWidth / 2 - 24}px;
+            }
           `}
-          width={220}
-          height={220}
           src="/xuanwu.png"
           alt=""
           onClick={() => {
-            setCurrent(i);
+            if (!pc) {
+              history.push(`nfts/token?token=${i}`);
+            } else {
+              setCurrent(i);
+            }
           }}
         />
         <div
@@ -58,6 +65,9 @@ export default (props: IRouteProps) => {
       className={css`
         padding-top: 120px;
         background: linear-gradient(${primaryColor}, #000);
+        ${mobile} {
+          padding: 120px 16px;
+        }
       `}
     >
       <div

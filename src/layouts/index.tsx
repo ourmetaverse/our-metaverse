@@ -188,6 +188,9 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             onClick={() => {
               setVisible(false);
             }}
+            style={{
+              backgroundColor: 'transparent',
+            }}
           >
             {items}
           </Menu>

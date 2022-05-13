@@ -1,14 +1,24 @@
 import { useEffect, useState } from 'react';
 import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
-import { useModel, useIntl } from 'umi';
+import { useModel, useIntl, IRouteProps } from 'umi';
 import { Button, Input, List, message, Space, Typography } from 'antd';
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
 import { css } from '@emotion/css';
 import ImageIcon from '@/components/ImageIcon';
+import { mobile } from '@/utils/css';
+import { useResponsive } from 'ahooks';
 
-export default (props: { token: number }) => {
-  const { token } = props;
+interface Props extends IRouteProps {
+  token?: number;
+}
+
+export default (props: Props) => {
+  let token = props.token;
+  if (!token) {
+    token = parseInt(props.location.query.token);
+  }
+  const { pc } = useResponsive();
   const [rewardBalance, setRewardBalance] = useState<number>(0);
   const [grants, setGrants] = useState<string[]>([]);
   const [grantStr, setGrantStr] = useState<string>('');
@@ -54,7 +64,13 @@ export default (props: { token: number }) => {
   }
 
   return (
-    <div>
+    <div
+      className={css`
+        ${mobile} {
+          padding: 120px 16px;
+        }
+      `}
+    >
       <div
         className={css`
           font-size: 24px;
@@ -72,6 +88,14 @@ export default (props: { token: number }) => {
       >
         # {token}
       </div>
+      {!pc ? (
+        <img
+          className={css`
+            width: 100%;
+          `}
+          src={`/xuanwu.png`}
+        />
+      ) : null}
       <Space
         className={css`
           margin-bottom: 12px;
