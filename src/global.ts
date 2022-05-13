@@ -1,6 +1,6 @@
 import { configResponsive } from 'ahooks';
 
 configResponsive({
-  mobile: 0,
+  isMobile: 0,
   pc: 767,
 });

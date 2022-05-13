@@ -3,8 +3,8 @@ import { BigNumber } from 'ethers';
 const gweiPer0001ETH = BigNumber.from('10000000000'); // 10 ** 14 = 0.00000001eth;
 
 export function formatAddress(address: string) {
-  return `${address.substring(0, 8)}......${address.substring(
-    address.length - 8,
+  return `${address.substring(0, 4)}...${address.substring(
+    address.length - 4,
   )}`;
 }
 

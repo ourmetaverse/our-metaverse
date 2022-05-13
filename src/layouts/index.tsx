@@ -1,11 +1,12 @@
-import { Layout, Menu, Divider } from 'antd';
+import { Layout, Menu, Divider, Drawer } from 'antd';
 import { contractAddress } from '@/constants';
 import { Link, useIntl, setLocale, getLocale, IRouteComponentProps } from 'umi';
 import { css } from '@emotion/css';
+import { MenuOutlined } from '@ant-design/icons';
 import ConnectWallet from '@/components/ConnectWallet';
-import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
 import { useResponsive } from 'ahooks';
+import { useState } from 'react';
 
 const { Header, Content, Footer } = Layout;
 
@@ -13,9 +14,58 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
   children,
   location,
 }) => {
+  const [visible, setVisible] = useState(false);
   const { formatMessage } = useIntl();
   const { pc } = useResponsive();
   const isCN = getLocale() === 'zh-CN';
+  const items = (
+    <>
+      <Menu.Item key="index">
+        <Link to="/">
+          {formatMessage({
+            id: 'index',
+          })}
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="/read">
+        <Link to="/read">
+          {formatMessage({
+            id: 'read',
+          })}
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="/whitepaper">
+        <Link to="/whitepaper">
+          {formatMessage({
+            id: 'wihte_paper',
+          })}
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="/nfts">
+        <Link to="/nfts">NFTs</Link>
+      </Menu.Item>
+      <Menu.Item key="/community">
+        <Link to="/community">
+          {formatMessage({
+            id: 'community',
+          })}
+        </Link>
+      </Menu.Item>
+      <Menu.Item>
+        <a
+          onClick={() => {
+            if (isCN) {
+              setLocale('en-US');
+            } else {
+              setLocale('zh-CN');
+            }
+          }}
+        >
+          {formatMessage({ id: 'lang_switch' })}
+        </a>
+      </Menu.Item>
+    </>
+  );
   return (
     <Layout>
       <Header
@@ -51,6 +101,21 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             justify-content: space-between;
           `}
         >
+          {!pc ? (
+            <MenuOutlined
+              className={css`
+                display: inline-block;
+                line-height: 95px;
+                margin-right: 16px;
+                font-size: 28px;
+                z-index: 2;
+              `}
+              onClick={() => {
+                console;
+                setVisible(true);
+              }}
+            />
+          ) : null}
           <Link
             to="/"
             className={css`
@@ -63,6 +128,9 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 opacity: 1;
                 color: white;
               }
+              ${mobile} {
+                font-size: 20px;
+              }
             `}
           >
             <img
@@ -73,88 +141,57 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 border-radius: 50%;
                 margin-top: -5px;
                 opacity: 1;
+                ${mobile} {
+                  height: 40px;
+                }
               `}
             />
             <span
               className={css`
                 display: inline-block;
-                ${mobile} {
-                  display: none;
-                }
               `}
             >
               OurMetaverse
             </span>
           </Link>
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            overflowedIndicator={<MenuUnfoldOutlined />}
-            defaultSelectedKeys={[location.pathname]}
-            style={{
-              backgroundColor: 'transparent',
-            }}
-            className={css`
-              width: ${isCN ? 610 : 800}px;
-
-              ${mobile} {
-                width: ${isCN ? 218 : 209}px;
-              }
-              .ant-menu-item-selected a {
-                border-bottom: 5px solid ${primaryColor};
-                padding-bottom: 6px;
-              }
-            `}
-          >
-            <Menu.Item key="index">
-              <Link to="/">
-                {formatMessage({
-                  id: 'index',
-                })}
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="/read">
-              <Link to="/read">
-                {formatMessage({
-                  id: 'read',
-                })}
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="/whitepaper">
-              <Link to="/whitepaper">
-                {formatMessage({
-                  id: 'wihte_paper',
-                })}
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="/nfts">
-              <Link to="/nfts">NFTs</Link>
-            </Menu.Item>
-            <Menu.Item key="/community">
-              <Link to="/community">
-                {formatMessage({
-                  id: 'community',
-                })}
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <a
-                onClick={() => {
-                  if (isCN) {
-                    setLocale('en-US');
-                  } else {
-                    setLocale('zh-CN');
-                  }
-                }}
-              >
-                {formatMessage({ id: 'lang_switch' })}
-              </a>
-            </Menu.Item>
-            <Menu.Item>
-              <ConnectWallet />
-            </Menu.Item>
-          </Menu>
+          {pc ? (
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={[location.pathname]}
+              style={{
+                backgroundColor: 'transparent',
+              }}
+              className={css`
+                .ant-menu-item-selected a {
+                  border-bottom: 5px solid ${primaryColor};
+                  padding-bottom: 6px;
+                }
+              `}
+            >
+              {items}
+              <Menu.Item>
+                <ConnectWallet />
+              </Menu.Item>
+            </Menu>
+          ) : null}
+          {!pc ? <ConnectWallet /> : null}
         </div>
+        <Drawer
+          placement="left"
+          visible={visible}
+          onClose={() => {
+            setVisible(false);
+          }}
+        >
+          <Menu
+            onClick={() => {
+              setVisible(false);
+            }}
+          >
+            {items}
+          </Menu>
+        </Drawer>
       </Header>
       <Content
         className={css`
