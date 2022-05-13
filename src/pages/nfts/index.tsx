@@ -26,6 +26,10 @@ export default (props: IRouteProps) => {
       <div
         className={css`
           margin-bottom: 24px;
+          margin-right: 24px;
+          ${mobile} {
+            margin-right: 0;
+          }
         `}
       >
         <img

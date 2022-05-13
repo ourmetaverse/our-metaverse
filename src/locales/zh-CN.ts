@@ -1,8 +1,9 @@
 export default {
-  index: '首页',
+  index: '元宇宙',
   novel_name: '《我们的元宇宙·开端》',
   lang_switch: 'English',
-  wihte_paper: '宇宙观',
+  universe: '宇宙观',
+  wihte_paper: 'ERC721M',
   read: '创世小说',
   reward: '奖金',
   community: '社区',

@@ -1,4 +1,18 @@
-# White Paper
+## About OurMetaverse
+
+I have a dream: to create a wonderful and diverse universe. 
+
+I also have a dream: I hope every creator can reap the value of creation.  
+
+This is a Web3 experiment, an exploration of the creator economy. This is a project I personally started, but I hope to leverage the power of Web3 to create OurMetaverseDAO so that more people can participate in making these two dreams a reality.
+
+I'm a programmer and I write science fiction during my spare time. I've already published some science fiction novels, even though I don't earn much money from it, I simply get a lot of joy from writing it. I write codes for a life and I don't count on creative writing to afford my bread and milk. But Most full time creators are not, especially those sci-fi writers. There are many creators who are much better than me while they even can't make a living from their writing and can only earn a couple of hundreds dollars for a novel of tens of thousands of words. The whole creator economy is not good, and the majority of profits from creative writings are monopoly by print giants, and creators' passionate are deeply frustrated  under the existing industry system. It is difficult to promote the circulation and secondary development of related rights and peripheral development, creators cannot get good income, good works are difficult to be discovered, consumers do not enjoy better works, and it is difficult for ordinary investors to participate in investment. But Web3 opened my eyes to endless possibilities, so I built this project.
+
+The project is known as *Our Metaverse*, which is the name of the project and the name of a novel. and we formed a community named Our Metaverse DAO, because we have the faith that decentralized is our future. Based on the fantasy of the future of the metaverse, I conceived a new universe, which I called "Our Metaverse", and wrote a novel of more than 20,000 words. But I think it is just the beginning, I hope it can be extended and become a universe with infinite possibilities. By issuing a smart contract on ethereum to manage the copyright of this IP, I have granted the copyright to everyone who wants to make a secondary creation through my newly designed ERC721M smart contract(the creation incentive for writers is powered by our ERC721M), and we welcome those who want to write a brand new side story can participate in the project and enjoy the benefits of this IP together.
+
+Everyone can become a member of OurMetaverse NFT through our [website minting page](/) to become a member of OurMetaverseDAO and own the NFT in addition to the corresponding digital image artwork and the rights related to *Our Metaverse*.
+
+## White Paper
 
 The science fiction novel *Our Metaverse - The Beginning* (`our-metaverse.md` SHA256 Hash `C73F914CBFD8E9BF6CF3FE3E9A3488E1524CC777779035E01975778BAD1D971C`) is cast as NFT through an ethereum smart contract, which is addressed as `0xEcd0D12E21805803f70de03B72B1C162dB0898d9` and published by address `0x9C3C27d5bADb93fC2468f4cb12056b8C0C228ad8` (later replaced by `our-metaverse.eth`). A total of 3000 copies of this project NFT were released. 2998 of them are base NFTs, which require 0.01 ETH to be minted, and a maximum of 10 NFTs per address, the ownership of which represents the following rights and obligations.
 
@@ -18,5 +32,3 @@ For NFT #0 and NFT #1, the two special NFTs are as follows.
 This logic has been implemented through a smart contract and is guaranteed by the contract code.
 
 598 of the 2998 base NFTs will be retained by the contract launch address `our-metaverse.eth`, of which 500 (NFTs 100-599) will be used to attract more creators and projects in the future. Their use will be publicized in OurMetaverseDAO, and if there is already revenue included in the NFT, it will be used in a way determined by `our-metaverse.eth`. The other 98 copies (NFTs 2-99) and the proceeds of Mint are held and used by `our-metaverse.eth`.
-
-[Read on Mirror](https://mirror.xyz/our-metaverse.eth/oRbB--IjSzrT2uGZF6AE1LiNnucZ-LI8e0TxpTWL7rA).

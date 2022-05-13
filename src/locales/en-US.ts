@@ -1,8 +1,9 @@
 export default {
-  index: 'OURM',
+  index: 'Metaverse',
   novel_name: 'Our Metaverse: Genesis',
   lang_switch: '中文',
-  wihte_paper: 'White Paper',
+  wihte_paper: 'ERC721M',
+  universe: 'Structure',
   read: 'Read',
   reward: 'Reward',
   community: 'Community',

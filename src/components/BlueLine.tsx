@@ -12,7 +12,12 @@ const Component: React.FC<Props> = ({ width = 120, left }) => {
     <div
       className={css`
         width: ${width}px;
-        background-color: ${primaryColor};
+        background: linear-gradient(
+          to right,
+          ${primaryColor},
+          #042bc7,
+          ${primaryColor}
+        );
         height: 11px;
         margin: 0 ${left ? '' : 'auto'};
         margin-top: 16px;

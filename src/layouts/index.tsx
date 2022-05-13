@@ -119,6 +119,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           <Link
             to="/"
             className={css`
+              flex: 1;
               cursor: pointer;
               font-size: 28px;
               color: white;
@@ -158,6 +159,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             <Menu
               theme="dark"
               mode="horizontal"
+              disabledOverflow
               defaultSelectedKeys={[location.pathname]}
               style={{
                 backgroundColor: 'transparent',
