@@ -2,7 +2,6 @@ import { Row } from 'antd';
 import { useIntl } from 'umi';
 import { css } from '@emotion/css';
 
-type StepStatus = 'Finished' | 'Progress' | 'Waiting';
 interface StepProps {
   name: string;
   content: Array<string>;
@@ -173,10 +172,11 @@ export default () => {
   return (
     <div
       className={css(`
-          width:100%;
-          height: 900px;
-          background-image:url('/index-bg-2.png');
-          background-size:100% 100%;
+          width: 100%;
+          height: 100vh;
+          background: transparent;
+          background-size: 100% 100%;
+          padding-top: 87px;
         `)}
     >
       <Row
@@ -213,19 +213,17 @@ export default () => {
           height: 456px;
           margin:83px 110px;
           background-image:url('/roadmap-bg.png');
-          // background: linear-gradient(to bottom, rgba(0,0,0,0.24),rgba(0,0,0,0.5);
           background-size: 100% 100%;
         `)}
       >
         <div
           className={css(`
-          display:flex;
-          flex-direction:row;
-          justify-content:space-around;
-          width:100%;
-          margin: 100px 50px;
-          
-        `)}
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+            width:100%;
+            margin: 100px 50px;
+          `)}
         >
           {StepContent.map((item, index) => {
             return (

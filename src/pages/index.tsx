@@ -3,24 +3,18 @@ import { css } from '@emotion/css';
 import IntroBanner from '@/components/IntroBanner';
 import BenefitBanner from '@/components/BenefitBanner';
 import RoadMap from '@/components/RoadMap';
+import StarCanvas from '@/components/StarCanvas';
 import { Carousel } from 'antd';
 import type { CarouselRef } from 'antd/es/carousel';
 
 const throttle = function (fn: Function, interval: number) {
   let last = Date.now();
-  let timerId: ReturnType<typeof setTimeout> | null;
   return function () {
     let current = Date.now();
     let args = [].slice.call(arguments, 0);
-    timerId && clearTimeout(timerId);
     if (current - last >= interval) {
       fn.apply(null, args);
       last = current;
-    } else {
-      timerId = setTimeout(function () {
-        fn.apply(null, args);
-        last = current;
-      }, interval);
     }
   };
 };
@@ -44,22 +38,24 @@ export default () => {
     }
   };
 
-  const newHandleWhell = throttle(handleWheel, 1000);
+  const newHandleWhell = throttle(handleWheel, 1500);
 
   return (
     <div
       onWheel={newHandleWhell}
       className={css(`
-        width:100%;
-        height: calc(100vh - 347px);
+        width: 100%;
+        height: 100vh;
         overflow: hidden;
       `)}
     >
-      <Carousel dotPosition="right" dots={false} ref={carouselRef}>
-        <IntroBanner />
-        <BenefitBanner />
-        <RoadMap />
-      </Carousel>
+      <StarCanvas numStars={1000} FPS={60} minSize={2} maxSize={5}>
+        <Carousel dotPosition="right" dots={false} ref={carouselRef}>
+          <IntroBanner />
+          <BenefitBanner />
+          <RoadMap />
+        </Carousel>
+      </StarCanvas>
     </div>
   );
 };

@@ -35,19 +35,19 @@ const Component: React.FC<Props> = () => {
     <div
       className={css(`
         width:100%;
-        height: 900px;
-        background-color:#000;
-        padding:106px;
+        height: 100vh;
+        background:transparent;
+        padding: 193px 106px 106px 106px;
       `)}
     >
       <div
         className={css(`
-              color: #1443FF;
-              font-size:40px;
-              letter-spacing:0.13px;
-              line-height:60px;
-              font-family: 苹方-简;
-            `)}
+          color: #1443FF;
+          font-size:40px;
+          letter-spacing:0.13px;
+          line-height:60px;
+          font-family: 苹方-简;
+        `)}
       >
         {formatMessage({ id: 'index_benefit_title_1' })} <br />
         {formatMessage({ id: 'index_benefit_title_2' })}
