@@ -21,9 +21,11 @@
     ]
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^3.1.0",
     "@emotion/css": "^11.7.1",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
+    "@toruslabs/torus-embed": "^1.22.6",
     "@walletconnect/web3-provider": "^1.7.3",
     "ahooks": "^3.3.10",
     "antd": "^4.18.9",
