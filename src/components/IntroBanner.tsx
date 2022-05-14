@@ -15,7 +15,7 @@ const Component: React.FC<Props> = () => {
         height: 100vh;
         background:transparent;
         background-size:100% 100%;
-        padding:87px 104px;
+        padding:87px 0;
       `)}
     >
       <Col

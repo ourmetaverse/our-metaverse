@@ -22,35 +22,55 @@ const throttle = function (fn: Function, interval: number) {
 export default () => {
   const carouselRef = useRef<CarouselRef>(null);
   const currentIndex = useRef(1);
+  const isChanging = useRef(false);
 
   const handleWheel = (e: React.WheelEvent) => {
     const deltaY = e.nativeEvent?.deltaY;
+    if (isChanging.current) return;
     if (deltaY < 0) {
       if (currentIndex.current > 1) {
         currentIndex.current -= 1;
+        isChanging.current = true;
         carouselRef.current?.prev();
       }
     } else {
       if (currentIndex.current < 3) {
         currentIndex.current += 1;
+        isChanging.current = true;
         carouselRef.current?.next();
       }
     }
   };
 
-  const newHandleWhell = throttle(handleWheel, 1500);
+  const newHandleWhell = throttle(handleWheel, 100);
+
+  const handleChange = () => {
+    // When using the trackpad to scroll, a slight swipe will prolong the execution for a period of time,
+    // the processing logic of the wheel event will be triggered many times.
+    // Therefore, a timer is used to delay the execution of the next event
+    const timer = setTimeout(() => {
+      isChanging.current = false;
+      clearTimeout(timer);
+    }, 1000);
+  };
 
   return (
     <div
       onWheel={newHandleWhell}
       className={css(`
-        width: 100%;
+        width: 1440px;
         height: 100vh;
         overflow: hidden;
+        margin: 0 auto;
       `)}
     >
       <StarCanvas numStars={1000} FPS={60} minSize={2} maxSize={5}>
-        <Carousel dotPosition="right" dots={false} ref={carouselRef}>
+        <Carousel
+          dotPosition="right"
+          dots={false}
+          ref={carouselRef}
+          afterChange={handleChange}
+        >
           <IntroBanner />
           <BenefitBanner />
           <RoadMap />

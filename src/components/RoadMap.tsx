@@ -211,7 +211,7 @@ export default () => {
       <Row
         className={css(`
           height: 456px;
-          margin:83px 110px;
+          margin:83px 0;
           background-image:url('/roadmap-bg.png');
           background-size: 100% 100%;
         `)}

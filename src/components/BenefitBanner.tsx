@@ -37,7 +37,7 @@ const Component: React.FC<Props> = () => {
         width:100%;
         height: 100vh;
         background:transparent;
-        padding: 193px 106px 106px 106px;
+        padding: 193px 0 106px 0;
       `)}
     >
       <div
@@ -58,7 +58,7 @@ const Component: React.FC<Props> = () => {
         height:19px;
         margin-top:36px;
         margin-bottom:92px;
-        background: radial-gradient(120px at 100px -6px , #000, #060F35, #142E9D,#041352);;
+        background: radial-gradient(120px at 100px -6px , #000, #060F35, #142E9D,#041352);
       `)}
       ></div>
       <Row gutter={[32, 32]}>
