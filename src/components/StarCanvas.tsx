@@ -1,5 +1,5 @@
 import { ReactElement, useCallback, useEffect, useRef } from 'react';
-import Star from '@/utils/Star';
+import Star, { Shape } from '@/utils/Star';
 import { css } from '@emotion/css';
 
 interface Prop {
@@ -7,6 +7,7 @@ interface Prop {
   FPS?: number;
   minSize?: number;
   maxSize?: number;
+  shape?: Shape;
   children?: ReactElement;
 }
 
@@ -16,6 +17,7 @@ const generateStars = (
   screenH: number,
   minSize: number,
   maxSize: number,
+  shape?: Shape,
 ) => {
   let stars = [];
   for (let i = 0; i < numStars; i++) {
@@ -23,7 +25,7 @@ const generateStars = (
     let y = Math.round(Math.random() * screenH);
     let length = minSize + Math.random() * (maxSize - minSize);
     let opacity = Math.random();
-    let star = new Star(x, y, length, opacity, screenW, screenH);
+    let star = new Star(x, y, length, opacity, screenW, screenH, shape);
     stars.push(star);
   }
   return stars;
@@ -57,7 +59,14 @@ const StarCanvas = (props: Prop) => {
 
   useEffect(() => {
     const { screenW, screenH } = initCanvasSize();
-    const stars = generateStars(numStars, screenW, screenH, minSize, maxSize);
+    const stars = generateStars(
+      numStars,
+      screenW,
+      screenH,
+      minSize,
+      maxSize,
+      props?.shape,
+    );
     const animate = () => {
       if (ctx.current) {
         ctx.current.clearRect(0, 0, screenW, screenH);

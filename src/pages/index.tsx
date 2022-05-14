@@ -64,7 +64,13 @@ export default () => {
         margin: 0 auto;
       `)}
     >
-      <StarCanvas numStars={1000} FPS={60} minSize={2} maxSize={5}>
+      <StarCanvas
+        numStars={1000}
+        FPS={60}
+        minSize={3}
+        maxSize={8}
+        shape="cross star"
+      >
         <Carousel
           dotPosition="right"
           dots={false}
