@@ -67,7 +67,7 @@ const StarRing = () => {
               attributeName="x"
               from="721px"
               to="71px"
-              dur="8s"
+              dur="4s"
               repeatCount="indefinite"
             />
           </rect>
