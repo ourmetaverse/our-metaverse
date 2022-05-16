@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from 'antd';
 import { useIntl } from 'umi';
 import { css } from '@emotion/css';
 import BlueLine from '@/components/BlueLine';
@@ -41,7 +40,8 @@ const Component: React.FC<Props> = () => {
         background:transparent;
         padding: 193px 0 106px 0;
         ${mobile} {
-          padding: 100px 16px;
+          padding: 16px;
+          height: auto;
         }
       `)}
     >

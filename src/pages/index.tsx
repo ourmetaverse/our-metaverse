@@ -9,9 +9,41 @@ import { maxWidth } from '@/utils/css';
 
 export default () => {
   const { pc } = useResponsive();
+  const content = (
+    <>
+      <div className="section">
+        <IntroBanner />
+      </div>
+      <div className="section">
+        <BenefitBanner />
+      </div>
+      <div className="section">
+        <RoadMap />
+      </div>
+    </>
+  );
+  if (!pc) {
+    return (
+      <StarCanvas
+        numStars={100}
+        FPS={30}
+        minSize={3}
+        maxSize={8}
+        shape="cross star"
+      >
+        <div
+          className={css`
+            position: relative;
+          `}
+        >
+          {content}
+        </div>
+      </StarCanvas>
+    );
+  }
   return (
     <StarCanvas
-      numStars={pc ? 500 : 100}
+      numStars={500}
       FPS={30}
       minSize={3}
       maxSize={8}
@@ -28,19 +60,7 @@ export default () => {
           licenseKey="ourm-metaverse"
           scrollingSpeed={500} /* Options here */
           render={({ state, fullpageApi }) => {
-            return (
-              <ReactFullpage.Wrapper>
-                <div className="section">
-                  <IntroBanner />
-                </div>
-                <div className="section">
-                  <BenefitBanner />
-                </div>
-                <div className="section">
-                  <RoadMap />
-                </div>
-              </ReactFullpage.Wrapper>
-            );
+            return <ReactFullpage.Wrapper>{content}</ReactFullpage.Wrapper>;
           }}
         />
       </div>

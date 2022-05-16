@@ -198,12 +198,17 @@ export default () => {
   return (
     <div
       className={css(`
-          width: 100%;
-          height: 100vh;
-          background: transparent;
-          background-size: 100% 100%;
-          padding-top: 87px;
-        `)}
+        width: 100%;
+        height: 100vh;
+        background: transparent;
+        background-size: 100% 100%;
+        padding-top: 87px;
+        ${mobile} {
+          height: auto;
+          padding-top: 32px;
+          padding-bottom: 32px;
+        }
+      `)}
     >
       <Row
         className={css(`
@@ -241,6 +246,7 @@ export default () => {
             flex-direction:column;
             margin: 0;
             background-image: none;
+            height: auto;
           }
         `)}
       >

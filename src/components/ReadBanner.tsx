@@ -77,10 +77,13 @@ const Component: React.FC<Props> = () => {
             </div>
             <div
               className={css`
-                margin-top: 64px;
+                margin-top: 32px;
                 height: 232px;
                 overflow: hidden;
                 flex: 1;
+                ${mobile} {
+                  margin-top: 16px;
+                }
               `}
             >
               <div

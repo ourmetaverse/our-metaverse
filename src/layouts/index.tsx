@@ -205,10 +205,11 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
       >
         {children}
       </Content>
-      {location.pathname !== '/' ? (
+      {location.pathname !== '/' || !pc ? (
         <Footer
           className={css`
             padding-top: 114px;
+            position: relative;
             a {
               color: white;
               width: 184px;
@@ -238,6 +239,8 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
             <Divider type="vertical" />
             <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>
+            <Divider type="vertical" />
+            <a href={`https://v1.our-metaverse.xyz`}>v1 Site</a>
           </div>
           <div
             className={css`
