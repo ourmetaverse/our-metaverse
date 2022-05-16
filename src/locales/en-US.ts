@@ -70,16 +70,15 @@ export default {
   index_benefit_title_2: 'by owning OurMetaverseDAO NFT',
   index_benefit_membership: 'DAO Membership',
   index_benefit_membership_content:
-    'Become a member of OurMetaverseDAO and join an exclusive community. In the future, you can participate in activities such as voting for the final election of the essay contest, and new NFT airdrops that may be issued by the official.',
+    'Become a member of OurMetaverseDAO and join an exclusive community. Can participate in activities such as voting for the essay contest.',
   index_benefit_pfp: 'Exclusive PFP',
   index_benefit_pfp_content:
     'Have the corresponding PFP. This series of images is being created based on the background of the novel. All NFTs can receive corresponding PFPs.',
   index_benefit_grant: 'Secondary creation authorization',
-  index_benefit_grant_content:
-    'Possess the right to modify and translate the digital form of all works contained in the OurMetaverseDAO portfolio, allowing for secondary authoring. The business authorization logic of secondary creation is realized through smart contracts.',
+  index_benefit_grant_content: 'Allowing for secondary authoring.',
   index_benefit_share: 'Project revenue share',
   index_benefit_share_content:
-    'Possess the right to modify and translate the digital form of all works contained in the OurMetaverseDAO portfolio, allowing for secondary authoring. The business authorization logic of secondary creation is realized through smart contracts.',
+    'Possess the right to modify and translate the digital form of all works contained in the OurMetaverseDAO portfolio.',
   index_roadmap_title: 'Project Roadmap',
   index_roadmap_step_one: 'Step One',
   index_roadmap_step_two: 'Step Two',

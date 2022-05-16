@@ -91,8 +91,8 @@ export default {
   index_roadmap_step_three_2: 'NFT 开图',
   index_roadmap_step_four_1: '开展科幻小说',
   index_roadmap_step_four_2: '征文大赛',
-  index_roadmap_step_five_1: '完善 IP 内容',
-  index_roadmap_step_five_2: '完善图书版权',
-  index_roadmap_step_five_3: '影视版权的铸造',
+  index_roadmap_step_five_1: '完善 IP',
+  index_roadmap_step_five_2: '图书出版',
+  index_roadmap_step_five_3: '影视改编',
   index_roadmap_in_progress: '进行中',
 };

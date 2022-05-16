@@ -53,8 +53,8 @@ const Component: React.FC<Props> = () => {
           line-height:60px;
           font-family: 苹方-简;
           ${mobile} {
-            font-size: 24px;
-            line-height:40px;
+            font-size: 18px;
+            line-height:32px;
           }
         `)}
       >
