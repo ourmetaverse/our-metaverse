@@ -1,55 +1,57 @@
 import React from 'react';
-import { Row, Col, Typography, Space } from 'antd';
+import { Row, Col, Typography, Space, Divider } from 'antd';
 import { css } from '@emotion/css';
 import { Link, useIntl } from 'umi';
+import BlueLine from '@/components/BlueLine';
+import IndexBtn from '@/components/IndexBtn';
+import { mobile } from '@/utils/css';
+import { useResponsive } from 'ahooks';
 import MintModal from './MintModal';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
   const { formatMessage } = useIntl();
+  const { pc } = useResponsive();
   return (
-    <Row
+    <div
       className={css(`
         width:100%;
         height: 100vh;
-        background:transparent;
-        background-size:100% 100%;
-        padding:87px 0;
+        background: transparent;
+        background-size: 100% 100%;
+        padding: 87px 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        ${mobile} {
+          padding: 0 16px;
+          width: auto;
+        }
       `)}
     >
-      <Col
-        span={12}
+      <div
         className={css(`
         display:flex;
+        flex: 1;
         flex-direction:column;
         justify-content:center;
+        .ourm-title {
+          color: #1443FF;
+          font-size:70px;
+          letter-spacing:0.22px;
+          line-height:80px;
+          font-family: Impact;
+          ${mobile} {
+            font-size: 40px;
+            line-height:60px;
+          }
+        }
       `)}
       >
         <Typography>
-          <div
-            className={css(`
-              color: #1443FF;
-              font-size:70px;
-              letter-spacing:0.22px;
-              line-height:80px;
-              font-family: Impact;
-            `)}
-          >
-            Our Metaverse ,
-          </div>
-          <div
-            className={css(`
-              color: #1443FF;
-              font-size:70px;
-              letter-spacing:0.22px;
-              line-height:80px;
-              font-family: Impact;
-              margin-bottom: 16px;
-            `)}
-          >
-            Our Dream !
-          </div>
+          <div className="ourm-title">Our Metaverse ,</div>
+          <div className="ourm-title">Our Dream !</div>
           <div
             className={css(`
               font-size:20px;
@@ -64,81 +66,43 @@ const Component: React.FC<Props> = () => {
             <br />
             {formatMessage({ id: 'index_intro_title_2' })}
           </div>
+          <BlueLine left />
           <div
             className={css(`
-              width:119px;
-              height:11px;
-              background-color:#1443FF;
-              margin: 20px 0 40px 0;
-            `)}
-          ></div>
-          <div
-            className={css(`
-              width:556px;
+              max-width:556px;
               font-size:16px;
               letter-spacing:0.05px;
               line-height:36px;
               font-family: 苹方-简;
               opacity:0.5;
-              margin-bottom: 55px
+              margin-bottom: 55px;
+              ${mobile} {
+                margin-bottom: 16px;
+              }
             `)}
           >
             {formatMessage({ id: 'index_intro_content' })}
           </div>
         </Typography>
-        <Space>
+        <Space direction={pc ? 'horizontal' : 'vertical'}>
           <MintModal>
-            <div
-              className={css(`
-              width:215px;
-              height:64px;
-              border-radius:39px;
-              border:4px solid #1443FF;
-              color:#fff;
-              background-color: rgba(20,67,255,0.29);
-              font-size:20px;
-              letter-spacing:0.06px;
-              font-family: 苹方-简;
-              margin-right:40px;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              cursor:pointer;
-            `)}
-            >
-              {formatMessage({ id: 'index_intro_mint' })}
-            </div>
+            <IndexBtn>{formatMessage({ id: 'index_intro_mint' })}</IndexBtn>
           </MintModal>
           <Link to="/read">
-            <div
-              className={css(`
-                width:215px;
-                height:64px;
-                border-radius:39px;
-                border:4px solid #1443FF;
-                color:#fff;
-                background-color: rgba(20,67,255,0.29);
-                font-size:20px;
-                letter-spacing:0.06px;
-                font-family: 苹方-简;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                cursor:pointer;
-              `)}
-            >
-              {formatMessage({ id: 'index_intro_read' })}
-            </div>
+            <IndexBtn>{formatMessage({ id: 'index_intro_read' })}</IndexBtn>
           </Link>
         </Space>
-      </Col>
-      <Col
-        span={12}
+      </div>
+      <div
         className={css(`
         display:flex;
+        flex: 1;
         flex-direction:column;
         justify-content:center;
         align-items:center;
+        ${mobile} {
+          display: none;
+        }
       `)}
       >
         <img
@@ -163,8 +127,8 @@ const Component: React.FC<Props> = () => {
         >
           *{formatMessage({ id: 'index_intro_tips' })}
         </div>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 
