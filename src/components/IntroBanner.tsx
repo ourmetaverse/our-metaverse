@@ -7,6 +7,7 @@ import IndexBtn from '@/components/IndexBtn';
 import { mobile } from '@/utils/css';
 import { useResponsive } from 'ahooks';
 import MintModal from './MintModal';
+import StarRing from './StarRing';
 
 interface Props {}
 
@@ -105,16 +106,37 @@ const Component: React.FC<Props> = () => {
         }
       `)}
       >
-        <img
+        <div
           className={css`
-            width: 620px;
+            width: 650px;
             height: 606px;
-            margin: 128px auto 88px auto;
-            display: block;
+            margin: 58px auto 58px auto;
+            position: relative;
           `}
-          src="/roles.png"
-          alt="OURM"
-        />
+        >
+          <img
+            className={css`
+              position: absolute;
+              left: 70px;
+              top: 0;
+              width: 620px;
+              height: 100%;
+            `}
+            src="/roles.png"
+            alt="OURM"
+          />
+          <div
+            className={css`
+              position: absolute;
+              left: 0;
+              top: 30%;
+              width: 100%;
+              height: 300px;
+            `}
+          >
+            <StarRing></StarRing>
+          </div>
+        </div>
         <div
           className={css`
             align-self: flex-end;
