@@ -1,3 +1,5 @@
+export type Shape = 'cross star' | 'pentagram' | undefined;
+
 class Star {
   x: number;
   y: number;
@@ -7,6 +9,7 @@ class Star {
   screenH: number;
   factor: number;
   increment: number;
+  shape: Shape;
   constructor(
     x: number,
     y: number,
@@ -14,6 +17,7 @@ class Star {
     opacity: number,
     screenW: number,
     screenH: number,
+    shape: Shape,
   ) {
     this.x = Math.round(x);
     this.y = Math.round(y);
@@ -21,6 +25,7 @@ class Star {
     this.opacity = opacity;
     this.screenW = screenW;
     this.screenH = screenH;
+    this.shape = shape;
     this.factor = 1;
     this.increment = Math.random() * 0.03;
   }
@@ -40,17 +45,29 @@ class Star {
     this.opacity += this.increment * this.factor;
 
     context.beginPath();
-
-    for (var i = 5; i > 0; i--) {
-      context.lineTo(0, this.length);
-      context.translate(0, this.length);
-      context.rotate((Math.PI * 2) / 10);
-      context.lineTo(0, -this.length);
-      context.translate(0, -this.length);
-      context.rotate(-((Math.PI * 6) / 10));
+    switch (this.shape) {
+      case 'cross star':
+        for (var i = 4; i > 0; i--) {
+          context.lineTo(0, this.length);
+          context.translate(0, this.length);
+          context.rotate((Math.PI * 1) / 10);
+          context.lineTo(0, -this.length);
+          context.translate(0, -this.length);
+          context.rotate(-((Math.PI * 6) / 10));
+        }
+        break;
+      case 'pentagram':
+      case undefined:
+      default:
+        for (var i = 5; i > 0; i--) {
+          context.lineTo(0, this.length);
+          context.translate(0, this.length);
+          context.rotate((Math.PI * 2) / 10);
+          context.lineTo(0, -this.length);
+          context.translate(0, -this.length);
+          context.rotate(-((Math.PI * 6) / 10));
+        }
     }
-
-    context.lineTo(0, this.length);
     context.closePath();
     context.fillStyle = `rgba(255,255,200, ${this.opacity})`;
     context.shadowBlur = 5;
