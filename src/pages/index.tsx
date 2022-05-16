@@ -26,7 +26,7 @@ export default () => {
         <ReactFullpage
           // license for opensource GPLv3 license
           licenseKey="ourm-metaverse"
-          scrollingSpeed={1000} /* Options here */
+          scrollingSpeed={500} /* Options here */
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
