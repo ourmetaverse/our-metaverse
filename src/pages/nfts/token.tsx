@@ -14,6 +14,8 @@ interface Props extends IRouteProps {
 }
 
 export default (props: Props) => {
+  // props token 存在说明是在 pc 端直接嵌套
+  // 否则通过 url 获取 token
   let token = props.token;
   if (token === undefined) {
     token = parseInt(props.location.query.token);

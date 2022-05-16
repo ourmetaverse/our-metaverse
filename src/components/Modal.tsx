@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, ModalProps } from 'antd';
 import { css } from '@emotion/css';
+import { mobile } from '@/utils/css';
 
 interface Props extends ModalProps {}
 
@@ -13,6 +14,9 @@ const Component: React.FC<Props> = (props) => {
         .ant-modal-close {
           right: -46px;
           top: -46px;
+          ${mobile} {
+            right: 0;
+          }
         }
         .ant-modal-body {
           border: 2px solid #1443ff;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Divider, Space } from 'antd';
+import { Button, Divider, Space, Spin } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
 import {
@@ -17,7 +17,7 @@ const Component: React.FC = () => {
   const [movieMinted, setMovieMinted] = useState<boolean>(false);
   const { address, contract } = useModel('user');
   const [progress, setProgress] = useState<number>(0);
-  const [numberMinted, setNumberMinted] = useState<number>(0);
+  const [numberMinted, setNumberMinted] = useState<number>();
   let mintButton;
   let mintBtns = [];
 
@@ -58,6 +58,10 @@ const Component: React.FC = () => {
 
   if (!contract) {
     return <ConnectWallet />;
+  }
+
+  if (numberMinted === undefined) {
+    return <Spin />;
   }
 
   for (let i = 0; i < maxMintPerAddr; i++) {

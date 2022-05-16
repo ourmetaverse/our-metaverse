@@ -51,7 +51,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           })}
         </Link>
       </Menu.Item>
-      <Menu.Item>
+      <Menu.Item key="language">
         <a
           onClick={() => {
             if (isCN) {
@@ -172,7 +172,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               `}
             >
               {items}
-              <Menu.Item>
+              <Menu.Item key="wallet">
                 <ConnectWallet />
               </Menu.Item>
             </Menu>

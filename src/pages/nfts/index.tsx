@@ -1,5 +1,5 @@
 import { Space, Col, Row, Pagination } from 'antd';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
@@ -14,8 +14,18 @@ const pageSize = 10;
 export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
-  const [current, setCurrent] = useState<number | null>(null);
+
+  const [current, setCurrent] = useState<number | undefined>();
+
   const { pc } = useResponsive();
+
+  useEffect(() => {
+    let token = props.location.query.token;
+    if (token !== undefined) {
+      token = parseInt(token);
+      setCurrent(token);
+    }
+  }, [props.location.query.token]);
 
   for (
     let i = (page - 1) * pageSize;
@@ -24,6 +34,7 @@ export default (props: IRouteProps) => {
   ) {
     nfts.push(
       <div
+        key={i}
         className={css`
           margin-bottom: 24px;
           margin-right: 24px;
@@ -47,7 +58,7 @@ export default (props: IRouteProps) => {
             if (!pc) {
               history.push(`nfts/token?token=${i}`);
             } else {
-              setCurrent(i);
+              history.push(`nfts?token=${i}`);
             }
           }}
         />
@@ -113,10 +124,10 @@ export default (props: IRouteProps) => {
         </div>
       </div>
       <Modal
-        visible={current !== null}
+        visible={current !== undefined}
         width="1000px"
         onCancel={() => {
-          setCurrent(null);
+          setCurrent(undefined);
         }}
         footer={false}
       >
@@ -139,7 +150,9 @@ export default (props: IRouteProps) => {
             />
           </Col>
           <Col span={12}>
-            <div>{current !== null ? <Token token={current} /> : null}</div>
+            <div>
+              {current !== undefined ? <Token token={current} /> : null}
+            </div>
           </Col>
         </Row>
       </Modal>
