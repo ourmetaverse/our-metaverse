@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Spin } from 'antd';
+import { Button, Divider, Space } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
 import {
@@ -116,33 +116,15 @@ const Component: React.FC = () => {
     );
   }
 
+  const avaliableCount = Math.max(maxMintPerAddr - numberMinted, 0);
+
   return (
-    <div className={css``}>
+    <div
+      className={css`
+        text-align: center;
+      `}
+    >
       {mintButton}
-      <MintButton
-        type="book"
-        disabled={bookMinted}
-        onMinted={() => {
-          setBookMinted(true);
-        }}
-      >
-        {formatMessage({
-          id: 'mint_book_token',
-        })}
-        (30ETH)
-      </MintButton>
-      <MintButton
-        type="movie"
-        disabled={movieMinted}
-        onMinted={() => {
-          setMovieMinted(true);
-        }}
-      >
-        {formatMessage({
-          id: 'mint_movie_token',
-        })}
-        (600ETH)
-      </MintButton>
       <div
         style={{
           display: 'flex',
@@ -153,20 +135,20 @@ const Component: React.FC = () => {
         <div
           style={{ marginBottom: 20, display: 'flex', alignItems: 'center' }}
         >
-          {address && (
+          {address && avaliableCount > 0 && (
             <span>
               {formatMessage(
                 {
                   id: 'mint_available_count',
                 },
                 {
-                  count: Math.max(maxMintPerAddr - numberMinted, 0),
+                  count: avaliableCount,
                 },
               )}
             </span>
           )}
         </div>
-        <div style={{ marginTop: 20, fontSize: 20, textAlign: 'center' }}>
+        <div style={{ fontSize: 20, textAlign: 'center' }}>
           {formatMessage({
             id: 'mint_progress',
           })}
@@ -182,6 +164,33 @@ const Component: React.FC = () => {
             },
           )}
         </div>
+        <Divider />
+        <Space>
+          <MintButton
+            type="book"
+            disabled={bookMinted}
+            onMinted={() => {
+              setBookMinted(true);
+            }}
+          >
+            {formatMessage({
+              id: 'mint_book_token',
+            })}
+            (30ETH)
+          </MintButton>
+          <MintButton
+            type="movie"
+            disabled={movieMinted}
+            onMinted={() => {
+              setMovieMinted(true);
+            }}
+          >
+            {formatMessage({
+              id: 'mint_movie_token',
+            })}
+            (600ETH)
+          </MintButton>
+        </Space>
       </div>
     </div>
   );

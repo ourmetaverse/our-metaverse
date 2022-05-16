@@ -15,7 +15,7 @@ interface Props extends IRouteProps {
 
 export default (props: Props) => {
   let token = props.token;
-  if (!token) {
+  if (token === undefined) {
     token = parseInt(props.location.query.token);
   }
   const { pc } = useResponsive();
