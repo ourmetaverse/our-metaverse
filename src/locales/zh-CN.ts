@@ -58,7 +58,7 @@ export default {
   index_intro_title_1: '这不仅仅是 NFT，',
   index_intro_title_2: '更是 Web3 创作者经济的梦想之旅。',
   index_intro_content:
-    'OurMetaverse 以科幻小说《我们的元宇宙·开端》为起点，是 Web3 创作者经济的一次革命。它在 ERC721 合约的基础上添加了版权授权、权益分成的逻辑，拥有 NFT 除了拥有对应的 PFP 头像外还拥有全套小说作品的部分著作权，数字改编权以及图书改编、影视改编的分成权益。',
+    'OurMetaverse 以科幻小说《我们的元宇宙·开端》为起点，是 Web3 创作者经济的一次大胆尝试。我们通过定义了 ERC721M 支持了未来整个作品集的著作权管理以及对应权益分成，拥有 NFT 就拥有了未来 IP 发展的持续收益。',
   index_intro_mint: '即刻 Mint',
   index_intro_read: '阅读创世小说',
   index_intro_tips: '图为小说人物角色设定非最终NFT',

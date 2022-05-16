@@ -4,6 +4,7 @@ import BenefitBanner from '@/components/BenefitBanner';
 import RoadMap from '@/components/RoadMap';
 import StarCanvas from '@/components/StarCanvas';
 import { useResponsive } from 'ahooks';
+// @ts-ignore
 import ReactFullpage from '@fullpage/react-fullpage';
 import { maxWidth } from '@/utils/css';
 
@@ -30,6 +31,7 @@ export default () => {
         minSize={3}
         maxSize={8}
         shape="cross star"
+        background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
       >
         <div
           className={css`
@@ -48,6 +50,7 @@ export default () => {
       minSize={3}
       maxSize={8}
       shape="cross star"
+      background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
     >
       <div
         className={css`
@@ -59,7 +62,7 @@ export default () => {
           // license for opensource GPLv3 license
           licenseKey="ourm-metaverse"
           scrollingSpeed={500} /* Options here */
-          render={({ state, fullpageApi }) => {
+          render={() => {
             return <ReactFullpage.Wrapper>{content}</ReactFullpage.Wrapper>;
           }}
         />

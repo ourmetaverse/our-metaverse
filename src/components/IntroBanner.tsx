@@ -109,7 +109,7 @@ const Component: React.FC<Props> = () => {
           className={css`
             width: 620px;
             height: 606px;
-            margin: 58px auto 148px auto;
+            margin: 128px auto 88px auto;
             display: block;
           `}
           src="/roles.png"

@@ -9,6 +9,7 @@ interface Prop {
   maxSize?: number;
   shape?: Shape;
   children?: ReactElement;
+  background?: string;
 }
 
 const generateStars = (
@@ -38,6 +39,7 @@ const StarCanvas = (props: Prop) => {
   const FPS = props.FPS || 50;
   const minSize = props.minSize || 1;
   const maxSize = props.maxSize || 3;
+  const background = props.background || '#000000';
 
   const initCanvasSize = useCallback(() => {
     const screenW =
@@ -91,7 +93,7 @@ const StarCanvas = (props: Prop) => {
           top: 0;
           width: 100%;
           height: auto;
-          background-color:#000;
+          background:${background};
         `)}
       ></canvas>
       {props?.children}
