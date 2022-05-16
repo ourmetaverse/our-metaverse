@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
+import { CoinbaseWalletSDKOptions } from '@coinbase/wallet-sdk/dist/CoinbaseWalletSDK';
+import Torus from '@toruslabs/torus-embed';
 import { contractAddress, infuraId } from '@/constants';
 import contractABI from '@/abi/OurMetaverse.json';
 import ConnectTip from '@/components/ConnectTip';
@@ -14,6 +17,17 @@ const providerOptions = {
     options: {
       infuraId,
     },
+  },
+  walletlink: {
+    package: CoinbaseWalletSDK,
+    options: {
+      appName: 'OurMetaverse',
+      appLogoUrl: 'https://www.our-metaverse.xyz/favicon.png',
+      infuraId,
+    } as CoinbaseWalletSDKOptions,
+  },
+  torus: {
+    package: Torus,
   },
 };
 
