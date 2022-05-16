@@ -1,12 +1,8 @@
-import { Anchor, Typography } from 'antd';
 import enwhitepaper from '@/docs/en/whitepaper.md';
 import whitepaper from '@/docs/whitepaper.md';
 import Markdown from '@/components/Markdown';
 import { css } from '@emotion/css';
 import { maxWidth, navHeight, mobile } from '@/utils/css';
-
-const { Link } = Anchor;
-const { Title } = Typography;
 
 export default () => {
   return (

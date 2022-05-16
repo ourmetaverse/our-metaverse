@@ -14,7 +14,6 @@ const Component: React.FC = ({ children }) => {
         background-color: rgba(20,67,255,0.29);
         font-size:20px;
         letter-spacing:0.06px;
-        font-family: 苹方-简;
         margin-right:40px;
         display:flex;
         align-items:center;
@@ -23,7 +22,7 @@ const Component: React.FC = ({ children }) => {
 
         position: relative;
         overflow: hidden;
-        &:after {
+        &::after {
           background: #fff;
           content: "";
           height: 155px;
@@ -33,12 +32,12 @@ const Component: React.FC = ({ children }) => {
           top: -50px;
           transform: rotate(35deg);
           width: 50px;
-          z-index: -10;
+          z-index: 1;
         }
         &:hover {
-          &:after {
+          ::after {
             left: 120%;
-            transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1);
           }
         }
 
