@@ -33,7 +33,7 @@ const Component: React.FC = () => {
   }
 
   const updateNumberMinted = async () => {
-    if (contract) {
+    if (contract && address) {
       const numberMinted = await contract.numberMinted(address);
       setNumberMinted(parseInt(numberMinted));
     }
@@ -41,7 +41,6 @@ const Component: React.FC = () => {
 
   useEffect(() => {
     if (contract) {
-      updateNumberMinted();
       updateStatus();
       contract.ownerOf(1).then((bookOwner: string) => {
         setBookMinted(
@@ -56,11 +55,15 @@ const Component: React.FC = () => {
     }
   }, [contract]);
 
+  useEffect(() => {
+    updateNumberMinted();
+  }, [contract, address]);
+
   if (!contract) {
     return <ConnectWallet />;
   }
 
-  if (numberMinted === undefined) {
+  if (numberMinted === undefined || address === undefined) {
     return <Spin />;
   }
 
