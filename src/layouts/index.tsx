@@ -42,7 +42,11 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
         </Link>
       </Menu.Item>
       <Menu.Item key="/nfts">
-        <Link to="/nfts">NFTs</Link>
+        <Link to="/nfts">
+          {formatMessage({
+            id: 'nfts',
+          })}
+        </Link>
       </Menu.Item>
       <Menu.Item key="/community">
         <Link to="/community">

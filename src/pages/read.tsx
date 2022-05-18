@@ -4,7 +4,7 @@ import Markdown from '@/components/Markdown';
 import ReadBanner from '@/components/ReadBanner';
 import RoleBanner from '@/components/RoleBanner';
 import { css } from '@emotion/css';
-import { maxWidth, mobile } from '@/utils/css';
+import { maxWidth, mobile, desktop, primaryColor } from '@/utils/css';
 
 export default () => {
   return (
@@ -55,6 +55,23 @@ export default () => {
             }
             ${mobile} {
               padding: 0 16px;
+            }
+            img {
+              max-width: 360px;
+              margin: 8px;
+
+              box-shadow: 0 2px 30px #fff;
+              border-radius: 30px;
+
+              ${desktop} {
+                float: right;
+                margin-right: 0;
+              }
+
+              ${mobile} {
+                margin: 8px auto;
+                max-width: 100%;
+              }
             }
           `}
         >

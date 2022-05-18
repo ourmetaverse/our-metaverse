@@ -50,6 +50,7 @@ export default {
   donate: '给 OurMetaverseDAO 捐款',
   ai_translate_tip: '注意：该文章翻译自 AI',
   wechat: '微信群',
+  nfts: '画廊',
   wechat_tip:
     '仅 OurMetaverseDAO 成员可以加入微信群和电报群，请先连接钱包认证。',
   jike: '即刻',

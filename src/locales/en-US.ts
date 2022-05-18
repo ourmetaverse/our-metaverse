@@ -48,6 +48,7 @@ export default {
   grant_required: 'Grant content required.',
   grant_limit: 'Grant content length limit: {grantLimitLength}',
   add_grant: 'Grant New',
+  nfts: 'NFTs',
   donate_tip:
     'Direct transfer to the contract can donate to all members of OurMetaverseDAO',
   donate: 'Donate to OurMetaverseDAO',
