@@ -27,14 +27,15 @@ const StarRing = () => {
             stop-opacity="0.712378141"
             offset="74.9535621%"
           ></stop>
-          <stop stop-color="#0059FF" offset="100%"></stop>
+          <stop stop-color="#637FF1" offset="100%"></stop>
         </linearGradient>
       </defs>
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#1443ff" />
+          <stop offset="0%" stop-color="#fff" />
+          <stop offset="25%" stop-color="#00f" />
           <stop offset="50%" stop-color="#fff" />
-          <stop offset="50.1%" stop-color="#1443ff" />
+          <stop offset="75%" stop-color="#00f" />
           <stop offset="100%" stop-color="#fff" />
         </linearGradient>
       </defs>
