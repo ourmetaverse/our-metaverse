@@ -1,6 +1,7 @@
-import { ReactElement, useCallback, useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef } from 'react';
 import Star, { Shape } from '@/utils/Star';
 import { css } from '@emotion/css';
+import { useSize } from 'ahooks';
 
 interface Prop {
   numStars?: number;
@@ -41,37 +42,28 @@ const StarCanvas = (props: Prop) => {
   const maxSize = props.maxSize || 3;
   const background = props.background || '#000000';
 
-  const initCanvasSize = useCallback(() => {
-    const screenW =
-      window.innerWidth ||
-      document.body.clientWidth ||
-      document.documentElement.clientWidth;
-    const screenH =
-      window.innerHeight ||
-      document.body.clientHeight ||
-      document.documentElement.clientHeight;
-    canvasRef.current?.setAttribute('width', screenW.toString());
-    canvasRef.current?.setAttribute('height', screenH.toString());
-    ctx.current = canvasRef.current?.getContext('2d') || null;
-    return {
-      screenW,
-      screenH,
-    };
-  }, [canvasRef]);
+  const size = useSize(document.querySelector('body'));
 
   useEffect(() => {
-    const { screenW, screenH } = initCanvasSize();
+    console.log(size);
+    if (size === undefined) {
+      return;
+    }
+    const { width, height } = size;
+    canvasRef.current?.setAttribute('width', width.toString());
+    canvasRef.current?.setAttribute('height', height.toString());
+    ctx.current = canvasRef.current?.getContext('2d') || null;
     const stars = generateStars(
       numStars,
-      screenW,
-      screenH,
+      width,
+      height,
       minSize,
       maxSize,
       props?.shape,
     );
     const animate = () => {
       if (ctx.current) {
-        ctx.current.clearRect(0, 0, screenW, screenH);
+        ctx.current.clearRect(0, 0, width, height);
         for (let i = 0; i < stars.length; i++) {
           stars[i].draw(ctx.current);
         }
@@ -81,7 +73,7 @@ const StarCanvas = (props: Prop) => {
     return () => {
       clearInterval(timer);
     };
-  }, [initCanvasSize, generateStars, numStars, FPS, minSize, maxSize]);
+  }, [size, canvasRef, generateStars, numStars, FPS, minSize, maxSize]);
 
   return (
     <>
