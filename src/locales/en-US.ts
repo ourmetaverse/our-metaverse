@@ -3,6 +3,23 @@ export default {
   novel_name: 'Our Metaverse: Genesis',
   lang_switch: '中文',
   wihte_paper: 'ERC721M',
+  erc_title: 'ERC721M - Serving the creator economy',
+  erc_subtitle:
+    'Let Web3 help the creator economy, hoping that every creator can reap the value of their creations.',
+  erc_desc:
+    "OurMetaverseDAO NFT casts a meta-universe science fiction novel as NFT, and provides a mechanism of IP secondary development and equity sharing based on the ERC721 contract, hoping to attract more creators to join to improve the whole IP ecology through this mechanism. The project also proposes the idea of ERC721M, hoping to promote the development of Web3 creators' economy by building ERC721M.",
+  erc_read: 'Read the article',
+  erc_contract_title: 'Contract features',
+  erc_contract_1: 'Commercial License Management',
+  erc_contract_1_desc:
+    'OurMetaverseDAO NFT Holder can get commercial license by calling the contract interface Grant, no fee for the first time, and 0.3ETH fee for each new addition later, providing a way to manage copyright outside CC0, making the flow and development of copyright more convenient, and also bringing Holder continuous revenue.',
+  erc_contract_2: 'Mechanism for distributing interests',
+  erc_contract_2_desc:
+    "OurMetaverseDAO's contract can have multiple channels to get revenue, all the revenue will be equally distributed to Holder, Holder can extract the revenue by calling the contract's receiveRewardBalanceWithToken method. The sources of revenue are: licensing of secondary creations, sale of book publishing rights and film adaptation rights, donations through the contract, etc.",
+  erc_contract_3:
+    'Management of book publishing rights and film adaptation rights',
+  erc_contract_3_desc:
+    'In our contract, we define two special interfaces, buyBookToken and buyMovieToken, which can be called by anyone to get book publishing rights and movie adaptation rights, and the related revenue will be equally distributed to all Holders. This allows Holder to continue to earn revenue as the IP develops.',
   universe: 'Structure',
   read: 'Read',
   read_title: 'Our Metaverse',
@@ -35,6 +52,7 @@ export default {
   read_role_title: 'The characters of the novel',
   reward: 'Reward',
   community: 'Community',
+  community_title: 'Enjoy Community',
   connect_tip: 'Please connect wallet first',
   disconnect_confirm: 'Are you sure to disconnect wallet?',
   connecting: 'Connecting...',
@@ -76,7 +94,8 @@ export default {
   grant_required: 'Grant content required.',
   grant_limit: 'Grant content length limit: {grantLimitLength}',
   add_grant: 'Grant New',
-  nfts: 'NFTs',
+  nfts: 'Gallery',
+  nft_gallery: 'NFT Gallery',
   donate_tip:
     'Direct transfer to the contract can donate to all members of OurMetaverseDAO',
   donate: 'Donate to OurMetaverseDAO',

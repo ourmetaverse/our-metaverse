@@ -5,7 +5,7 @@ import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
-import { IRouteProps, history } from 'umi';
+import { IRouteProps, history, useIntl } from 'umi';
 const { useResponsive } = require('ahooks');
 import Token from './token';
 
@@ -14,7 +14,7 @@ const pageSize = 10;
 export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
-
+  const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
 
   const { pc } = useResponsive();
@@ -93,11 +93,10 @@ export default (props: IRouteProps) => {
       >
         <div
           className={css`
-            width: 200px;
             font-size: 50px;
           `}
         >
-          <div>NFT画廊</div>
+          <div>{formatMessage({ id: 'nft_gallery' })}</div>
           <BlueLine left />
         </div>
         <Space

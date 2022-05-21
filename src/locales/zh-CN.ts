@@ -4,6 +4,21 @@ export default {
   lang_switch: 'English',
   universe: '宇宙观',
   wihte_paper: 'ERC721M',
+  erc_title: 'ERC721M - 服务创作者经济',
+  erc_subtitle: '让 Web3 助力创作者经济，希望每个创作者都可以收获创作的价值。',
+  erc_desc:
+    'OurMetaverseDAO NFT 将一篇元宇宙科幻小说铸造为 NFT，在 ERC721 合约的基础上提供了 IP 二次开发和权益分成的一套机制，希望通过这套机制来吸引更多创作者加入来完善整个 IP 生态。同时借该项目提出 ERC721M 的构想，希望能够通过构建出 ERC721M 来促进 Web3 创作者经济的发展。',
+  erc_read: '阅读文章',
+  erc_contract_title: '合约特性',
+  erc_contract_1: '商业授权管理',
+  erc_contract_1_desc:
+    'OurMetaverseDAO NFT Holder 可以通过调用合约接口 Grant 可以获取商业授权，第一次无需费用，后面每次新增 0.3ETH 费用，提供了一种在 CC0 之外的著作权管理办法，让著作权的流转和开发更加方便，也能带给 Holder 持续的收益。',
+  erc_contract_2: '权益分发机制',
+  erc_contract_2_desc:
+    'OurMetaverseDAO 的合约可以有多种渠道获取收入，所有的收入会平分给 Holder，Holder 可以通过调用合约的 receiveRewardBalanceWithToken 方法提取收益。收益的来源有：二次创作授权、图书出版权和影视改编权出售、通过合约捐赠等。',
+  erc_contract_3: '图书出版权和影视改编权管理',
+  erc_contract_3_desc:
+    '在我们的合约中定义了两个特殊的接口，buyBookToken 和 buyMovieToken，任何人都可以通过调用它获取图书出版权和影视改编权，相关收益会平分给所有 Holder。出版权和改编权可以被多次使用，每次使用都会有收益产生，而且是递增的，确保随着 IP 发展让 Holder 可以持续获取收益。',
   read: '创世小说',
   read_title: '我们的元宇宙',
   read_subtitle: '开端',
@@ -31,6 +46,7 @@ export default {
   read_role_title: '小说主要角色',
   reward: '奖金',
   community: '社区',
+  community_title: '加入社区，见证梦想',
   connect_tip: '请先连接钱包',
   disconnect_confirm: '你确认要断开连接吗？',
   connecting: '连接中...',
@@ -75,6 +91,7 @@ export default {
   ai_translate_tip: '注意：该文章翻译自 AI',
   wechat: '微信群',
   nfts: '画廊',
+  nft_gallery: 'NFT 画廊',
   wechat_tip:
     '仅 OurMetaverseDAO 成员可以加入微信群和电报群，请先连接钱包认证。',
   jike: '即刻',

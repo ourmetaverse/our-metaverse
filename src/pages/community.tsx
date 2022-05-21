@@ -87,7 +87,9 @@ export default () => {
           }
         `}
       >
-        加入社区，见证梦想
+        {formatMessage({
+          id: 'community_title',
+        })}
       </div>
       <BlueLine />
       <div>
