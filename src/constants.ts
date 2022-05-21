@@ -41,37 +41,53 @@ export const wechatLink = 'https://our-metaverse.xyz/404/assets/wechat.png';
 export const roles = [
   {
     name: '彼得',
+    nameEN: 'Peter',
     img: '/peter.png',
     desc: '一个原俄罗斯人的名字，鲁莽的革命军人。',
+    descEN: 'The name of a former Russian, reckless revolutionary soldier.',
   },
   {
     name: '汪强',
+    nameEN: 'WangQiang',
     img: '/wangqiang.png',
     desc: '冷静做事果断的革命军人。',
+    descEN: 'A calm and decisive revolutionary soldier.',
   },
   {
     name: '首领',
+    nameEN: 'Leader',
     img: '/leader.png',
     desc: '年迈的革命军女领导者，一个有故事的古代人。',
+    descEN: 'An old-aged leader of the revolution army, a medieval.',
   },
   {
     name: '玄武',
+    nameEN: 'XuanWu',
     img: '/xuanwu.png',
     desc: '玄武在“真实世界”元宇宙中是一名飞船修理师，在工作中邂逅了神秘的发卡女孩。他们之间发生了什么故事呢？',
+    descEN:
+      'Xuanwu is a space ship repairman in the real world, and he met a mysterious girl.',
   },
   {
     name: '发卡女孩',
+    nameEN: 'Mysterious Girl',
     img: '/girl.png',
     desc: '发卡女孩在创世小说中出场并不多，但是无疑她是小说的女主。温柔羞涩，十七八岁的少女。她是否是幕后大佬的千金？她和玄武之间又有什么关联？',
+    descEN:
+      'The Mysterious Girl is not often in the novel, but she is the main character of the novel. She is gentle and shy, and she is seventeen years old. Is she a millionaire?',
   },
   {
     name: '弘',
+    nameEN: 'Hiro',
     img: '/hiro.png',
     desc: '一个喜欢把弄武士刀的搞笑胖子',
+    descEN: 'A funny fat.',
   },
   {
     name: '阿丽塔',
+    nameEN: 'Alita',
     img: '/alita.png',
     desc: '一个喜欢东亚文化的西方人，灵动的妹纸。',
+    descEN: 'A westerner who likes Asian culture, a lively.',
   },
 ];

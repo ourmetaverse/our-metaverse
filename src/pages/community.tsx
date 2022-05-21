@@ -87,7 +87,7 @@ export default () => {
           }
         `}
       >
-        加入社区，成为家人
+        加入社区，见证梦想
       </div>
       <BlueLine />
       <div>

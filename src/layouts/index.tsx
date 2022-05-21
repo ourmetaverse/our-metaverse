@@ -74,6 +74,8 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
     <Layout>
       <Header
         className={css`
+          position: fixed;
+          width: 100%;
           height: ${navHeight};
           line-height: ${navHeight};
           background: transparent;
@@ -195,6 +197,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               setVisible(false);
             }}
             style={{
+              borderRight: 'none',
               backgroundColor: 'transparent',
             }}
           >
@@ -202,13 +205,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           </Menu>
         </Drawer>
       </Header>
-      <Content
-        className={css`
-          margin-top: -${navHeight};
-        `}
-      >
-        {children}
-      </Content>
+      <Content>{children}</Content>
       {location.pathname !== '/' || !pc ? (
         <Footer
           className={css`
@@ -236,15 +233,13 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               Etherscan
             </a>
             <Divider type="vertical" />
-            <a href={`https://www.our-metaverse.xyz`}>Website</a>
+            <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>
             <Divider type="vertical" />
-            <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
+            <a href={`https://v1.our-metaverse.xyz`}>V1 Site</a>
             {pc ? <Divider type="vertical" /> : <br />}
             <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
             <Divider type="vertical" />
-            <a href={`https://opensea.io/collection/our-metaverse`}>Opensea</a>
-            <Divider type="vertical" />
-            <a href={`https://v1.our-metaverse.xyz`}>v1 Site</a>
+            <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
           </div>
           <div
             className={css`

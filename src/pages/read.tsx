@@ -4,9 +4,11 @@ import Markdown from '@/components/Markdown';
 import ReadBanner from '@/components/ReadBanner';
 import RoleBanner from '@/components/RoleBanner';
 import { css } from '@emotion/css';
-import { maxWidth, mobile, desktop, primaryColor } from '@/utils/css';
+import { maxWidth, mobile, desktop } from '@/utils/css';
+import { useIntl, getLocale } from 'umi';
 
 export default () => {
+  const { formatMessage } = useIntl();
   return (
     <div>
       <ReadBanner />
@@ -38,7 +40,8 @@ export default () => {
           `}
         >
           <img src="/read-start-ball.png" />
-          我们的元宇宙·开端
+          {formatMessage({ id: 'read_title' })}·
+          {formatMessage({ id: 'read_subtitle' })}
         </div>
         <div
           className={css`

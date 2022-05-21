@@ -5,6 +5,34 @@ export default {
   wihte_paper: 'ERC721M',
   universe: 'Structure',
   read: 'Read',
+  read_title: 'Our Metaverse',
+  read_subtitle: 'Geneis',
+  read_2028:
+    "In 2028, China's moon landing project makes progress, humans land on the moon again, and a new space race begins.",
+  read_2029:
+    'In 2029, humans land on Mars and start Mars migration. A small number of humans start to move to the Mars migration base.',
+  read_2032:
+    'In 2032, humans land on Mars and initiate migration to Mars. A small number of humans begin to migrate to the Mars Migration Base.',
+  read_2049:
+    'In 2049, the brain-computer interface breaks through and Mars immigration takes the lead in the meta-universe era. Human creativity appeared to explode, giving rise to a renaissance of human technology and culture. In the same year, Star Ring DAO was founded.',
+  read_2057:
+    'In 2057, there was a key breakthrough in basic physics, and mankind opened the era of space transformation.',
+  read_2058:
+    'In 2058, the Mars Migration Authority begins its Venus transformation program and return to Earth program.',
+  read_2060:
+    "In 2060, a freedom movement breaks out on Earth, and a war breaks out between the revolutionary army composed of Earth's indigenous people and the Martian Immigration Bureau.",
+  read_2078:
+    'In the year 2078, Star Ring DAO successfully experiments with the FTL jump engine, the return to Earth is terminated, and the Mars Migration Authority begins an era of interstellar exploration.',
+  read_2080:
+    'In 2080, the transformation of Venus was completed, and the first batch of Venusian immigrants were opened. At the same time, the construction of the Venus Space Elevator was started. In the same year, the "real world" metaverse was opened.',
+  read_2082:
+    'In 2082, the first extrasolar habitable planet was successfully discovered by Star Ring DAO.',
+  read_2112:
+    'In 2112, Venus began building a super iron system to support the massive growth in population.',
+  read_2121:
+    'In 2121, Star Ring DAO successfully discovered the fourth habitable planet, Morningside, which, together with Venus and Earth, corresponds to a total of six planets in the "real world" metaverse.',
+  read_2122: 'In 2122, the story begins here.',
+  read_role_title: 'The characters of the novel',
   reward: 'Reward',
   community: 'Community',
   connect_tip: 'Please connect wallet first',
@@ -63,7 +91,7 @@ export default {
   index_intro_title_2: 'It is the dream journey of the Web3 creator economy.',
   index_intro_content:
     'Starting with the science fiction novel Our Metaverse Begins, OurMetaverse is a revolution in the Web3 creator economy. It adds the logic of copyright authorization and equity sharing based on the ERC721 contract. In addition to the corresponding PFP avatar, NFT also owns part of the copyright of a full set of novel works, digital adaptation rights, and sharing rights for book adaptation and film and television adaptation.',
-  index_intro_mint: 'Instant Mint',
+  index_intro_mint: 'Mint Now',
   index_intro_read: 'Read the Novel',
   index_intro_tips:
     'The picture shows set for the characters of the novel was not the final NFT',

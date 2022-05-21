@@ -31,7 +31,6 @@ export default () => {
         minSize={3}
         maxSize={8}
         shape="cross star"
-        background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
       >
         <div
           className={css`

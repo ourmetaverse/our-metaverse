@@ -1,9 +1,4 @@
-Our Metaverse Genesis(Translate by 🐦@0xRealBurgerking; CMO@OurMetaverse DAO).
-Brief Intro: _Our Metaverse Genesis_ is a sci-fi novel. The story starts 100 years later from now, which is year 2122 , welcome you all to OURM. OURM is a Giant multi-metaverse system, and our main characters Xuanwu and Hiro are live in a metaverse called The Real World, everything here is highly similar to the real world, people can only realize that they are actually wandering in metaverse when they are jumping to another metaverse through the jumping point. But is The Real World Metaverse real or “real”? Keep reading through the novel, you will find it out. (Btw, Our first 3000 pieces Genesis NFT collection is designed based on **_Our Metaverse Genesis_**.
-
-About OurMetaverseDAO NFT: [https://www.our-metaverse.xyz/](https://www.our-metaverse.xyz/).
-
-### 1. Our Metaverse
+## 1. Our Metaverse
 I'm a mechanic, but nowadays there aren't many people doing this any more. Most people who are interested in mechanics flaunting themselves as mechanical designers or mechanical architects, and the machines they design and build are perfect — uh, I mean not entirely, and there are still destructive settings in some war games. It's just that even if it's broken, they just need to replace it with a new one. After all, in the metaverse, this is just a string of hashes (Note: the hash id represents the unique identity of a digital asset, which can be calculated from the content of the asset, but cannot be reversed).
 
 Of course, this is not the case for all metaverses, such as the The Real World metaverse. The Real World is my favorite metaverse, and I spend barely all pf my time in the The Real World, where I have a job as a mechanic repairman that doesn't exist in other metaverses.
@@ -87,7 +82,7 @@ I have seen many alien creatures in the metaverse. They often copy the Cambrian 
 
 Hopefully, the The Real World doesn't let us down.
 
-### 2. Terminator
+## 2. Terminator
 Hiro and I left the Terminator spacecraft in a nuclear-powered two-seat landing craft, and this is the official start of the expedition! Compared to the landing craft of the Dyson Sphere Universe, the The Real World landing craft follows the principles of real physics. We need to fasten our seat belts to avoid being thrown out of the seat by acceleration. Landing also requires consideration of true gravity, air density, oxygen content, etc. There are many things to pay attention to, fortunately, the landing craft has an intelligent control system, otherwise it is estimated that we will be equipped with a professional astronaut of the last century, and perhaps a mathematician and physicist, just like in the old movie, everyone will unite to solve the space crisis smoothly. Although artificial intelligence ultimately failed to surpass the human brain, in this designated field, artificial intelligence has replaced humans hundreds of years ago.
 
 We first lowered to a suborbital orbit of about 50 kilometers above the surface, and now that the planet has taken up most of our field of vision, we can see the planetary ground more clearly. The Terminator planets are about the size of Mercury in the solar system, and smaller than Mars. Much smaller than the The Real World home planet. The The Real World parent star is based on the blueprint of venus in the solar system, so the gravity on the mother planet is actually not much different from that of the earth, but the gravity on Terminator is relatively low, almost only 1/3 of the earth. Of course, these are all told by the spacecraft, warning us to pay attention to controlling the balance of the body when landing. This is the The Real World, exactly!
@@ -141,7 +136,7 @@ Flying faster than swimming, the fish, transformed into a dragon, soon swam to t
 Over the next day, we landed on the ground and explored a forest full of giant sunflower trees. Because the gravitational pull of the planets is too small, the trees are hundreds of meters high, and because of the light, they all grow to one side. We also delve deep into the dark mountains of the overworld, where abundant rain and glaciers continue to nourish the Beauty Sea. There are also fish that constantly migrate ovulation across the morning and evening lines, insects that fly with hot and cold air currents, and more importantly, the design of their interdependent ecosystems is amazing. And every inch of the mountains and rivers seems so real, there is no trace of random generation by the algorithm. I'm afraid that no map of the world, except for the fully simulated 21st-century Earth in Life Tsering, can reach this level of design. Really curious about who was leading the design, Star Ring DAO was tight-lipped about it. No wonder, presumably, this is their core trade secret.
 
 The expedition was enjoyable and smooth. Hiroshi and I had a lot of fun, both gave a full score of 10, and it seems that the 10 bitcoins of the star ring are saved. In addition, we also gained 28 naming rights, as well as a POAP of the "Terminator Pioneer", and Hiroshi also wore it to several universes to show off.
-### 3. Beyond the green sky
+## 3. Beyond the green sky
 The first opening of the Terminator received high praise, and the Star Ring DAO immediately began to plan to establish a vacation site, after all, the automatic care mode cannot be used frequently, otherwise it will cause damage to the human body. According to the The Real World setting, only after having a vacation point can you switch out of the metaverse by "falling asleep" on the "morning and dusk line". Hiroshi participated in the construction of the resort site, on the one hand, to earn a little bit of the back vacation bits, on the other hand, he was very enthusiastic about the construction of things.
 
 It's not just me and Hiroshi, almost half of the The Real World players are peripheral members of Star Ring DAO, which was founded after the nuclear war of World War III, and is said to have been founded by a real-life version of Iron Man in the last century, but he went bankrupt in his Mars colonization plan, and it happened to be a war, and the company was finally acquired by a big chaebol in the East. There are rumors that the Chinese government at that time actually took the lead, with the purpose of seizing the resources of Mars, and some said that the capitalists of the Western camp were manipulating through a backdoor. In that history of nation-states, political secrets in the great power game are interesting topics that have remained unchanged for millennia.
@@ -354,7 +349,7 @@ I nodded and hugged Hiro to say goodbye, it was the first time I had really touc
 "Take care."
 
 "Goodbye."
-### 4. Snowfield
+## 4. Snowfield
 The door at the exit of the habitat could not be opened directly, and I used a robotic laser gun to melt the door lock directly. I also brought the laser gun with me, and maybe I can still use it.
 
 Hiro also gave me his gloves and hat, which helped me a lot. Although the nano-smart suit can withstand the cold of minus one hundred degrees, the head and hands are not covered. He also handed me some artificial beef jerky, and this guy actually brought snacks with him, which is not cheap, no wonder he is so fat now.
@@ -461,7 +456,7 @@ I nodded, and I was really tired today. Then Wang Qiang left alone, and Peter to
 
 Peter took my clothes and the laser gun with me and gave me a normal outfit here. I understand that, but at my insistence he allowed me to leave Hiro's knife behind. With mixed feelings, I fell asleep in this "real" cave and spent my first night in the real world.
 
-### 5. Chief
+## 5. Chief
 The first night in the cave I slept well, felt very solid, the space was cramped, but very secure, no longer rely on the private key implanted in my hand. It was early in the morning after I got up and I decided to turn around on my own. They didn't limit my freedom. Peter and I met at eleven o'clock, and he gave me some cash last night, which was really a rarity for me, and I was going to find something to eat myself, and the beef jerky that Hiroshi had given me had been eaten by me last night.
 
 Out of the small cave where I rested, I carefully observed the surrounding environment, although the whole street is also in the cave, but there are many monitors fake floor-to-ceiling windows, through the floor-to-ceiling windows can see the outside snowfield, sunlight through the floor-to-ceiling windows to provide enough lighting inside the cave. Floor-to-ceiling windows should be the real-time reception of the external picture, last night because it was dark did not find, this display technology if not carefully observed then completely can not see is the screen display screen.

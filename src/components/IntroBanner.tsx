@@ -26,8 +26,8 @@ const Component: React.FC<Props> = () => {
         display: flex;
         flex-direction: row;
         ${mobile} {
-          padding: 0 16px;
-          width: auto;
+          padding: 87px 16px;
+          height: auto;
         }
       `)}
     >

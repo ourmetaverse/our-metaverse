@@ -10,8 +10,10 @@ import {
 } from '@/constants';
 import MintButton from '@/components/MintButton';
 import ConnectWallet from './ConnectWallet';
+import { useResponsive } from 'ahooks';
 
 const Component: React.FC = () => {
+  const { pc } = useResponsive();
   const { formatMessage } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
   const [movieMinted, setMovieMinted] = useState<boolean>(false);
@@ -172,7 +174,7 @@ const Component: React.FC = () => {
           )}
         </div>
         <Divider />
-        <Space>
+        <Space direction={pc ? 'horizontal' : 'vertical'}>
           <MintButton
             type="book"
             disabled={bookMinted}

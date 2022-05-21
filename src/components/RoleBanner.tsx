@@ -6,10 +6,13 @@ import { css } from '@emotion/css';
 import BlueLine from '@/components/BlueLine';
 import { roles } from '@/constants';
 import { useResponsive } from 'ahooks';
+import { useIntl, getLocale } from 'umi';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
+  const { formatMessage } = useIntl();
+  const isCN = getLocale() === 'zh-CN';
   const { pc } = useResponsive();
   const settings = {
     className: 'center',
@@ -45,7 +48,7 @@ const Component: React.FC<Props> = () => {
             text-align: center;
           `}
         >
-          小说主要角色
+          {formatMessage({ id: 'read_role_title' })}
         </h2>
         <BlueLine />
         <Slider
@@ -133,8 +136,12 @@ const Component: React.FC<Props> = () => {
               <div className="ourm-role">
                 <img src={item.img} alt={item.name} />
                 <div className="ourm-role-detail">
-                  <div className="ourm-role-name">{item.name}</div>
-                  <div className="ourm-role-desc">{item.desc}</div>
+                  <div className="ourm-role-name">
+                    {isCN ? item.name : item.nameEN}
+                  </div>
+                  <div className="ourm-role-desc">
+                    {isCN ? item.desc : item.descEN}
+                  </div>
                 </div>
               </div>
             );
