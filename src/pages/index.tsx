@@ -1,11 +1,13 @@
+// @ts-ignore
+import ReactFullpage from '@fullpage/react-fullpage';
 import { css } from '@emotion/css';
 import IntroBanner from '@/components/IntroBanner';
 import BenefitBanner from '@/components/BenefitBanner';
 import RoadMap from '@/components/RoadMap';
 import StarCanvas from '@/components/StarCanvas';
+import PFPShow from '@/components/PFPShow';
+import Members from '@/components/Members';
 import { useResponsive } from 'ahooks';
-// @ts-ignore
-import ReactFullpage from '@fullpage/react-fullpage';
 import { maxWidth } from '@/utils/css';
 
 export default () => {
@@ -19,7 +21,13 @@ export default () => {
         <BenefitBanner />
       </div>
       <div className="section">
+        <PFPShow />
+      </div>
+      <div className="section">
         <RoadMap />
+      </div>
+      <div className="section">
+        <Members />
       </div>
     </>
   );

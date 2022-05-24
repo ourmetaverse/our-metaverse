@@ -91,3 +91,54 @@ export const roles = [
     descEN: 'A westerner who likes Asian culture, a lively.',
   },
 ];
+
+export const members = [
+  {
+    name: '愚指导',
+    title: '项目创始人',
+    avatar: '/xuanwu.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '年糕荷',
+    title: '品牌官',
+    avatar: '/girl.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '愚指导',
+    title: '项目创始人',
+    avatar: '/xuanwu.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '年糕荷',
+    title: '品牌官',
+    avatar: '/girl.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '愚指导',
+    title: '项目创始人',
+    avatar: '/xuanwu.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '年糕荷',
+    title: '品牌官',
+    avatar: '/girl.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '愚指导',
+    title: '项目创始人',
+    avatar: '/xuanwu.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+  {
+    name: '年糕荷',
+    title: '品牌官',
+    avatar: '/girl.png',
+    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+  },
+];

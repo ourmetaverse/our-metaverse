@@ -62,7 +62,15 @@ export default (props: Props) => {
   }, [contract, token]);
 
   if (!contract || !contractWithSigner) {
-    return <ConnectTip />;
+    return (
+      <div
+        className={css`
+          margin-top: 100px;
+        `}
+      >
+        <ConnectTip />
+      </div>
+    );
   }
 
   return (
