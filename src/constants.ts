@@ -103,13 +103,13 @@ export const members = [
     name: '年糕荷',
     title: '品牌官',
     avatar: '/girl.png',
-    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+    desc: '新媒体运营，资深吃货，萌妹子。',
   },
   {
-    name: '愚指导',
-    title: '项目创始人',
-    avatar: '/xuanwu.png',
-    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+    name: 'Bear',
+    title: '气氛组',
+    avatar: '/bear.jpg',
+    desc: '福豹 NFT builder，Web3 程序员。',
   },
   {
     name: '年糕荷',
