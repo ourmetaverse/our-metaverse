@@ -3,70 +3,103 @@ import { Col, Row } from 'antd';
 import { css } from '@emotion/css';
 import { members } from '@/constants';
 import { useResponsive } from 'ahooks';
+import { mobile, fontColor } from '@/utils/css';
+import BlueLine from '@/components/BlueLine';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
   const { pc } = useResponsive();
   return (
-    <Row>
-      {members.map((m) => {
-        return (
-          <Col
-            span={pc ? 6 : 12}
-            key={m.name}
-            className={css`
-              margin-bottom: 16px;
-            `}
-          >
-            <div
+    <div
+      className={css`
+        text-align: center;
+      `}
+    >
+      <div
+        className={css`
+          ${fontColor}
+          font-size: 40px;
+          display: inline-block;
+        `}
+      >
+        DAO 核心贡献成员
+      </div>
+      <BlueLine />
+      <Row>
+        {members.map((m) => {
+          return (
+            <Col
+              span={pc ? 6 : 12}
+              key={m.name}
               className={css`
-                margin: 16px auto;
-                width: 253px;
+                margin-bottom: 8px;
+                text-align: left;
               `}
             >
-              <img
+              <div
                 className={css`
+                  margin: 16px auto;
                   width: 253px;
-                  height: 253px;
-                `}
-                src={m.avatar}
-                alt={m.name}
-              />
-              <div
-                className={css`
-                  background: linear-gradient(to right, #0f22ff, #b5bbff);
-                  display: inline-block;
-                  background-clip: text;
-                  color: transparent;
-                  font-size: 30px;
-                  margin-top: 8px;
+                  ${mobile} {
+                    width: 151px;
+                  }
                 `}
               >
-                {m.name}
+                <img
+                  className={css`
+                    width: 253px;
+                    height: 253px;
+                    ${mobile} {
+                      width: 151px;
+                      height: 151px;
+                    }
+                  `}
+                  src={m.avatar}
+                  alt={m.name}
+                />
+                <div
+                  className={css`
+                    ${fontColor}
+                    font-size: 30px;
+                    margin-top: 8px;
+                    display: inline-block;
+                    ${mobile} {
+                      font-size: 24px;
+                    }
+                  `}
+                >
+                  {m.name}
+                </div>
+                <div
+                  className={css`
+                    font-size: 20px;
+                    opacity: 0.6;
+                    ${mobile} {
+                      font-size: 16px;
+                    }
+                  `}
+                >
+                  {m.title}
+                </div>
+                <div
+                  className={css`
+                    font-size: 16px;
+                    opacity: 0.6;
+                    margin-top: 8px;
+                    ${mobile} {
+                      font-size: 14px;
+                    }
+                  `}
+                >
+                  {m.desc}
+                </div>
               </div>
-              <div
-                className={css`
-                  font-size: 20px;
-                  opacity: 0.6;
-                `}
-              >
-                {m.title}
-              </div>
-              <div
-                className={css`
-                  font-size: 16px;
-                  opacity: 0.6;
-                  margin-top: 16px;
-                `}
-              >
-                {m.desc}
-              </div>
-            </div>
-          </Col>
-        );
-      })}
-    </Row>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
   );
 };
 

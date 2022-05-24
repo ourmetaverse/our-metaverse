@@ -12,10 +12,10 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
     <div
       className={css`
         position: relative;
-        animation: scroll ${right && 'right'} 40s linear infinite;
-        -webkit-animation: scroll ${right && 'right'} 40s linear infinite;
+        animation: ${right ? 'scrollright' : 'scroll'} 10s linear infinite;
+        -webkit-animation: scroll ${right && 'right'} 10s linear infinite;
         margin-bottom: 54px;
-        width: 1280px;
+        width: 1252px;
         ${mobile} {
           height: 200px;
         }
