@@ -1,7 +1,7 @@
 import { Row } from 'antd';
 import { useIntl } from 'umi';
 import { css } from '@emotion/css';
-import { mobile } from '@/utils/css';
+import { maxWidth, mobile } from '@/utils/css';
 import BlueLine from '@/components/BlueLine';
 
 interface StepProps {
@@ -198,28 +198,45 @@ export default () => {
   return (
     <div
       className={css(`
-        width: 100%;
         height: 100vh;
         background: transparent;
         background-size: 100% 100%;
         padding-top: 87px;
+        background: linear-gradient(190deg, #0A1855, #000000, #060F35, #041352);
         ${mobile} {
+          background: none;
           height: auto;
           padding-top: 32px;
           padding-bottom: 32px;
         }
       `)}
     >
-      <Row
-        className={css(`
+      <div
+        className={css`
+          background-image: url(/roadmapbgstar.png);
+          height: 100%;
+          ${mobile} {
+            background: none;
+            height: auto;
+          }
+        `}
+      >
+        <div
+          className={css`
+            max-width: ${maxWidth};
+            margin: 0 auto;
+          `}
+        >
+          <Row
+            className={css(`
               display:flex;
               flex-direction:column;
               justify-content:center;
               align-items:center;
             `)}
-      >
-        <div
-          className={css(`
+          >
+            <div
+              className={css(`
               font-size:40px;
               letter-spacing:0.13px;
               line-height:60px;
@@ -231,27 +248,29 @@ export default () => {
                 margin-top: 24px;
               }
             `)}
-        >
-          {formatMessage({ id: 'index_roadmap_title' })}
-        </div>
-        <BlueLine />
-      </Row>
-      <Row
-        className={css(`
+            >
+              {formatMessage({ id: 'index_roadmap_title' })}
+            </div>
+            <BlueLine />
+          </Row>
+          <Row
+            className={css(`
           height: 456px;
-          margin:83px 0;
-          background-image:url('/roadmap-bg.png');
-          background-size: 100% 100%;
+          margin: 24px 0;
+          background: linear-gradient(to right bottom, #041A60, #020B32);
+          border: 1px solid;
+          border-image: linear-gradient(to bottom, rgb(53, 122, 255), rgba(0, 209, 255, 0.17)) 1;
           ${mobile} {
             flex-direction:column;
             margin: 0;
             background-image: none;
             height: auto;
+            border: none;
           }
         `)}
-      >
-        <div
-          className={css(`
+          >
+            <div
+              className={css(`
             display:flex;
             flex-direction:row;
             justify-content:space-around;
@@ -262,20 +281,22 @@ export default () => {
               margin: 0;
             }
           `)}
-        >
-          {StepContent.map((item, index) => {
-            return (
-              <Step
-                current={3}
-                index={index + 1}
-                name={item.name}
-                content={item.content}
-                key={item.name}
-              ></Step>
-            );
-          })}
+            >
+              {StepContent.map((item, index) => {
+                return (
+                  <Step
+                    current={3}
+                    index={index + 1}
+                    name={item.name}
+                    content={item.content}
+                    key={item.name}
+                  ></Step>
+                );
+              })}
+            </div>
+          </Row>
         </div>
-      </Row>
+      </div>
     </div>
   );
 };

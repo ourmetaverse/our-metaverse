@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl } from 'umi';
 import { css } from '@emotion/css';
 import BlueLine from '@/components/BlueLine';
-import { mobile } from '@/utils/css';
+import { maxWidth, mobile } from '@/utils/css';
 import BenefitItem from '@/components/BenefitItem';
 
 const Component: React.FC = () => {
@@ -34,10 +34,11 @@ const Component: React.FC = () => {
   return (
     <div
       className={css(`
-        width:100%;
         height: 100vh;
         background:transparent;
         padding: 193px 0 106px 0;
+        margin: 0 auto;
+        max-width: ${maxWidth};
         ${mobile} {
           padding: 16px;
           height: auto;

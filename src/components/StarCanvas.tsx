@@ -11,6 +11,8 @@ interface Prop {
   shape?: Shape;
   children?: ReactElement;
   background?: string;
+  visible?: boolean;
+  zIndex?: number;
 }
 
 const generateStars = (
@@ -34,6 +36,10 @@ const generateStars = (
 };
 
 const StarCanvas = (props: Prop) => {
+  const visible = props.visible;
+  if (visible === false) {
+    return <>{props.children}</>;
+  }
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ctx = useRef<CanvasRenderingContext2D | null>(null);
   const numStars = props.numStars || 2000;
@@ -80,6 +86,7 @@ const StarCanvas = (props: Prop) => {
       <canvas
         ref={canvasRef}
         className={css(`
+          z-index: ${props.zIndex === undefined ? -1 : props.zIndex};
           position: fixed;
           left: 0;
           top: 0;

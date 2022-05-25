@@ -8,7 +8,6 @@ import StarCanvas from '@/components/StarCanvas';
 import PFPShow from '@/components/PFPShow';
 import Members from '@/components/Members';
 import { useResponsive } from 'ahooks';
-import { maxWidth } from '@/utils/css';
 
 export default () => {
   const { pc } = useResponsive();
@@ -39,6 +38,7 @@ export default () => {
         minSize={3}
         maxSize={8}
         shape="cross star"
+        zIndex={0}
       >
         <div
           className={css`
@@ -51,29 +51,19 @@ export default () => {
     );
   }
   return (
-    <StarCanvas
-      numStars={500}
-      FPS={30}
-      minSize={3}
-      maxSize={8}
-      shape="cross star"
-      background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
+    <div
+      className={css`
+        margin: 0 auto;
+      `}
     >
-      <div
-        className={css`
-          max-width: ${maxWidth};
-          margin: 0 auto;
-        `}
-      >
-        <ReactFullpage
-          // license for opensource GPLv3 license
-          licenseKey="ourm-metaverse"
-          scrollingSpeed={500} /* Options here */
-          render={() => {
-            return <ReactFullpage.Wrapper>{content}</ReactFullpage.Wrapper>;
-          }}
-        />
-      </div>
-    </StarCanvas>
+      <ReactFullpage
+        // license for opensource GPLv3 license
+        licenseKey="ourm-metaverse"
+        scrollingSpeed={500} /* Options here */
+        render={() => {
+          return <ReactFullpage.Wrapper>{content}</ReactFullpage.Wrapper>;
+        }}
+      />
+    </div>
   );
 };

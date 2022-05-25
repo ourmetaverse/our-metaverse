@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 import { css } from '@emotion/css';
 import { members } from '@/constants';
 import { useResponsive } from 'ahooks';
-import { mobile, fontColor } from '@/utils/css';
+import { mobile, fontColor, maxWidth } from '@/utils/css';
 import BlueLine from '@/components/BlueLine';
 
 interface Props {}
@@ -14,6 +14,8 @@ const Component: React.FC<Props> = () => {
     <div
       className={css`
         text-align: center;
+        max-width: ${maxWidth};
+        margin: 0 auto;
       `}
     >
       <div
@@ -25,7 +27,7 @@ const Component: React.FC<Props> = () => {
       >
         DAO 核心贡献成员
       </div>
-      <BlueLine />
+      <BlueLine primary />
       <Row>
         {members.map((m) => {
           return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { mobile } from '@/utils/css';
+import { maxWidth, mobile } from '@/utils/css';
 
 interface SliderRowProps {
   items: string[];
@@ -12,12 +12,13 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
     <div
       className={css`
         position: relative;
-        animation: ${right ? 'scrollright' : 'scroll'} 10s linear infinite;
-        -webkit-animation: scroll ${right && 'right'} 10s linear infinite;
+        animation: ${right ? 'scrollright' : 'scroll'} 30s linear infinite;
+        -webkit-animation: ${right ? 'scrollright' : 'scroll'} 30s linear
+          infinite;
         margin-bottom: 54px;
-        width: 1252px;
+        width: 1280px;
         ${mobile} {
-          height: 200px;
+          width: 900px;
         }
       `}
     >
@@ -33,11 +34,15 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
               display: inline-block;
               padding-top: 30px;
               padding-left: 19px;
-              ${mobile} {
-                transform: scale(0.6);
-              }
               &:nth-child(even) {
                 background-image: url(/pfpbg2.png);
+              }
+              ${mobile} {
+                background-size: 175px 187px;
+                height: 189px;
+                width: 189px;
+                padding-top: 18px;
+                padding-left: 12px;
               }
             `}
             key={item}
@@ -46,6 +51,10 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
               className={css`
                 width: 254px;
                 height: 254px;
+                ${mobile} {
+                  height: 151px;
+                  width: 151px;
+                }
               `}
               src={item}
               alt={item}
