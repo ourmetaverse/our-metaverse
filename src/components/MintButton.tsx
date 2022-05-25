@@ -3,14 +3,9 @@ import { Button, Divider } from 'antd';
 import { useModel, useIntl } from 'umi';
 import showMessage from '@/utils/showMessage';
 import { ethers } from 'ethers';
-import {
-  bookPrice,
-  commonPrice,
-  maxMintPerAddr,
-  moviePrice,
-  wechatLink,
-} from '@/constants';
+import { bookPrice, commonPrice, moviePrice, wechatLink } from '@/constants';
 import { css } from '@emotion/css';
+import { mobile } from '@/utils/css';
 
 const ETHERSCAN_DOMAIN =
   CHAIN_ID === 'rinkeby' ? 'rinkeby.etherscan.io' : 'etherscan.io';
@@ -23,10 +18,18 @@ export interface MintButtonProps {
   children?: React.ReactNode;
   name?: string;
   max?: number;
+  maxPerAddr?: number;
 }
 
 export default function MintButton(props: MintButtonProps) {
-  const { disabled, max = 1, type = 'common', children, name } = props;
+  const {
+    disabled,
+    max = 1,
+    maxPerAddr = 1,
+    type = 'common',
+    children,
+    name,
+  } = props;
   const [mintAmount, setMintAmount] = useState<number>(1);
   const [minting, setMinting] = useState(false);
   const { signer, contract } = useModel('user');
@@ -46,6 +49,7 @@ export default function MintButton(props: MintButtonProps) {
         height: 328px;
         opacity: ${type === 'common' ? '0.9' : '0.5'};
         border: ${type === 'common' ? '3px' : '2px'} solid #184cff;
+        margin-bottom: 32px;
         &:hover {
           opacity: 1;
         }
@@ -68,7 +72,7 @@ export default function MintButton(props: MintButtonProps) {
       >
         {price}ETH/NFT
         <br />
-        {max === 1 ? 'ONLY 1' : `MAX ${max}/Wallet`}
+        {maxPerAddr === 1 ? 'ONLY 1' : `MAX ${maxPerAddr}/Wallet`}
       </div>
       <div
         className={css`
@@ -86,6 +90,7 @@ export default function MintButton(props: MintButtonProps) {
             width: 55px;
             line-height: 65px;
             opacity: 0.8;
+            user-select: none;
             &:hover {
               opacity: 1;
             }
@@ -113,6 +118,7 @@ export default function MintButton(props: MintButtonProps) {
           className={css`
             width: 74px;
             background-color: #4f60a0;
+            font-size: 40px;
           `}
         >
           {mintAmount}

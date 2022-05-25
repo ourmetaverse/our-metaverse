@@ -11,6 +11,9 @@ export default () => {
         padding-top: 120px;
         padding-bottom: 80px;
         background: linear-gradient(to bottom, #000000, #112a94 30%, #1a41e4);
+        ${mobile} {
+          padding-top: 32px;
+        }
       `}
     >
       <div
@@ -23,6 +26,7 @@ export default () => {
           margin-top: 32px;
           ${mobile} {
             margin: 16px;
+            padding: 64px 8px;
           }
         `}
       >

@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Space, Spin } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
-import {
-  totalSupply,
-  commonPrice,
-  maxMintPerAddr,
-  contractAddress,
-} from '@/constants';
+import { totalSupply, maxMintPerAddr, contractAddress } from '@/constants';
 import MintButton from '@/components/MintButton';
 import ConnectWallet from './ConnectWallet';
 import { useResponsive } from 'ahooks';
@@ -166,7 +161,7 @@ const Component: React.FC = () => {
             },
           )}
         </div> */}
-      <Space>
+      <Space direction={pc ? 'horizontal' : 'vertical'}>
         <MintButton
           type="common"
           disabled={avaliableCount <= 0}
@@ -175,6 +170,7 @@ const Component: React.FC = () => {
             id: 'mint_tip',
           })}
           max={avaliableCount}
+          maxPerAddr={maxMintPerAddr}
         />
         <MintButton
           type="book"
