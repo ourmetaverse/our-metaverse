@@ -59,7 +59,7 @@ export default {
   connect_wallet: 'Connect Wallet',
   sold_out: 'Sold Out',
   limit_reached: 'Upper limit reached',
-  mint_available_count: 'You can mint {count} Token.',
+  mint_available_count: 'You can mint {count} Token',
   mint_progress: 'Mint progress',
   mint_succeed: 'Mint succeed',
   not_mint_yet: 'Not mint yet',

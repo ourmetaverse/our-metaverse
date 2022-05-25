@@ -53,7 +53,7 @@ export default {
   connect_wallet: '连接钱包',
   sold_out: '已售罄',
   limit_reached: '铸造已达上限',
-  mint_available_count: '你还可以铸造 {count} 个。',
+  mint_available_count: '你还可以铸造 {count} 个',
   mint_succeed: '铸造成功',
   not_started: '还未开始。',
   mint_progress: '铸造进度',
