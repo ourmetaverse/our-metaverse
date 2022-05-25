@@ -25,7 +25,7 @@ const Component: React.FC<Props> = () => {
           display: inline-block;
         `}
       >
-        DAO 核心贡献成员
+        核心贡献成员
       </div>
       <BlueLine primary />
       <Row>

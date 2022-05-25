@@ -96,13 +96,13 @@ export const members = [
   {
     name: '愚指导',
     title: '创始人',
-    avatar: '/xuanwu.png',
+    avatar: '/pfp5.jpg',
     desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
   },
   {
     name: '年糕荷',
     title: '品牌官',
-    avatar: '/girl.png',
+    avatar: '/pfp3.jpg',
     desc: '新媒体运营，资深吃货，萌妹子。',
   },
   {
@@ -114,31 +114,31 @@ export const members = [
   {
     name: 'Koroo',
     title: '艺术家',
-    avatar: '/wangqiang.png',
-    desc: '有范艺术家。',
+    avatar: '/koroo.png',
+    desc: '有范艺术家，独立工作室。',
   },
   {
     name: '柳乘风',
     title: '设计师',
-    avatar: '/hiro.png',
-    desc: '靠谱设计师。',
+    avatar: '/liu.png',
+    desc: '靠谱设计师，互联网从业者。',
   },
   {
     name: 'Jessie',
     title: '社区运营',
-    avatar: '/alita.png',
-    desc: '某交易所从业者。',
+    avatar: '/jessie.png',
+    desc: '某交易所运营，混迹各种社区。',
   },
   {
     name: 'Jackson',
     title: '国际化运营',
-    avatar: '/peter.png',
-    desc: '国际化运营。',
+    avatar: '/jackson.png',
+    desc: '精通英语，NFT 狂热者，出没于国内外各大社群。',
   },
   {
     name: 'Captain',
     title: '媒体运营',
-    avatar: '/alita.png',
-    desc: '自媒体。',
+    avatar: '/pfp2.jpg',
+    desc: '自媒体人，战略PMO。',
   },
 ];

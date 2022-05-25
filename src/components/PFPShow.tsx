@@ -69,10 +69,12 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
 const Component: React.FC = () => {
   return (
     <div>
-      <SliderRow items={['/pfp1.png', '/pfp2.png', '/pfp1.png', '/pfp2.png']} />
+      <SliderRow
+        items={['/pfp13.jpg', '/pfp4.jpg', '/pfp12.jpg', '/pfp6.jpg']}
+      />
       <SliderRow
         right
-        items={['/pfp1.png', '/pfp2.png', '/pfp1.png', '/pfp2.png']}
+        items={['/pfp7.jpg', '/pfp8.jpg', '/pfp9.jpg', '/pfp10.jpg']}
       />
     </div>
   );
