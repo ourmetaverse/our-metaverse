@@ -156,13 +156,15 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 }
               `}
             />
-            <span
-              className={css`
-                display: inline-block;
-              `}
-            >
-              OurMetaverse
-            </span>
+            {pc ? (
+              <span
+                className={css`
+                  display: inline-block;
+                `}
+              >
+                OurMetaverse
+              </span>
+            ) : null}
           </Link>
           {pc ? (
             <Menu
@@ -182,11 +184,11 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             >
               {items}
               <Menu.Item key="wallet">
-                <ConnectWallet />
+                <ConnectWallet style={{ top: -18 }} />
               </Menu.Item>
             </Menu>
           ) : null}
-          {!pc ? <ConnectWallet /> : null}
+          {!pc ? <ConnectWallet size="small" style={{ top: 24 }} /> : null}
         </div>
         <Drawer
           placement="left"

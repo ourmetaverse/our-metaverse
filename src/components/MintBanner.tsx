@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Space, Spin } from 'antd';
+import { Space, Spin } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
-import {
-  totalSupply,
-  maxMintPerAddr,
-  contractAddress,
-  commonPrice,
-} from '@/constants';
+import { totalSupply, maxMintPerAddr, contractAddress } from '@/constants';
 import MintButton from '@/components/MintButton';
 import ConnectWallet from './ConnectWallet';
 import { useResponsive } from 'ahooks';
@@ -60,7 +55,17 @@ const Component: React.FC = () => {
   }, [contract, address]);
 
   if (!contract) {
-    return <ConnectWallet />;
+    return (
+      <div
+        className={css`
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <ConnectWallet />
+      </div>
+    );
   }
 
   if (numberMinted === undefined || address === undefined) {

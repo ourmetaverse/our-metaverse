@@ -1,18 +1,35 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { mobile } from '@/utils/css';
 
-const Component: React.FC = ({ children }) => {
+interface Props {
+  onClick?: () => void;
+  width?: string;
+  height?: string;
+  fontSize?: string;
+}
+
+const Component: React.FC<Props> = ({
+  children,
+  width,
+  height = '79px',
+  fontSize = '20px',
+  onClick,
+}) => {
   return (
     <div
+      onClick={() => {
+        if (onClick) {
+          onClick();
+        }
+      }}
       className={css(`
-        width:219px;
-        height:79px;
-        line-height:70px;
+        padding: 0 32px;
+        width: ${width || 'auto'};
+        height: ${height};
         background: url(/btnbg.png) no-repeat center center;
-        font-size:20px;
+        background-size: 100% 100%;
+        font-size: ${fontSize};
         letter-spacing:0.06px;
-        margin-right:40px;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -23,9 +40,11 @@ const Component: React.FC = ({ children }) => {
         overflow: hidden;
         &:hover {
           background: url(/btnbg-hover.png) no-repeat center center;
+          background-size: 100% 100%;
         }
         &:active {
           background: url(/btnbg-active.png) no-repeat center center;
+          background-size: 100% 100%;
           .index-btn-content {
             margin-top: 0px;
           }

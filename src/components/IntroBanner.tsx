@@ -103,12 +103,16 @@ const Component: React.FC<Props> = () => {
               {formatMessage({ id: 'index_intro_content' })}
             </div>
           </Typography>
-          <Space direction={pc ? 'horizontal' : 'vertical'}>
+          <Space size="large" direction={pc ? 'horizontal' : 'vertical'}>
             <Link to="/mint">
-              <IndexBtn>{formatMessage({ id: 'index_intro_mint' })}</IndexBtn>
+              <IndexBtn width="215px">
+                {formatMessage({ id: 'index_intro_mint' })}
+              </IndexBtn>
             </Link>
             <Link to="/read">
-              <IndexBtn>{formatMessage({ id: 'index_intro_read' })}</IndexBtn>
+              <IndexBtn width="215px">
+                {formatMessage({ id: 'index_intro_read' })}
+              </IndexBtn>
             </Link>
           </Space>
         </div>
