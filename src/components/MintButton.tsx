@@ -22,15 +22,8 @@ export interface MintButtonProps {
 }
 
 export default function MintButton(props: MintButtonProps) {
-  const {
-    disabled,
-    max = 1,
-    maxPerAddr = 1,
-    type = 'common',
-    children,
-    name,
-  } = props;
-  const [mintAmount, setMintAmount] = useState<number>(1);
+  const { disabled, max = 1, maxPerAddr = 1, type = 'common', name } = props;
+  const [mintAmount, setMintAmount] = useState<number>(max);
   const [minting, setMinting] = useState(false);
   const { signer, contract } = useModel('user');
   const { formatMessage } = useIntl();
@@ -51,6 +44,9 @@ export default function MintButton(props: MintButtonProps) {
         border: ${type === 'common' ? '3px' : '2px'} solid #184cff;
         margin-bottom: 32px;
         &:hover {
+          opacity: 1;
+        }
+        ${mobile} {
           opacity: 1;
         }
       `}
@@ -135,6 +131,16 @@ export default function MintButton(props: MintButtonProps) {
           +
         </div>
       </div>
+      <div
+        className={css`
+          font-size: 16px;
+          opacity: 0.5;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        `}
+      >
+        Total {price * mintAmount}ETH
+      </div>
       <Button
         disabled={disabled}
         loading={minting}
@@ -157,7 +163,7 @@ export default function MintButton(props: MintButtonProps) {
                 value,
               });
             } else {
-              tx = await contractWithSigner.mint(props.mintAmount, {
+              tx = await contractWithSigner.mint(mintAmount, {
                 value,
               });
             }

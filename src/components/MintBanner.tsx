@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, Space, Spin } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
-import { totalSupply, maxMintPerAddr, contractAddress } from '@/constants';
+import {
+  totalSupply,
+  maxMintPerAddr,
+  contractAddress,
+  commonPrice,
+} from '@/constants';
 import MintButton from '@/components/MintButton';
 import ConnectWallet from './ConnectWallet';
 import { useResponsive } from 'ahooks';
@@ -15,8 +20,6 @@ const Component: React.FC = () => {
   const { address, contract } = useModel('user');
   const [progress, setProgress] = useState<number>(0);
   const [numberMinted, setNumberMinted] = useState<number>();
-  let mintButton;
-  let mintBtns = [];
 
   async function updateStatus() {
     if (contract) {
@@ -64,62 +67,6 @@ const Component: React.FC = () => {
     return <Spin />;
   }
 
-  for (let i = 0; i < maxMintPerAddr; i++) {
-    mintBtns.push(
-      <MintButton
-        key={i}
-        onMinted={updateNumberMinted}
-        mintAmount={i + 1}
-        disabled={!(numberMinted + i < maxMintPerAddr)}
-        style={{ margin: '8px', width: '124px' }}
-      >
-        {formatMessage(
-          {
-            id: 'mint_tip',
-          },
-          {
-            mintAmount: i + 1,
-          },
-        )}
-      </MintButton>,
-    );
-  }
-  mintButton = (
-    <div
-      className={css(`
-      text-align: center;
-    `)}
-    >
-      {mintBtns}
-    </div>
-  );
-
-  if (progress >= totalSupply) {
-    mintButton = (
-      <Button disabled>
-        {formatMessage({
-          id: 'sold_out',
-        })}
-      </Button>
-    );
-  }
-
-  if (numberMinted === maxMintPerAddr) {
-    mintButton = (
-      <Button
-        style={{
-          background: '#eee',
-          color: '#999',
-          cursor: 'not-allowed',
-        }}
-      >
-        {formatMessage({
-          id: 'limit_reached',
-        })}
-      </Button>
-    );
-  }
-
   const avaliableCount = Math.max(maxMintPerAddr - numberMinted, 0);
 
   return (
@@ -128,39 +75,27 @@ const Component: React.FC = () => {
         text-align: center;
       `}
     >
-      {/* {mintButton}
-        <div
-          style={{ marginBottom: 20, display: 'flex', alignItems: 'center' }}
-        >
-          {address && avaliableCount > 0 && (
-            <span>
-              {formatMessage(
-                {
-                  id: 'mint_available_count',
-                },
-                {
-                  count: avaliableCount,
-                },
-              )}
-            </span>
-          )}
-        </div>
-        <div style={{ fontSize: 20, textAlign: 'center' }}>
-          {formatMessage({
-            id: 'mint_progress',
-          })}
-          ：{progress} / {totalSupply}
-          <br />
-          {formatMessage(
-            {
-              id: 'price_tip',
-            },
-            {
-              commonPrice,
-              maxMintPerAddr,
-            },
-          )}
-        </div> */}
+      <div
+        className={css`
+          font-size: 20px;
+          text-align: center;
+          margin-bottom: 16px;
+        `}
+      >
+        {formatMessage({
+          id: 'mint_progress',
+        })}
+        ：{progress} / {totalSupply}
+        <br />
+        {formatMessage(
+          {
+            id: 'mint_available_count',
+          },
+          {
+            count: avaliableCount,
+          },
+        )}
+      </div>
       <Space direction={pc ? 'horizontal' : 'vertical'}>
         <MintButton
           type="common"

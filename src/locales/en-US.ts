@@ -64,8 +64,7 @@ export default {
   mint_succeed: 'Mint succeed',
   not_mint_yet: 'Not mint yet',
   not_started: 'Not started.',
-  price_tip:
-    'Price：{commonPrice} ETH per Token, each address mint limit: {maxMintPerAddr}.',
+  price_tip: 'Each address mint limit: {maxMintPerAddr}.',
   mint_book_token: 'Mint Book Token',
   mint_movie_token: 'Movie Token',
   mint_game_token: 'Game Token',

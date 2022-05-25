@@ -12,7 +12,7 @@ export default () => {
         padding-bottom: 80px;
         background: linear-gradient(to bottom, #000000, #112a94 30%, #1a41e4);
         ${mobile} {
-          padding-top: 32px;
+          padding-top: 80px;
         }
       `}
     >
