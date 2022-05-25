@@ -67,9 +67,9 @@ export default {
   price_tip:
     'Price：{commonPrice} ETH per Token, each address mint limit: {maxMintPerAddr}.',
   mint_book_token: 'Mint Book Token',
-  mint_movie_token: 'Mint Movie Token',
-  mint_game_token: 'Mint Game Token',
-  mint_tip: 'Mint {mintAmount} Token',
+  mint_movie_token: 'Movie Token',
+  mint_game_token: 'Game Token',
+  mint_tip: 'DAO Token',
   minting: 'Miniting...',
   mint_failed: 'Mint failed',
   view_on_etherscan: 'View on Etherscan',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Divider, Space, Spin } from 'antd';
+import { Button, Space, Spin } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
 import {
@@ -133,14 +133,7 @@ const Component: React.FC = () => {
         text-align: center;
       `}
     >
-      {mintButton}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+      {/* {mintButton}
         <div
           style={{ marginBottom: 20, display: 'flex', alignItems: 'center' }}
         >
@@ -172,35 +165,38 @@ const Component: React.FC = () => {
               maxMintPerAddr,
             },
           )}
-        </div>
-        <Divider />
-        <Space direction={pc ? 'horizontal' : 'vertical'}>
-          <MintButton
-            type="book"
-            disabled={bookMinted}
-            onMinted={() => {
-              setBookMinted(true);
-            }}
-          >
-            {formatMessage({
-              id: 'mint_book_token',
-            })}
-            (30ETH)
-          </MintButton>
-          <MintButton
-            type="movie"
-            disabled={movieMinted}
-            onMinted={() => {
-              setMovieMinted(true);
-            }}
-          >
-            {formatMessage({
-              id: 'mint_movie_token',
-            })}
-            (600ETH)
-          </MintButton>
-        </Space>
-      </div>
+        </div> */}
+      <Space>
+        <MintButton
+          type="common"
+          disabled={avaliableCount <= 0}
+          onMinted={updateNumberMinted}
+          name={formatMessage({
+            id: 'mint_tip',
+          })}
+          max={avaliableCount}
+        />
+        <MintButton
+          type="book"
+          disabled={bookMinted}
+          onMinted={() => {
+            setBookMinted(true);
+          }}
+          name={formatMessage({
+            id: 'mint_book_token',
+          })}
+        />
+        <MintButton
+          type="movie"
+          disabled={movieMinted}
+          name={formatMessage({
+            id: 'mint_movie_token',
+          })}
+          onMinted={() => {
+            setMovieMinted(true);
+          }}
+        />
+      </Space>
     </div>
   );
 };

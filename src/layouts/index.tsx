@@ -20,12 +20,15 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
   const isCN = getLocale() === 'zh-CN';
   const items = (
     <>
-      <Menu.Item key="index">
+      <Menu.Item key="/">
         <Link to="/">
           {formatMessage({
             id: 'index',
           })}
         </Link>
+      </Menu.Item>
+      <Menu.Item key="/mint">
+        <Link to="/mint">Mint</Link>
       </Menu.Item>
       <Menu.Item key="/read">
         <Link to="/read">

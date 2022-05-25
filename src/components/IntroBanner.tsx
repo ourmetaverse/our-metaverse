@@ -6,7 +6,6 @@ import BlueLine from '@/components/BlueLine';
 import IndexBtn from '@/components/IndexBtn';
 import { mobile, maxWidth } from '@/utils/css';
 import { useResponsive } from 'ahooks';
-import MintModal from './MintModal';
 import StarRing from './StarRing';
 import StarCanvas from './StarCanvas';
 
@@ -105,9 +104,9 @@ const Component: React.FC<Props> = () => {
             </div>
           </Typography>
           <Space direction={pc ? 'horizontal' : 'vertical'}>
-            <MintModal>
+            <Link to="/mint">
               <IndexBtn>{formatMessage({ id: 'index_intro_mint' })}</IndexBtn>
-            </MintModal>
+            </Link>
             <Link to="/read">
               <IndexBtn>{formatMessage({ id: 'index_intro_read' })}</IndexBtn>
             </Link>
