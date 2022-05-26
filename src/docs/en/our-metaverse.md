@@ -45,6 +45,8 @@ Hiro tied the passing strap of the ticket to the samurai sword and swung it in a
 
 "He also has a ticket, I'm really envious."
 
+"The number is 101010, find the universe answer and search wechat ourmnft get OURM airdrop"
+
 Hearing the praise next to him, Hiro raised his head higher. I said, "You're so arrogant, if you had been in the last century, you would have had your ticket robbed."
 
 Hiro still had a disdainful face: "You just watched too many ancient movies, always mentioned the things of the last century, now it is different, it is the era of digitalization, the era of the metaverse!" The ownership of this ticket is on-chain and certified, no one can take it without my private key.

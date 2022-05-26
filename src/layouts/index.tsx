@@ -6,8 +6,9 @@ import ConnectWallet from '@/components/ConnectWallet';
 import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
 import { useResponsive } from 'ahooks';
 import { useState } from 'react';
+import Footer from '@/components/Footer';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 const CommonLayout: React.FC<IRouteComponentProps> = ({
   children,
