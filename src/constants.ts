@@ -36,7 +36,7 @@ export const infuraId = 'e48a5a10953840999e806ce8a8a151ab';
 export const contentHash =
   'C73F914CBFD8E9BF6CF3FE3E9A3488E1524CC777779035E01975778BAD1D971C';
 
-export const wechatLink = 'https://our-metaverse.xyz/404/assets/wechat.png';
+export const wechatLink = '/xiaoyuan.png';
 
 export const roles = [
   {
@@ -154,7 +154,7 @@ export const members = [
     desc: '某大厂前端开发，定投小能手。',
   },
   {
-    name: 'panda',
+    name: 'Panda',
     title: '工程师',
     avatar: '/panda.png',
     desc: '合约老司机，币圈老韭菜。',

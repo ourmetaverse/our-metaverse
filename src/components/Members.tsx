@@ -6,11 +6,13 @@ import { useResponsive } from 'ahooks';
 import { mobile, fontColor, maxWidth } from '@/utils/css';
 import BlueLine from '@/components/BlueLine';
 import Footer from '@/components/Footer';
+import { useIntl } from 'umi';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
   const { pc } = useResponsive();
+  const { formatMessage } = useIntl();
   return (
     <div>
       <div
@@ -28,7 +30,7 @@ const Component: React.FC<Props> = () => {
             display: inline-block;
           `}
         >
-          核心贡献成员
+          {formatMessage({ id: 'member_title' })}
         </div>
         <BlueLine primary />
         <Row>

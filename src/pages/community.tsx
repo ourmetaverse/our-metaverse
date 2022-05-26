@@ -1,15 +1,16 @@
-import { message, Modal, Image, Spin, Typography } from 'antd';
+import { message, Image, Spin } from 'antd';
 import { useIntl, useModel } from 'umi';
 import { wechatLink } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/css';
 import { primaryColor, mobile } from '@/utils/css';
+import Modal from '@/components/Modal';
 
 export default () => {
   const { formatMessage } = useIntl();
   const { contract, address } = useModel('user');
-  const [modal, contextHolder] = Modal.useModal();
+  const [visible, setVisble] = useState<boolean>(false);
   const [isOwner, setIsOwner] = useState<boolean>(false);
 
   useEffect(() => {
@@ -30,15 +31,7 @@ export default () => {
       title: formatMessage({ id: 'wechat' }),
       icon: '/wechat.png',
       hoverIcon: '/wechat-hover.png',
-      tip: formatMessage({ id: 'wechat_tip' }),
-      img: contract && isOwner ? wechatLink : '',
-    },
-    {
-      title: 'Telegram',
-      icon: '/telegram.png',
-      hoverIcon: '/telegram-hover.png',
-      tip: formatMessage({ id: 'wechat_tip' }),
-      daoLink: contract && isOwner ? 'https://t.me/+Bq8C7dclNGs5Y2Q9' : '',
+      isWeChat: true,
     },
     {
       title: 'Discord',
@@ -96,6 +89,7 @@ export default () => {
         {data.map((item) => {
           return (
             <a
+              key={item.title}
               target="_blank"
               href={item.link || '#'}
               className={css`
@@ -119,18 +113,9 @@ export default () => {
                 } else {
                   return;
                 }
-                let content: React.ReactNode = item.tip;
-                if (item.img) {
-                  content = <Image src={item.img} placeholder={<Spin />} />;
-                } else if (item.daoLink) {
-                  content = (
-                    <Typography.Text copyable>{item.daoLink}</Typography.Text>
-                  );
+                if (item.isWeChat) {
+                  setVisble(true);
                 }
-                modal.info({
-                  title: item.title,
-                  content,
-                });
               }}
             >
               <div
@@ -173,7 +158,24 @@ export default () => {
           );
         })}
       </div>
-      {contextHolder}
+      <Modal
+        visible={visible}
+        onCancel={() => {
+          setVisble(false);
+        }}
+      >
+        <div
+          className={css`
+            text-align: center;
+          `}
+        >
+          {isOwner ? (
+            <Image src={wechatLink} placeholder={<Spin />} />
+          ) : (
+            formatMessage({ id: 'wechat_tip' })
+          )}
+        </div>
+      </Modal>
     </div>
   );
 };

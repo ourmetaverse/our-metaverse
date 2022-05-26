@@ -6,9 +6,10 @@ import BlueLine from '@/components/BlueLine';
 
 interface StepProps {
   name: string;
-  content: Array<string>;
   current: number;
   index: number;
+  title: string;
+  desc: string;
 }
 
 const ColorConfig = {
@@ -31,7 +32,7 @@ const ColorConfig = {
 
 const Step = (props: StepProps) => {
   const { formatMessage } = useIntl();
-  const { name, content, current, index } = props;
+  const { name, title, desc, current, index } = props;
   const status =
     current === index ? 'Progress' : index < current ? 'Finished' : 'Waiting';
   return (
@@ -51,7 +52,7 @@ const Step = (props: StepProps) => {
           line-height:28px;
           font-family: 苹方-简;
           ${mobile} {
-            margin-top: 8px;
+            margin-top: 32px;
             margin-bottom: 8px;
           }
         `)}
@@ -70,7 +71,6 @@ const Step = (props: StepProps) => {
           font-size:10px;
           letter-spacing:0.03px;
           line-height:14px;
-          font-family: 苹方-简;
           display:flex;
           justify-content:center;
           align-items:center;
@@ -120,35 +120,46 @@ const Step = (props: StepProps) => {
         ></div>
       </div>
       <div
-        className={css(`
-          width:180px;
+        className={css`
+          width: 180px;
+          background: linear-gradient(
+            to bottom right,
+            ${ColorConfig[status].block[0]},
+            ${ColorConfig[status].block[1]}
+          );
+          border-radius: 12px;
+          text-align: center;
+          padding-top: 8px;
           height: 126px;
-          background: linear-gradient(to bottom right, ${ColorConfig[status].block[0]}, ${ColorConfig[status].block[1]});
-          border-radius:12px;
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          align-items:center;
-          font-size:16px;
-          letter-spacing:0.05px;
-          line-height:30px;
-          font-family: 苹方-简;
           ${mobile} {
             flex-direction: row;
-            height: 60px;
-            width:260px;
-            justify-content:center;
+            width: 260px;
             div {
               margin-right: 8px;
               white-space: nowrap;
               overflow: hidden;
             }
           }
-        `)}
+        `}
       >
-        {content.map((item) => (
-          <div key={item}>{item}</div>
-        ))}
+        <div
+          className={css`
+            font-size: 16px;
+            letter-spacing: 0.05px;
+            line-height: 30px;
+          `}
+        >
+          {title}
+        </div>
+        <div
+          className={css`
+            margin: 0 8px;
+            font-size: 14px;
+            opacity: 0.8;
+          `}
+        >
+          {desc}
+        </div>
       </div>
     </div>
   );
@@ -159,40 +170,28 @@ export default () => {
   const StepContent = [
     {
       name: formatMessage({ id: 'index_roadmap_step_one' }),
-      content: [
-        formatMessage({ id: 'index_roadmap_step_one_1' }),
-        formatMessage({ id: 'index_roadmap_step_one_2' }),
-      ],
+      title: formatMessage({ id: 'index_roadmap_step_one_1' }),
+      desc: formatMessage({ id: 'index_roadmap_step_one_2' }),
     },
     {
       name: formatMessage({ id: 'index_roadmap_step_two' }),
-      content: [
-        formatMessage({ id: 'index_roadmap_step_two_1' }),
-        formatMessage({ id: 'index_roadmap_step_two_2' }),
-        formatMessage({ id: 'index_roadmap_step_two_3' }),
-      ],
+      title: formatMessage({ id: 'index_roadmap_step_two_1' }),
+      desc: formatMessage({ id: 'index_roadmap_step_two_2' }),
     },
     {
       name: formatMessage({ id: 'index_roadmap_step_three' }),
-      content: [
-        formatMessage({ id: 'index_roadmap_step_three_1' }),
-        formatMessage({ id: 'index_roadmap_step_three_2' }),
-      ],
+      title: formatMessage({ id: 'index_roadmap_step_three_1' }),
+      desc: formatMessage({ id: 'index_roadmap_step_three_2' }),
     },
     {
       name: formatMessage({ id: 'index_roadmap_step_four' }),
-      content: [
-        formatMessage({ id: 'index_roadmap_step_four_1' }),
-        formatMessage({ id: 'index_roadmap_step_four_2' }),
-      ],
+      title: formatMessage({ id: 'index_roadmap_step_four_1' }),
+      desc: formatMessage({ id: 'index_roadmap_step_four_2' }),
     },
     {
       name: formatMessage({ id: 'index_roadmap_step_five' }),
-      content: [
-        formatMessage({ id: 'index_roadmap_step_five_1' }),
-        formatMessage({ id: 'index_roadmap_step_five_2' }),
-        formatMessage({ id: 'index_roadmap_step_five_3' }),
-      ],
+      title: formatMessage({ id: 'index_roadmap_step_five_1' }),
+      desc: formatMessage({ id: 'index_roadmap_step_five_2' }),
     },
   ];
   return (
@@ -288,7 +287,8 @@ export default () => {
                     current={3}
                     index={index + 1}
                     name={item.name}
-                    content={item.content}
+                    title={item.title}
+                    desc={item.desc}
                     key={item.name}
                   ></Step>
                 );

@@ -107,10 +107,10 @@ export default {
   index_benefit_title_2: '便可拥有的权益',
   index_benefit_membership: 'DAO 成员身份',
   index_benefit_membership_content:
-    '获得 OurMetaverseDAO 成员的身份，加入专享社区。未来可参与征文大赛决选投票、官方可能发行的新的 NFT 空投等活动。',
+    '获得 OurMetaverseDAO 成员的身份，加入专享社区。未来可参与征文大赛决选投票、官方可能发行的新的 NFT 空投、科幻交流等活动。',
   index_benefit_pfp: '专属 PFP',
   index_benefit_pfp_content:
-    '拥有对应的 PFP。该系列图片正在基于小说背景创作。所有 NFT 均能收到对应 PFP。',
+    '拥有对应的 PFP。该系列图片正在基于小说背景创作，还会埋入很多科幻彩蛋哦。所有 NFT 均能收到对应 PFP。',
   index_benefit_grant: '二次创作授权',
   index_benefit_grant_content:
     '拥有 OurMetaverseDAO 作品集中包含的所有作品的数字化形式的修改权和翻译权，可以进行二次创作。二创的商业授权逻辑通过智能合约实现。',
@@ -124,16 +124,20 @@ export default {
   index_roadmap_step_four: '第四阶段',
   index_roadmap_step_five: '第五阶段',
   index_roadmap_step_one_1: '发布项目',
-  index_roadmap_step_one_2: '开始铸造',
-  index_roadmap_step_two_1: '项目翻译',
-  index_roadmap_step_two_2: '网站优化',
-  index_roadmap_step_two_3: '代码开源',
-  index_roadmap_step_three_1: 'NFT 设计',
-  index_roadmap_step_three_2: 'NFT 开图',
-  index_roadmap_step_four_1: '开展科幻小说',
-  index_roadmap_step_four_2: '征文大赛',
-  index_roadmap_step_five_1: '完善 IP',
-  index_roadmap_step_five_2: '图书出版',
-  index_roadmap_step_five_3: '影视改编',
+  index_roadmap_step_one_2:
+    '合约部署开放铸造，创世小说发布，启动初期社区运营，吸引 OG 加入。',
+  index_roadmap_step_two_1: '专业化运转',
+  index_roadmap_step_two_2:
+    '重构网站，全新发布。项目国际化，吸引专业人才加入，开启 PFP 设计。',
+  index_roadmap_step_three_1: 'NFT 开图',
+  index_roadmap_step_three_2:
+    '基于创世小说背景创作 PFP，提供风格独特的，可扩展的艺术作品。',
+  index_roadmap_step_four_1: '征文大赛',
+  index_roadmap_step_four_2:
+    '基于世界观组织征文大赛，科幻粮食赋能社区，打造一流的科幻社区。',
+  index_roadmap_step_five_1: '星辰大海',
+  index_roadmap_step_five_2:
+    '空投出版图书，一起去看电影首映，打造创作者经济范式。',
   index_roadmap_in_progress: '进行中',
+  member_title: '核心贡献成员',
 };
