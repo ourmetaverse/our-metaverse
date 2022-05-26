@@ -127,7 +127,13 @@ const Component: React.FC<Props> = () => {
             justify-content: center;
           `}
         >
-          <img src="/read-banner.png" alt="" />
+          <img
+            className={css`
+              width: 140%;
+            `}
+            src="/read-banner.png"
+            alt=""
+          />
         </div>
       </div>
     </StarCanvas>
