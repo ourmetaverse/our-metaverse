@@ -60,19 +60,19 @@ const Component: React.FC<Props> = () => {
       `)}
         >
           <Typography>
-            <div
-              className={css`
-                background: linear-gradient(150deg, #0f22ff, #ffffff);
-                background-clip: text;
-                color: transparent;
-              `}
-            >
-              <div className="ourm-title">Our Metaverse ,</div>
-              <div className="ourm-title">Our Dream !</div>
-            </div>
-
-            <div
-              className={css(`
+            <div title="F12 Get The EGG">
+              <div
+                className={css`
+                  background: linear-gradient(150deg, #0f22ff, #ffffff);
+                  background-clip: text;
+                  color: transparent;
+                `}
+              >
+                <div className="ourm-title">Our Metaverse ,</div>
+                <div className="ourm-title">Our Dream !</div>
+              </div>
+              <div
+                className={css(`
               font-size:20px;
               letter-spacing:0.06px;
               line-height:40px;
@@ -80,14 +80,14 @@ const Component: React.FC<Props> = () => {
               margin-bottom: 16px;
               font-weight:bold;
             `)}
-            >
-              {formatMessage({ id: 'index_intro_title_1' })}
-              <br />
-              {formatMessage({ id: 'index_intro_title_2' })}
-            </div>
-            <BlueLine left primary />
-            <div
-              className={css(`
+              >
+                {formatMessage({ id: 'index_intro_title_1' })}
+                <br />
+                {formatMessage({ id: 'index_intro_title_2' })}
+              </div>
+              <BlueLine left primary />
+              <div
+                className={css(`
               max-width:556px;
               font-size:16px;
               letter-spacing:0.05px;
@@ -99,8 +99,9 @@ const Component: React.FC<Props> = () => {
                 margin-bottom: 16px;
               }
             `)}
-            >
-              {formatMessage({ id: 'index_intro_content' })}
+              >
+                {formatMessage({ id: 'index_intro_content' })}
+              </div>
             </div>
           </Typography>
           <Space size="large" direction={pc ? 'horizontal' : 'vertical'}>

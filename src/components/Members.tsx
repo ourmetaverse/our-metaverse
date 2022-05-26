@@ -18,6 +18,7 @@ const Component: React.FC<Props> = () => {
           text-align: center;
           max-width: ${maxWidth};
           margin: 0 auto;
+          padding-top: 100px;
         `}
       >
         <div
