@@ -6,7 +6,6 @@ import BlueLine from '@/components/BlueLine';
 import IndexBtn from '@/components/IndexBtn';
 import { mobile, maxWidth } from '@/utils/css';
 import { useResponsive } from 'ahooks';
-import StarRing from './StarRing';
 import StarCanvas from './StarCanvas';
 
 interface Props {}
@@ -43,21 +42,21 @@ const Component: React.FC<Props> = () => {
       >
         <div
           className={css(`
-        display:flex;
-        flex: 1;
-        flex-direction:column;
-        justify-content:center;
-        .ourm-title {
-          font-size:70px;
-          letter-spacing:0.22px;
-          line-height:80px;
-          font-family: Rockwell;
-          ${mobile} {
-            font-size: 40px;
-            line-height:60px;
-          }
-        }
-      `)}
+            display:flex;
+            flex: 1;
+            flex-direction:column;
+            justify-content:center;
+            .ourm-title {
+              font-size:70px;
+              letter-spacing:0.22px;
+              line-height:80px;
+              font-family: Rockwell;
+              ${mobile} {
+                font-size: 40px;
+                line-height:60px;
+              }
+            }
+          `)}
         >
           <Typography>
             <div title="F12 Get The EGG">
@@ -118,48 +117,17 @@ const Component: React.FC<Props> = () => {
           </Space>
         </div>
         <div
-          className={css(`
-        display:flex;
-        flex: 1;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        ${mobile} {
-          display: none;
-        }
-      `)}
+          className={css`
+            width: 50%;
+            ${mobile} {
+              display: none;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          `}
         >
-          <div
-            className={css`
-              width: 650px;
-              height: 606px;
-              margin: 58px auto 58px auto;
-              position: relative;
-            `}
-          >
-            <img
-              className={css`
-                position: absolute;
-                left: 70px;
-                top: 0;
-                width: 620px;
-                height: 100%;
-              `}
-              src="/roles.png"
-              alt="OURM"
-            />
-            <div
-              className={css`
-                position: absolute;
-                left: 0;
-                top: 30%;
-                width: 100%;
-                height: 300px;
-              `}
-            >
-              <StarRing></StarRing>
-            </div>
-          </div>
+          <img src="/read-banner.png" alt="" />
         </div>
       </div>
     </StarCanvas>

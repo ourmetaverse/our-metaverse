@@ -29,7 +29,7 @@ export default {
   read_2029:
     'In 2029, humans land on Mars and start Mars migration. A small number of humans start to move to the Mars migration base.',
   read_2032:
-    'In 2032, humans land on Mars and initiate migration to Mars. A small number of humans begin to migrate to the Mars Migration Base.',
+    'In 2032, World War III breaks out and Earth enters the age of radiation. There is a mass death of human beings and tickets to the Mars base are hard to come by.',
   read_2049:
     'In 2049, the brain-computer interface breaks through and Mars immigration takes the lead in the meta-universe era. Human creativity appeared to explode, giving rise to a renaissance of human technology and culture. In the same year, Star Ring DAO was founded.',
   read_2057:

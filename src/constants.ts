@@ -159,4 +159,10 @@ export const members = [
     avatar: '/panda.png',
     desc: 'WEB 全栈开发，BUILD WEB3。',
   },
+  {
+    name: '小元',
+    title: '机器人助理',
+    avatar: '/assistant.png',
+    desc: '人工智能，服务每一位家人。',
+  },
 ];

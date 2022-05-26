@@ -162,7 +162,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               theme="dark"
               mode="horizontal"
               disabledOverflow
-              defaultSelectedKeys={[location.pathname]}
+              selectedKeys={[location.pathname]}
               style={{
                 backgroundColor: 'transparent',
               }}

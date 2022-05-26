@@ -3,6 +3,7 @@ import { Typography } from 'antd';
 import { css } from '@emotion/css';
 import { primaryColor, maxWidth, navHeight, mobile } from '@/utils/css';
 import { useIntl } from 'umi';
+import StarRing from '@/components/StarRing';
 
 interface Props {}
 
@@ -121,7 +122,49 @@ const Component: React.FC<Props> = () => {
               }
             `}
           >
-            <img src="/read-banner.png" alt="" />
+            <div
+              className={css`
+                width: 650px;
+                height: 606px;
+                position: relative;
+                ${mobile} {
+                  display: none;
+                }
+              `}
+            >
+              <img
+                className={css`
+                  position: absolute;
+                  left: 70px;
+                  top: 0;
+                  width: 620px;
+                  height: 100%;
+                `}
+                src="/roles.png"
+                alt="OURM"
+              />
+              <div
+                className={css`
+                  position: absolute;
+                  left: 0;
+                  top: 30%;
+                  width: 100%;
+                  height: 300px;
+                `}
+              >
+                <StarRing></StarRing>
+              </div>
+            </div>
+            <img
+              className={css`
+                display: none;
+                ${mobile} {
+                  display: block;
+                }
+              `}
+              src="/read-banner.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

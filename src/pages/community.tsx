@@ -33,12 +33,13 @@ export default () => {
       hoverIcon: '/wechat-hover.png',
       isWeChat: true,
     },
-    {
-      title: 'Discord',
-      icon: '/discord.png',
-      hoverIcon: '/discord-hover.png',
-      link: 'https://discord.gg/ku4rPFcr',
-    },
+    // 先不开
+    // {
+    //   title: 'Discord',
+    //   icon: '/discord.png',
+    //   hoverIcon: '/discord-hover.png',
+    //   link: 'https://discord.gg/ku4rPFcr',
+    // },
     {
       title: formatMessage({ id: 'jike' }),
       icon: '/jike.png',
