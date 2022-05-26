@@ -103,7 +103,7 @@ export default (props: Props) => {
           className={css`
             width: 100%;
           `}
-          src={`/ourm.png`}
+          src={`/blindbox.gif`}
         />
       ) : null}
       <Space

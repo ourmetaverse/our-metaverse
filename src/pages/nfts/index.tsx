@@ -52,7 +52,7 @@ export default (props: IRouteProps) => {
               width: ${document.body.clientWidth / 2 - 24}px;
             }
           `}
-          src="/ourm.png"
+          src="/blindbox.gif"
           alt=""
           onClick={() => {
             if (!pc) {
@@ -144,7 +144,7 @@ export default (props: IRouteProps) => {
               `}
               width={400}
               height={400}
-              src="/ourm.png"
+              src="/blindbox.gif"
               alt=""
             />
           </Col>
