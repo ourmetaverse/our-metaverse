@@ -39,6 +39,7 @@ export default () => {
         maxSize={8}
         shape="cross star"
         zIndex={0}
+        visible
         background="linear-gradient(190deg, #041352, #060F35, #142E9D 40%, #000000)"
       >
         <div

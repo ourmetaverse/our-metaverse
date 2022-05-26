@@ -96,8 +96,8 @@ const StarCanvas = (props: Prop) => {
           left: 0;
           top: 0;
           width: 100%;
-          height: auto;
-          background:${background};
+          height: ${visible ? 'auto' : 0};
+          background:${visible ? background : 'transparent'};
         `)}
       ></canvas>
       {props?.children}

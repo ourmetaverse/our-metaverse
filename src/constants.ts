@@ -102,8 +102,8 @@ export const members = [
   {
     name: '年糕荷',
     title: '品牌官',
-    avatar: '/pfp3.jpg',
-    desc: '新媒体运营，资深吃货，萌妹子。',
+    avatar: '/niangao.jpg',
+    desc: '人文艺术内容创作者，杭州野生代言人。',
   },
   {
     name: 'Bear',
