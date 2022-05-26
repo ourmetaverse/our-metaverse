@@ -130,6 +130,12 @@ export const members = [
     desc: '某交易所运营，混迹各种社区。',
   },
   {
+    name: 'Roger Zhu',
+    title: '搞事组',
+    avatar: '/roger.jpg',
+    desc: 'Roger Zhu: Founder @ FirstPod.xyz.',
+  },
+  {
     name: 'Jackson',
     title: '国际化运营',
     avatar: '/jackson.png',
