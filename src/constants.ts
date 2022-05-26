@@ -141,4 +141,16 @@ export const members = [
     avatar: '/pfp2.jpg',
     desc: '自媒体人，战略PMO。',
   },
+  {
+    name: '可可',
+    title: '工程师',
+    avatar: '/keke.jpg',
+    desc: '某大厂前端开发，定投小能手。',
+  },
+  {
+    name: 'panda',
+    title: '工程师',
+    avatar: '/panda.png',
+    desc: '合约老司机，币圈老韭菜。',
+  },
 ];

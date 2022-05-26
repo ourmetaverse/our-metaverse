@@ -16,30 +16,30 @@ const StarRing = () => {
           y2="58.5925516%"
           id="linearGradient-imfhulbqmp-1"
         >
-          <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+          <stop stopColor="#FFFFFF" stopOpacity="0" offset="0%"></stop>
           <stop
-            stop-color="#D1D9F9"
-            stop-opacity="0.0780157343"
+            stopColor="#D1D9F9"
+            stopOpacity="0.0780157343"
             offset="45.3425481%"
           ></stop>
           <stop
-            stop-color="#637FF1"
-            stop-opacity="0.712378141"
+            stopColor="#637FF1"
+            stopOpacity="0.712378141"
             offset="74.9535621%"
           ></stop>
-          <stop stop-color="#637FF1" offset="100%"></stop>
+          <stop stopColor="#637FF1" offset="100%"></stop>
         </linearGradient>
       </defs>
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#fff" />
-          <stop offset="25%" stop-color="#00f" />
-          <stop offset="50%" stop-color="#fff" />
-          <stop offset="75%" stop-color="#00f" />
-          <stop offset="100%" stop-color="#fff" />
+          <stop offset="0%" stopColor="#fff" />
+          <stop offset="25%" stopColor="#00f" />
+          <stop offset="50%" stopColor="#fff" />
+          <stop offset="75%" stopColor="#00f" />
+          <stop offset="100%" stopColor="#fff" />
         </linearGradient>
       </defs>
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g
           transform="translate(-721.000000, -312.000000)"
           fill="url(#linearGradient-imfhulbqmp-1)"

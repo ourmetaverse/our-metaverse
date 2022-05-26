@@ -39,6 +39,7 @@ export default () => {
         maxSize={8}
         shape="cross star"
         zIndex={0}
+        background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
       >
         <div
           className={css`
@@ -59,6 +60,7 @@ export default () => {
       <ReactFullpage
         // license for opensource GPLv3 license
         licenseKey="ourm-metaverse"
+        scrollOverflow
         scrollingSpeed={500} /* Options here */
         render={() => {
           return <ReactFullpage.Wrapper>{content}</ReactFullpage.Wrapper>;
