@@ -145,6 +145,27 @@ export default function MintButton(props: MintButtonProps) {
         disabled={disabled}
         loading={minting}
         type="primary"
+        className={css`
+          overflow: hidden;
+          &::after {
+            background: #fff;
+            content: '';
+            height: 155px;
+            left: -75px;
+            opacity: 0.2;
+            position: absolute;
+            top: -50px;
+            transform: rotate(35deg);
+            width: 50px;
+            z-index: 1;
+          }
+          &:hover {
+            ::after {
+              left: 120%;
+              transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+          }
+        `}
         onClick={async () => {
           if (minting || props.disabled || !contract || !signer) {
             return;
@@ -196,9 +217,6 @@ export default function MintButton(props: MintButtonProps) {
                     })}
                   </a>
                   <Divider />
-                  <a href={wechatLink} target="_blank" rel="noreferrer">
-                    OURM 的家人们点我加入微信群
-                  </a>
                 </div>
               ),
             });

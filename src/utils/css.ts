@@ -9,23 +9,3 @@ export const fontColor = `
   background-clip: text;
   color: transparent;
 `;
-
-// 鼠标发光 hover 效果，备用
-// &::after {
-//   background: #fff;
-//   content: "";
-//   height: 155px;
-//   left: -75px;
-//   opacity: .2;
-//   position: absolute;
-//   top: -50px;
-//   transform: rotate(35deg);
-//   width: 50px;
-//   z-index: 1;
-// }
-// &:hover {
-//   ::after {
-//     left: 120%;
-//     transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1);
-//   }
-// }
