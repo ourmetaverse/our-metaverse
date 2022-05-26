@@ -1,5 +1,5 @@
 // @ts-ignore
-import ReactFullpage from '@fullpage/react-fullpage';
+import ReactFullpage from '@/utils/fullpage';
 import { css } from '@emotion/css';
 import IntroBanner from '@/components/IntroBanner';
 import BenefitBanner from '@/components/BenefitBanner';

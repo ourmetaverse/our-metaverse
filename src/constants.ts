@@ -162,7 +162,7 @@ export const members = [
   {
     name: '小元',
     title: '机器人助理',
-    avatar: '/assistant.png',
+    avatar: '/ourm.png',
     desc: '人工智能，服务每一位家人。',
   },
 ];

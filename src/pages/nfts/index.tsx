@@ -52,7 +52,7 @@ export default (props: IRouteProps) => {
               width: ${document.body.clientWidth / 2 - 24}px;
             }
           `}
-          src="/xuanwu.png"
+          src="/ourm.png"
           alt=""
           onClick={() => {
             if (!pc) {
@@ -144,7 +144,7 @@ export default (props: IRouteProps) => {
               `}
               width={400}
               height={400}
-              src="/xuanwu.png"
+              src="/ourm.png"
               alt=""
             />
           </Col>
