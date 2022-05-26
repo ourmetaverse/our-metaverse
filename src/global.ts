@@ -5,4 +5,11 @@ configResponsive({
   pc: 767,
 });
 
-console.log('🪐 VmlldyB0aGUgSFRNTCBzb3VyY2UgY29kZSBmb3IgZmluZCBuZXh0IGNsdWU=');
+setTimeout(() => {
+  if (console.clear) {
+    console.clear();
+  }
+  console.log(
+    '🪐 VmlldyB0aGUgSFRNTCBzb3VyY2UgY29kZSBmb3IgZmluZCBuZXh0IGNsdWU=',
+  );
+}, 1000);
