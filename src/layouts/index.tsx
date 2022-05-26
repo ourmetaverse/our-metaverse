@@ -135,37 +135,27 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
               color: white;
               z-index: 2;
               opacity: 0.9;
-              &:hover {
-                opacity: 1;
-                color: white;
-              }
-              ${mobile} {
-                font-size: 20px;
-              }
             `}
           >
-            <img
-              src="/favicon.png"
+            <div
               className={css`
-                height: 50px;
-                margin-right: 8px;
-                border-radius: 50%;
-                margin-top: -5px;
-                opacity: 1;
+                overflow: hidden;
+                background: url(/logo.svg) no-repeat;
+                background-size: 300px 55px;
+                background-position-y: 16px;
+                height: 100%;
+                &:hover {
+                  opacity: 1;
+                  color: white;
+                }
                 ${mobile} {
-                  height: 40px;
+                  font-size: 20px;
+                  width: 55px;
+                  background-size: 200px 37px;
+                  background-position-y: 25px;
                 }
               `}
             />
-            {pc ? (
-              <span
-                className={css`
-                  display: inline-block;
-                `}
-              >
-                OurMetaverse
-              </span>
-            ) : null}
           </Link>
           {pc ? (
             <Menu

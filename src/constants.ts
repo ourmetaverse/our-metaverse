@@ -95,9 +95,9 @@ export const roles = [
 export const members = [
   {
     name: '愚指导',
-    title: '创始人',
+    title: '梦想家',
     avatar: '/pfp5.jpg',
-    desc: 'Web3 程序员，科幻作家，创作者，梦想家。',
+    desc: 'Web3 程序员，科幻作家，独立创作者。',
   },
   {
     name: '年糕荷',
@@ -113,9 +113,9 @@ export const members = [
   },
   {
     name: 'Koroo',
-    title: '艺术家',
+    title: '设计师',
     avatar: '/koroo.png',
-    desc: '有范艺术家，独立工作室。',
+    desc: 'PFP & Logo 设计师，臭画画的。',
   },
   {
     name: '柳乘风',
