@@ -5,7 +5,7 @@ import ReadBanner from '@/components/ReadBanner';
 import RoleBanner from '@/components/RoleBanner';
 import { css } from '@emotion/css';
 import { maxWidth, mobile, desktop } from '@/utils/css';
-import { useIntl, getLocale } from 'umi';
+import { useIntl } from 'umi';
 
 export default () => {
   const { formatMessage } = useIntl();

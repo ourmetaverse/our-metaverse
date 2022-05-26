@@ -133,7 +133,7 @@ const Component: React.FC<Props> = () => {
         >
           {roles.map((item) => {
             return (
-              <div className="ourm-role">
+              <div key={item.name} className="ourm-role">
                 <img src={item.img} alt={item.name} />
                 <div className="ourm-role-detail">
                   <div className="ourm-role-name">

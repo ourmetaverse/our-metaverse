@@ -51,7 +51,6 @@ const StarCanvas = (props: Prop) => {
   const size = useSize(document.querySelector('body'));
 
   useEffect(() => {
-    console.log(size);
     if (size === undefined) {
       return;
     }

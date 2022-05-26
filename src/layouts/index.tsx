@@ -1,5 +1,4 @@
-import { Layout, Menu, Divider, Drawer } from 'antd';
-import { contractAddress } from '@/constants';
+import { Layout, Menu, Drawer } from 'antd';
 import { Link, useIntl, setLocale, getLocale, IRouteComponentProps } from 'umi';
 import { css } from '@emotion/css';
 import { MenuOutlined } from '@ant-design/icons';
@@ -211,6 +210,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
         </Drawer>
       </Header>
       <Content>{children}</Content>
+      {location.pathname !== '/' ? <Footer /> : null}
     </Layout>
   );
 };
