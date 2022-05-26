@@ -91,6 +91,8 @@ export default {
   wechat: '微信群',
   nfts: '画廊',
   nft_gallery: 'NFT 画廊',
+  nft_gallery_desc:
+    'NFT 头像艺术品还在设计中，会融入小说背景和科幻元素。我们努力提供酷酷的作品给家人们，敬请期待！',
   wechat_tip:
     '仅 OurMetaverseDAO 成员可以加入微信群和电报群，请先连接钱包认证。',
   jike: '即刻',

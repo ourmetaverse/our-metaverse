@@ -97,6 +97,14 @@ export default (props: IRouteProps) => {
           `}
         >
           <div>{formatMessage({ id: 'nft_gallery' })}</div>
+          <div
+            className={css`
+              font-size: 16px;
+              opacity: 0.7;
+            `}
+          >
+            {formatMessage({ id: 'nft_gallery_desc' })}
+          </div>
           <BlueLine left />
         </div>
         <Space

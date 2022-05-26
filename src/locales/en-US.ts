@@ -95,6 +95,8 @@ export default {
   add_grant: 'Grant New',
   nfts: 'Gallery',
   nft_gallery: 'NFT Gallery',
+  nft_gallery_desc:
+    'NFT PFP is still being designed and will incorporate fictional settings and sci-fi elements. We strive to provide cool artwork to our families, so stay tuned!',
   donate_tip:
     'Direct transfer to the contract can donate to all members of OurMetaverseDAO',
   donate: 'Donate to OurMetaverseDAO',
