@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Divider } from 'antd';
 import { useModel, useIntl } from 'umi';
 import showMessage from '@/utils/showMessage';
 import { ethers } from 'ethers';
-import { bookPrice, commonPrice, moviePrice, wechatLink } from '@/constants';
+import { bookPrice, commonPrice, moviePrice } from '@/constants';
 import { css } from '@emotion/css';
 import { mobile } from '@/utils/css';
 
@@ -34,6 +34,15 @@ export default function MintButton(props: MintButtonProps) {
   } else if (type === 'movie') {
     price = moviePrice;
   }
+
+  useEffect(() => {
+    if (mintAmount <= 0) {
+      setMintAmount(Math.min(max));
+    }
+    if (mintAmount > max) {
+      setMintAmount(Math.min(max));
+    }
+  }, [max]);
 
   return (
     <div
@@ -216,7 +225,6 @@ export default function MintButton(props: MintButtonProps) {
                       id: 'view_on_opensea',
                     })}
                   </a>
-                  <Divider />
                 </div>
               ),
             });
