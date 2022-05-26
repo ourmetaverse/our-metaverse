@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import { maxWidth, mobile } from '@/utils/css';
+import { useResponsive } from 'ahooks';
 
 interface SliderRowProps {
   items: string[];
@@ -8,16 +9,24 @@ interface SliderRowProps {
 }
 
 const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
+  const { pc } = useResponsive();
   return (
     <div
       className={css`
         position: relative;
-        animation: ${right ? 'scrollright' : 'scroll'} 30s linear infinite;
-        -webkit-animation: ${right ? 'scrollright' : 'scroll'} 30s linear
-          infinite;
+        animation: ${right
+            ? `${!pc ? 'mobile' : ''}scrollright`
+            : `${!pc ? 'mobile' : ''}scroll`}
+          10s linear ${!pc ? 'infinite' : ''};
+        -webkit-animation: ${right
+            ? `${!pc ? 'mobile' : ''}scrollright`
+            : `${!pc ? 'mobile' : ''}scroll`}
+          10s linear ${!pc ? 'infinite' : ''};
         margin-bottom: 54px;
         width: 1280px;
+        left: calc(50% - 640px);
         ${mobile} {
+          left: auto;
           width: 900px;
         }
       `}

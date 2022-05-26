@@ -41,26 +41,42 @@ code {
     left: -800px;
   }
 
-  50% {
-    left: 80%;
-  }
-
   100% {
-    left: -800px;
+    left: calc(50% - 640px);
   }
 }
 
 @keyframes scrollright {
   0% {
-    left: 80%;
-  }
-
-  50% {
-    left: -800px;
+    left: calc(100% - 480px);
   }
 
   100% {
-    left: 80%;
+    left: calc(50% - 640px);
+  }
+}
+
+@keyframes mobilescroll {
+  0% {
+    left: calc(100% - 900px);
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 900px);
+  }
+}
+
+@keyframes mobilescrollright {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 900px);
+  }
+  100% {
+    left: 0;
   }
 }
 
