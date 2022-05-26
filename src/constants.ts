@@ -157,6 +157,6 @@ export const members = [
     name: 'Panda',
     title: '工程师',
     avatar: '/panda.png',
-    desc: '合约老司机，币圈老韭菜。',
+    desc: 'WEB 全栈开发，BUILD WEB3。',
   },
 ];
