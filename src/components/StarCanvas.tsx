@@ -37,12 +37,9 @@ const generateStars = (
 
 const StarCanvas = (props: Prop) => {
   const visible = props.visible;
-  if (visible === false) {
-    return <>{props.children}</>;
-  }
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ctx = useRef<CanvasRenderingContext2D | null>(null);
-  const numStars = props.numStars || 2000;
+  const numStars = visible ? props.numStars || 100 : 0;
   const FPS = props.FPS || 50;
   const minSize = props.minSize || 1;
   const maxSize = props.maxSize || 3;
@@ -67,7 +64,7 @@ const StarCanvas = (props: Prop) => {
       props?.shape,
     );
     const animate = () => {
-      if (ctx.current) {
+      if (ctx.current && visible) {
         ctx.current.clearRect(0, 0, width, height);
         for (let i = 0; i < stars.length; i++) {
           stars[i].draw(ctx.current);
@@ -78,7 +75,16 @@ const StarCanvas = (props: Prop) => {
     return () => {
       clearInterval(timer);
     };
-  }, [size, canvasRef, generateStars, numStars, FPS, minSize, maxSize]);
+  }, [
+    size,
+    canvasRef,
+    generateStars,
+    numStars,
+    FPS,
+    minSize,
+    maxSize,
+    visible,
+  ]);
 
   return (
     <>

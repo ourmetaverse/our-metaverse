@@ -36,6 +36,7 @@ const ConnectWallet: React.FC<Props> = ({ style, size }) => {
       <IndexBtn
         height={size === 'small' ? '40px' : '52px'}
         fontSize={size === 'small' ? '16px' : '20px'}
+        size={size}
         onClick={connect}
       >
         {loading

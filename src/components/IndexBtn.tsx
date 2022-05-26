@@ -6,6 +6,7 @@ interface Props {
   width?: string;
   height?: string;
   fontSize?: string;
+  size?: 'small';
 }
 
 const Component: React.FC<Props> = ({
@@ -14,6 +15,7 @@ const Component: React.FC<Props> = ({
   height = '79px',
   fontSize = '20px',
   onClick,
+  size,
 }) => {
   return (
     <div
@@ -50,7 +52,8 @@ const Component: React.FC<Props> = ({
           }
         }
         .index-btn-content {
-          margin-top: -10px;
+          margin-top: ${size === 'small' ? '-5px' : '-10px'};
+          transform: skew(-6deg);
         }
       `)}
     >

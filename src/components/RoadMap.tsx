@@ -131,15 +131,6 @@ const Step = (props: StepProps) => {
           text-align: center;
           padding-top: 8px;
           height: 126px;
-          ${mobile} {
-            flex-direction: row;
-            width: 260px;
-            div {
-              margin-right: 8px;
-              white-space: nowrap;
-              overflow: hidden;
-            }
-          }
         `}
       >
         <div

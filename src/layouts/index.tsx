@@ -118,6 +118,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
                 margin-right: 16px;
                 font-size: 28px;
                 z-index: 2;
+                opacity: 0.7;
               `}
               onClick={() => {
                 console;

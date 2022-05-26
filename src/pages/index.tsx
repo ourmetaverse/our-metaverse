@@ -33,13 +33,13 @@ export default () => {
   if (!pc) {
     return (
       <StarCanvas
-        numStars={100}
+        numStars={60}
         FPS={30}
         minSize={3}
         maxSize={8}
         shape="cross star"
         zIndex={0}
-        background="linear-gradient(to right bottom, #000000, #060F35, #142E9D, #041352)"
+        background="linear-gradient(190deg, #041352, #060F35, #142E9D 40%, #000000)"
       >
         <div
           className={css`
