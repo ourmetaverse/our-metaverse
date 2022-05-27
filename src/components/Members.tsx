@@ -6,13 +6,14 @@ import { useResponsive } from 'ahooks';
 import { mobile, fontColor, maxWidth } from '@/utils/css';
 import BlueLine from '@/components/BlueLine';
 import Footer from '@/components/Footer';
-import { useIntl } from 'umi';
+import { useIntl, getLocale } from 'umi';
 
 interface Props {}
 
 const Component: React.FC<Props> = () => {
   const { pc } = useResponsive();
   const { formatMessage } = useIntl();
+  const keyTail = getLocale() === 'en-US' ? '_en' : '';
   return (
     <div>
       <div
@@ -63,7 +64,7 @@ const Component: React.FC<Props> = () => {
                       }
                     `}
                     src={m.avatar}
-                    alt={m.name}
+                    alt={m[`name${keyTail}`]}
                   />
                   <div
                     className={css`
@@ -76,7 +77,7 @@ const Component: React.FC<Props> = () => {
                       }
                     `}
                   >
-                    {m.name}
+                    {m[`name${keyTail}`]}
                   </div>
                   <div
                     className={css`
@@ -87,7 +88,7 @@ const Component: React.FC<Props> = () => {
                       }
                     `}
                   >
-                    {m.title}
+                    {m[`title${keyTail}`]}
                   </div>
                   <div
                     className={css`
@@ -99,7 +100,7 @@ const Component: React.FC<Props> = () => {
                       }
                     `}
                   >
-                    {m.desc}
+                    {m[`desc${keyTail}`]}
                   </div>
                 </div>
               </Col>
