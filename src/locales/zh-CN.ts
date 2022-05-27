@@ -115,10 +115,10 @@ export default {
     '拥有对应的 PFP。该系列图片正在基于小说背景创作，还会埋入很多科幻彩蛋哦。所有 NFT 均能收到对应 PFP。',
   index_benefit_grant: '二次创作授权',
   index_benefit_grant_content:
-    '拥有 OurMetaverseDAO 作品集中包含的所有作品的数字化形式的修改权和翻译权，可以进行二次创作。二创的商业授权逻辑通过智能合约实现。',
+    '拥有 OurMetaverseDAO 作品集中包含的所有作品的数字化形式的修改权和翻译权，可以进行二次创作。二创的商业授权逻辑通过智能合约实现，并定义了 ERC721M 的规范。',
   index_benefit_share: '项目收益分成',
   index_benefit_share_content:
-    '拥有 OurMetaverseDAO 作品集中包含的所有作品的数字化形式的修改权和翻译权，可以进行二次创作。二创的商业授权逻辑通过智能合约实现。',
+    '享受未来 IP 发展带来的收益，我们定义了图书书版权和影视改编权的出售逻辑，以及商业使用的授权逻辑，这些均能给项目带来收益，收益通过合约自动分发给 NFT Holder。',
   index_roadmap_title: '项目路线图',
   index_roadmap_step_one: '第一阶段',
   index_roadmap_step_two: '第二阶段',
