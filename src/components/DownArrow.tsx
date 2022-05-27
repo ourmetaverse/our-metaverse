@@ -1,5 +1,5 @@
 import React from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import downAnimationData from '@/lottie/down.json';
 import { css } from '@emotion/css';
 import { mobile } from '@/utils/css';
@@ -18,15 +18,11 @@ const Component: React.FC = () => {
       `}
     >
       <Lottie
-        options={{
-          loop: true,
-          autoplay: true,
-          animationData: downAnimationData,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-          },
+        animationData={downAnimationData}
+        loop
+        style={{
+          width: 100,
         }}
-        width={100}
       />
     </div>
   );
