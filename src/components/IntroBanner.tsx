@@ -94,7 +94,7 @@ const Component: React.FC<Props> = () => {
               line-height:36px;
               font-family: 苹方-简;
               opacity:0.5;
-              margin-bottom: 55px;
+              margin-bottom: 32px;
               ${mobile} {
                 margin-bottom: 16px;
               }

@@ -18,7 +18,7 @@ const Component: React.FC<Props> = ({ width = 180, primary, left }) => {
         height: 20px;
         margin: 0 ${left ? '' : 'auto'};
         margin-top: 16px;
-        margin-bottom: 64px;
+        margin-bottom: 32px;
         ${mobile} {
           margin-bottom: 32px;
         }
