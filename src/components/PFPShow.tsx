@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/css';
 import { maxWidth, mobile } from '@/utils/css';
 import { useResponsive } from 'ahooks';
+import DownArrow from './DownArrow';
 
 interface SliderRowProps {
   items: string[];
@@ -85,6 +86,7 @@ const Component: React.FC = () => {
         right
         items={['/pfp7.jpg', '/pfp8.jpg', '/pfp9.jpg', '/pfp10.jpg']}
       />
+      <DownArrow />
     </div>
   );
 };

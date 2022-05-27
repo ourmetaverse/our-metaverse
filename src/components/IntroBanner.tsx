@@ -6,6 +6,7 @@ import BlueLine from '@/components/BlueLine';
 import IndexBtn from '@/components/IndexBtn';
 import { mobile, maxWidth } from '@/utils/css';
 import { useResponsive } from 'ahooks';
+import DownArrow from '@/components/DownArrow';
 import StarCanvas from './StarCanvas';
 
 interface Props {}
@@ -135,6 +136,7 @@ const Component: React.FC<Props> = () => {
             alt=""
           />
         </div>
+        <DownArrow />
       </div>
     </StarCanvas>
   );

@@ -3,6 +3,7 @@ import { useIntl } from 'umi';
 import { css } from '@emotion/css';
 import { maxWidth, mobile } from '@/utils/css';
 import BlueLine from '@/components/BlueLine';
+import DownArrow from './DownArrow';
 
 interface StepProps {
   name: string;
@@ -288,6 +289,7 @@ export default () => {
           </Row>
         </div>
       </div>
+      <DownArrow />
     </div>
   );
 };

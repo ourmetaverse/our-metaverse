@@ -4,6 +4,7 @@ import { css } from '@emotion/css';
 import BlueLine from '@/components/BlueLine';
 import { maxWidth, mobile } from '@/utils/css';
 import BenefitItem from '@/components/BenefitItem';
+import DownArrow from './DownArrow';
 
 const Component: React.FC = () => {
   const { formatMessage } = useIntl();
@@ -77,6 +78,7 @@ const Component: React.FC = () => {
           <BenefitItem item={item} key={item.title} />
         ))}
       </div>
+      <DownArrow />
     </div>
   );
 };

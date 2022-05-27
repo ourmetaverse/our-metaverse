@@ -158,6 +158,9 @@ const Component: React.FC<Props> = () => {
             <img
               className={css`
                 display: none;
+                width: 100%;
+                margin-top: 226px;
+                margin-left: 36px;
                 ${mobile} {
                   display: block;
                 }
