@@ -39,7 +39,11 @@ export default () => {
         <Divider type="vertical" />
         <a href={`https://v1.our-metaverse.xyz`}>V1 Site</a>
         {pc ? <Divider type="vertical" /> : <br />}
-        <a href={`https://discord.gg/EPh8xZZ6yz`}>Discord</a>
+        <a
+          href={`https://m.okjike.com/users/9B1FBD80-B109-4AAA-AD5C-568142A67D5C`}
+        >
+          Jike
+        </a>
         <Divider type="vertical" />
         <a href={`https://twitter.com/OurMetaverseDAO`}>Twitter</a>
       </div>

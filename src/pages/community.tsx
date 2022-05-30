@@ -44,7 +44,7 @@ export default () => {
       title: formatMessage({ id: 'jike' }),
       icon: '/jike.png',
       hoverIcon: '/jike-hover.png',
-      link: 'https://okjk.co/4o6WHD',
+      link: 'https://m.okjike.com/users/9B1FBD80-B109-4AAA-AD5C-568142A67D5C',
     },
     {
       title: 'Twitter',
