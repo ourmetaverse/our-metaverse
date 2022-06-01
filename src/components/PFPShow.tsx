@@ -78,7 +78,13 @@ const SliderRow: React.FC<SliderRowProps> = ({ items, right }) => {
 
 const Component: React.FC = () => {
   return (
-    <div>
+    <div
+      className={css`
+        ${mobile} {
+          overflow: hidden;
+        }
+      `}
+    >
       <SliderRow
         items={['/pfp13.jpg', '/pfp4.jpg', '/pfp12.jpg', '/pfp6.jpg']}
       />
