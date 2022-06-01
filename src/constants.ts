@@ -176,13 +176,13 @@ export const members = [
     desc_en: 'Roger Zhu: Founder @ FirstPod.xyz.',
   },
   {
-    name: '可可',
-    name_en: 'Koko',
+    name: '心豆茶',
+    name_en: 'Xindoucha',
     title: '工程师',
     title_en: 'Engineer',
     avatar: '/keke.jpg',
-    desc: '某大厂前端开发，定投小能手。',
-    desc_en: 'A front-end developer, a supporter of FirstPod.',
+    desc: '程序员，web3 爱好者，定投小能手。',
+    desc_en: 'Programmer, Web3 enthusiast, Good at fund fixed investment.',
   },
   {
     name: 'Panda',
