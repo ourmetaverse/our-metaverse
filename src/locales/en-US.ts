@@ -92,7 +92,8 @@ export default {
   withdraw_succeed: 'Withdraw request succeed.',
   grant_required: 'Grant content required.',
   grant_limit: 'Grant content length limit: {grantLimitLength}',
-  add_grant: 'Grant New',
+  add_grant: 'Grant',
+  grant_validate: 'Grant content format validation error',
   nfts: 'Gallery',
   nft_gallery: 'NFT Gallery',
   nft_gallery_desc:

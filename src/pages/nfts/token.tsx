@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
 import { useModel, useIntl, IRouteProps } from 'umi';
-import { Button, Input, List, message, Space, Typography } from 'antd';
+import { Button, Input, List, message, Space, Typography, Select } from 'antd';
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
 import { css } from '@emotion/css';
@@ -9,9 +9,26 @@ import ImageIcon from '@/components/ImageIcon';
 import { mobile } from '@/utils/css';
 import { useResponsive } from 'ahooks';
 
+const { Option } = Select;
+
 interface Props extends IRouteProps {
   token?: number;
 }
+
+const GRANT_INFO = {
+  ipfs: {
+    reg: /^\w{46}(\/.*)?$/,
+    placeholder: 'CID like QmP1vMSaw3rG2coQaBfgqBhax1t8qyyng1Z91cjcH8MvBc',
+  },
+  ethereum: {
+    reg: /^0x[0-9a-fA-F]{40}$/,
+    placeholder: 'Address like 0xEcd0D12E21805803f70de03B72B1C162dB0898d9',
+  },
+  custom: {
+    reg: /^.{1, 128}$/,
+    placeholder: 'Custom text length less then 128',
+  },
+};
 
 export default (props: Props) => {
   // props token 存在说明是在 pc 端直接嵌套
@@ -28,6 +45,9 @@ export default (props: Props) => {
     useModel('user');
   const { formatMessage } = useIntl();
   const [owner, setOwner] = useState<string>();
+  const [grantType, setGrantType] = useState<'ipfs' | 'ethereum' | 'custom'>(
+    'ipfs',
+  );
 
   if (token >= totalSupply) {
     return <div>{formatMessage({ id: 'empty_token_tip' }, { token })}</div>;
@@ -147,7 +167,19 @@ export default (props: Props) => {
           address === owner ? (
             <Input.Group compact>
               <Input
-                style={{ width: 'calc(100% - 150px)' }}
+                placeholder={GRANT_INFO[grantType].placeholder}
+                addonBefore={
+                  <Select
+                    onChange={setGrantType}
+                    value={grantType}
+                    className="select-before"
+                  >
+                    <Option value="ipfs">ipfs://</Option>
+                    <Option value="ethereum">Ethereum</Option>
+                    <Option value="custom">Custom</Option>
+                  </Select>
+                }
+                style={{ width: 'calc(100% - 67px)' }}
                 value={grantStr}
                 onChange={(e) => {
                   setGrantStr(e.target.value);
@@ -158,6 +190,10 @@ export default (props: Props) => {
                 onClick={() => {
                   if (!grantStr) {
                     message.error(formatMessage({ id: 'grant_required' }));
+                    return;
+                  }
+                  if (!GRANT_INFO[grantType].reg.test(grantStr)) {
+                    message.error(formatMessage({ id: 'grant_validate' }));
                     return;
                   }
                   if (grantStr.length > grantLimitLength) {
@@ -178,9 +214,13 @@ export default (props: Props) => {
                   const value = ethers.utils.parseEther(
                     String(grants.length * price),
                   );
-                  contractWithSigner.grant(token, grantStr, {
-                    value,
-                  });
+                  contractWithSigner.grant(
+                    token,
+                    grantType === 'ipfs' ? `ipfs://${grantStr}` : grantStr,
+                    {
+                      value,
+                    },
+                  );
                 }}
               >
                 {formatMessage({ id: 'add_grant' })}
