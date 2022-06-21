@@ -1,8 +1,10 @@
 import MintBanner from '@/components/MintBanner';
 import { mobile } from '@/utils/css';
 import { css } from '@emotion/css';
+import { useIntl } from 'umi';
 
 export default () => {
+  const { formatMessage } = useIntl();
   return (
     <div
       className={css`
@@ -31,6 +33,14 @@ export default () => {
         `}
       >
         <MintBanner />
+        <div
+          className={css`
+            font-size: 20px;
+            margin-top: 18px;
+          `}
+        >
+          {formatMessage({ id: 'mint_slogan' })}
+        </div>
       </div>
     </div>
   );

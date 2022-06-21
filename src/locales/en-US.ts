@@ -150,4 +150,5 @@ export default {
   index_roadmap_step_five_2: 'Go see the movie premiere together!',
   index_roadmap_in_progress: 'in progress',
   member_title: 'Core Members',
+  mint_slogan: 'We are made of star stuff',
 };

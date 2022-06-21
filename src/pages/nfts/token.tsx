@@ -46,7 +46,7 @@ export default (props: Props) => {
   const { formatMessage } = useIntl();
   const [owner, setOwner] = useState<string>();
   const [grantType, setGrantType] = useState<'ipfs' | 'ethereum' | 'custom'>(
-    'ipfs',
+    'ethereum',
   );
 
   if (token >= totalSupply) {
@@ -174,8 +174,8 @@ export default (props: Props) => {
                     value={grantType}
                     className="select-before"
                   >
-                    <Option value="ipfs">ipfs://</Option>
                     <Option value="ethereum">Ethereum</Option>
+                    <Option value="ipfs">ipfs://</Option>
                     <Option value="custom">Custom</Option>
                   </Select>
                 }
