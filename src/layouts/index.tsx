@@ -5,7 +5,7 @@ import { MenuOutlined } from '@ant-design/icons';
 import ConnectWallet from '@/components/ConnectWallet';
 import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
 import { useResponsive } from 'ahooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '@/components/Footer';
 
 const { Header, Content } = Layout;
@@ -18,6 +18,9 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
   const { formatMessage } = useIntl();
   const { pc } = useResponsive();
   const isCN = getLocale() === 'zh-CN';
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   const items = (
     <>
       <Menu.Item key="/">

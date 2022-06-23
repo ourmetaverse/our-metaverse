@@ -22,10 +22,14 @@ export default (props: IRouteProps) => {
   useEffect(() => {
     let token = props.location.query.token;
     if (token !== undefined) {
-      token = parseInt(token);
-      setCurrent(token);
+      if (!pc) {
+        history.push(`nfts/token?token=${token}`);
+      } else {
+        token = parseInt(token);
+        setCurrent(token);
+      }
     }
-  }, [props.location.query.token]);
+  }, [props.location.query.token, pc]);
 
   for (
     let i = (page - 1) * pageSize;

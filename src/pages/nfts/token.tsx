@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
-import { useModel, useIntl, IRouteProps } from 'umi';
+import { useModel, useIntl, IRouteProps, history } from 'umi';
 import { Button, Input, List, message, Space, Typography, Select } from 'antd';
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
@@ -54,6 +54,9 @@ export default (props: Props) => {
   }
 
   useEffect(() => {
+    if (pc && props.location?.query.token) {
+      history.push(`/nfts?token=${token}`);
+    }
     if (contract) {
       contract
         .getRewardBalanceWithToken(token)
@@ -79,7 +82,7 @@ export default (props: Props) => {
           message.error(e.data?.message || e.message);
         });
     }
-  }, [contract, token]);
+  }, [contract, token, pc]);
 
   if (!contract || !contractWithSigner) {
     return (
