@@ -20,6 +20,7 @@ export default {
   erc_contract_3_desc:
     '在我们的合约中定义了两个特殊的接口，buyBookToken 和 buyMovieToken，任何人都可以通过调用它获取图书出版权和影视改编权，相关收益会平分给所有 Holder。出版权和改编权可以被多次使用，每次使用都会有收益产生，而且是递增的，确保随着 IP 发展让 Holder 可以持续获取收益。',
   read: '创世小说',
+  microsf: '小科幻征文',
   read_title: '我们的元宇宙',
   read_subtitle: '开端',
   read_2028:

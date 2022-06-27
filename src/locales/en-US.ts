@@ -22,6 +22,7 @@ export default {
     'In our contract, we define two special interfaces, buyBookToken and buyMovieToken, which can be called by anyone to get book publishing rights and movie adaptation rights, and the related revenue will be equally distributed to all Holders. This allows Holder to continue to earn revenue as the IP develops.',
   universe: 'Structure',
   read: 'Read',
+  microsf: 'MicroSF',
   read_title: 'Our Metaverse',
   read_subtitle: 'Geneis',
   read_2028:

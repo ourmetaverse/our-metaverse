@@ -47,6 +47,13 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           })}
         </Link>
       </Menu.Item>
+      <Menu.Item key="/microsf">
+        <Link to="/microsf">
+          {formatMessage({
+            id: 'microsf',
+          })}
+        </Link>
+      </Menu.Item>
       <Menu.Item key="/nfts">
         <Link to="/nfts">
           {formatMessage({

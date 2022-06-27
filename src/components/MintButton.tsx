@@ -19,14 +19,31 @@ export interface MintButtonProps {
   name?: string;
   max?: number;
   maxPerAddr?: number;
+  defaultNumber?: number;
+  onMintAmountChanged?: (amount: number) => void;
 }
 
 export default function MintButton(props: MintButtonProps) {
-  const { disabled, max = 1, maxPerAddr = 1, type = 'common', name } = props;
-  const [mintAmount, setMintAmount] = useState<number>(max);
+  const {
+    disabled,
+    max = 1,
+    maxPerAddr = 1,
+    type = 'common',
+    name,
+    defaultNumber = 1,
+    onMintAmountChanged,
+  } = props;
+  const [mintAmount, setAmount] = useState<number>(defaultNumber);
   const [minting, setMinting] = useState(false);
   const { signer, contract } = useModel('user');
   const { formatMessage } = useIntl();
+
+  const setMintAmount = (amount: number) => {
+    setAmount(amount);
+    if (onMintAmountChanged) {
+      onMintAmountChanged(amount);
+    }
+  };
 
   let price = commonPrice;
   if (type === 'book') {
@@ -36,13 +53,10 @@ export default function MintButton(props: MintButtonProps) {
   }
 
   useEffect(() => {
-    if (mintAmount <= 0) {
-      setMintAmount(Math.min(max));
-    }
     if (mintAmount > max) {
-      setMintAmount(Math.min(max));
+      setMintAmount(max);
     }
-  }, [max]);
+  }, [max, mintAmount]);
 
   return (
     <div
@@ -111,7 +125,7 @@ export default function MintButton(props: MintButtonProps) {
         <div
           className="minus"
           onClick={() => {
-            if (mintAmount <= 1) {
+            if (mintAmount <= 0) {
               return;
             }
             setMintAmount(mintAmount - 1);
@@ -151,7 +165,7 @@ export default function MintButton(props: MintButtonProps) {
         Total {price * mintAmount}ETH
       </div>
       <Button
-        disabled={disabled}
+        disabled={disabled || mintAmount <= 0}
         loading={minting}
         type="primary"
         className={css`
