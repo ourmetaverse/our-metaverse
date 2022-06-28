@@ -24,4 +24,7 @@ export function onRouteChange({ location }: { location: any }) {
   if (location.pathname === '/community') {
     log('“也许我应该多关注下这个世界的声音。”');
   }
+  if (location.pathname === '/wormhole') {
+    log('“哇！发现了神秘的区域，这是一个虫洞！”');
+  }
 }

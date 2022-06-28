@@ -22,6 +22,10 @@ export default (props: IRouteProps) => {
   useEffect(() => {
     let token = props.location.query.token;
     if (token !== undefined) {
+      const tokenNum = parseInt(token);
+      if (tokenNum >= 3000 && tokenNum % 42 === 0) {
+        history.push(`/wormhole?key=${token}`);
+      }
       if (!pc) {
         history.push(`nfts/token?token=${token}`);
       } else {

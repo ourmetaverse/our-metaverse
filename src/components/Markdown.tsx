@@ -6,15 +6,16 @@ import TranslateTip from '@/components/TranslateTip';
 interface Props {
   zh: string;
   aiTip?: boolean;
+  enTip?: boolean;
   en?: string;
 }
 
-export default ({ zh, en, aiTip }: Props) => {
+export default ({ zh, en, aiTip, enTip = true }: Props) => {
   const { locale, formatMessage } = useIntl();
   const isZH = locale === 'zh-CN';
   return (
     <div>
-      {!en ? (
+      {!en && enTip ? (
         <>
           <TranslateTip />
           <br />

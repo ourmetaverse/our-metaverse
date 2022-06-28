@@ -76,6 +76,9 @@ export default () => {
                 max-width: 100%;
               }
             }
+            strong {
+              font-weight: normal;
+            }
           `}
         >
           <Markdown zh={ourmetaverse} en={enourmetaverse}></Markdown>
