@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import ourmetaverse from '@/docs/our-metaverse.md';
 import { css } from '@emotion/css';
-import { IRouteProps } from 'umi';
+import { IRouteProps, useModel } from 'umi';
 import Markdown from '@/components/Markdown';
 import { maxWidth } from '@/utils/css';
+import { log } from '@/utils/log';
 
 const Component: React.FC<IRouteProps> = ({ location }) => {
   const [token, setToken] = useState<number>();
+  const { code } = useModel('code');
 
   useEffect(() => {
-    let key = location.query.key;
+    let key = location.query.code;
     if (key !== undefined) {
       const tokenNum = parseInt(key);
-      if (tokenNum >= 3000 && tokenNum % 42 === 0) {
+      if (tokenNum === code) {
         setToken(tokenNum);
       }
     }
-  }, [location.query.key]);
+    log('“我找到了一个虫洞，秘密一定就隐藏在这里！”');
+  }, [location.query.code]);
 
   if (token === undefined) {
     return (

@@ -139,6 +139,7 @@ const Component: React.FC = () => {
           maxPerAddr={maxMintPerAddr}
           defaultNumber={3}
           onMintAmountChanged={(a) => {
+            log('一生二...');
             updateMintAmountObj({
               ...mintAmountObj,
               common: a,
@@ -156,6 +157,7 @@ const Component: React.FC = () => {
             id: 'mint_book_token',
           })}
           onMintAmountChanged={(a) => {
+            log('...二生三...');
             updateMintAmountObj({
               ...mintAmountObj,
               book: a,
@@ -173,6 +175,7 @@ const Component: React.FC = () => {
             setMovieMinted(true);
           }}
           onMintAmountChanged={(a) => {
+            log('...三生万物...');
             updateMintAmountObj({
               ...mintAmountObj,
               movie: a,
@@ -213,6 +216,7 @@ const Component: React.FC = () => {
             <h6>
               钥匙由两个碎片组成，去找到它们！去寻找合成的方法！密码和答案就隐藏在元宇宙中！
             </h6>
+            <h6>一个不存在的 NFT 编号将指引你走向通往终极之地的虫洞！</h6>
             <br />
             <Space>
               <InputNumber
@@ -224,7 +228,7 @@ const Component: React.FC = () => {
               <Button
                 type="primary"
                 onClick={() => {
-                  if (key === 42 * code) {
+                  if (key === 42 * code * 10000) {
                     setRight(true);
                     message.success('恭喜你成功开启了宇宙奥秘的大门！');
                   } else {

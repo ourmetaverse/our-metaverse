@@ -5,7 +5,7 @@ import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
-import { IRouteProps, history, useIntl } from 'umi';
+import { IRouteProps, history, useIntl, useModel } from 'umi';
 const { useResponsive } = require('ahooks');
 import Token from './token';
 
@@ -14,6 +14,7 @@ const pageSize = 10;
 export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
+  const { code } = useModel('code');
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
 
@@ -23,8 +24,8 @@ export default (props: IRouteProps) => {
     let token = props.location.query.token;
     if (token !== undefined) {
       const tokenNum = parseInt(token);
-      if (tokenNum >= 3000 && tokenNum % 42 === 0) {
-        history.push(`/wormhole?key=${token}`);
+      if (tokenNum === code) {
+        history.push(`/wormhole?code=${token}`);
       }
       if (!pc) {
         history.push(`nfts/token?token=${token}`);

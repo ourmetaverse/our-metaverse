@@ -54,6 +54,7 @@ const Component: React.FC = () => {
           src="/microsf.jpg"
           onDragStart={() => {
             setDraging(true);
+            log('“这片二维空间似乎隐藏着奥秘...”');
           }}
           onDragEnd={() => {
             setDraging(false);
