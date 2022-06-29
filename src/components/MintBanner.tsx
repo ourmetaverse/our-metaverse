@@ -16,6 +16,7 @@ interface AmountObj {
 }
 
 const Component: React.FC = () => {
+  const { code } = useModel('code');
   const { pc } = useResponsive();
   const { formatMessage } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
@@ -25,6 +26,7 @@ const Component: React.FC = () => {
   const [numberMinted, setNumberMinted] = useState<number>();
   const [doorVisible, setDoorVisible] = useState<boolean>(false);
   const [key, setKey] = useState<number>();
+  const [right, setRight] = useState<boolean>();
 
   const [mintAmountObj, setMintAmountObj] = useState<AmountObj>({
     common: 3,
@@ -184,32 +186,59 @@ const Component: React.FC = () => {
           setDoorVisible(false);
         }}
       >
-        <h2>宇宙奥秘的大门已经找到!</h2>
-        <h2>伟大的冒险家，去寻找属于你自己的钥匙吧！</h2>
-        <Space>
-          <InputNumber
-            style={{ width: 200 }}
-            placeholder="你的钥匙"
-            value={key}
-            onChange={setKey}
-          />
-          <Button
-            type="primary"
-            onClick={() => {
-              if (key === 42) {
-                message.success(
-                  '恭喜你找到了正确的钥匙，加微信 ourmnft 备注上钥匙即有机会获得宇宙空投，抓紧哦，不然就被其它冒险家抢先了！',
-                );
-              } else {
-                message.error(
-                  '钥匙错误，冒险家请继续努力哦！抓紧哦，不然有限的奖品就被其它冒险家抢先了！',
-                );
-              }
-            }}
+        {right ? (
+          <div
+            className={css`
+              text-align: center;
+            `}
           >
-            开启宇宙之门
-          </Button>
-        </Space>
+            🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉
+            <br />
+            加微信 ourmnft 备注上钥匙即有机会获得宇宙空投！
+            <br />
+            抓紧哦，不然就被其它冒险家抢先了！
+            <img
+              className={css`
+                margin: 16px auto;
+                display: block;
+              `}
+              src="/xiaoyuan.png"
+              alt=""
+            />
+          </div>
+        ) : (
+          <>
+            <h2>宇宙奥秘的大门已经找到！</h2>
+            <h6>伟大的冒险家，去寻找属于你自己的钥匙吧！</h6>
+            <h6>
+              钥匙由两个碎片组成，去找到它们！去寻找合成的方法！密码和答案就隐藏在元宇宙中！
+            </h6>
+            <br />
+            <Space>
+              <InputNumber
+                style={{ width: 200 }}
+                placeholder="你的钥匙"
+                value={key}
+                onChange={setKey}
+              />
+              <Button
+                type="primary"
+                onClick={() => {
+                  if (key === 42 * code) {
+                    setRight(true);
+                    message.success('恭喜你成功开启了宇宙奥秘的大门！');
+                  } else {
+                    message.error(
+                      '钥匙错误，冒险家请继续努力哦！抓紧哦，不然有限的奖品就被其它冒险家抢先了！',
+                    );
+                  }
+                }}
+              >
+                开启宇宙之门
+              </Button>
+            </Space>
+          </>
+        )}
       </Modal>
     </div>
   );

@@ -54,7 +54,7 @@ export default function MintButton(props: MintButtonProps) {
 
   useEffect(() => {
     if (mintAmount > max) {
-      setMintAmount(max);
+      setMintAmount(Math.max(max, 1));
     }
   }, [max, mintAmount]);
 
