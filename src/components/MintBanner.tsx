@@ -8,6 +8,7 @@ import ConnectWallet from './ConnectWallet';
 import { useResponsive } from 'ahooks';
 import { log } from '@/utils/log';
 import Modal from '@/components/Modal';
+import confetti from 'canvas-confetti';
 
 interface AmountObj {
   common: number;
@@ -16,7 +17,7 @@ interface AmountObj {
 }
 
 const Component: React.FC = () => {
-  const { code } = useModel('code');
+  const { code } = useModel('user');
   const { pc } = useResponsive();
   const { formatMessage } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
@@ -131,7 +132,12 @@ const Component: React.FC = () => {
         <MintButton
           type="common"
           disabled={avaliableCount <= 0}
-          onMinted={updateNumberMinted}
+          onMinted={() => {
+            updateNumberMinted();
+            confetti({
+              zIndex: 9000,
+            });
+          }}
           name={formatMessage({
             id: 'mint_tip',
           })}
@@ -230,6 +236,10 @@ const Component: React.FC = () => {
                 onClick={() => {
                   if (key === 42 * code * 10000) {
                     setRight(true);
+                    confetti({
+                      zIndex: 9000,
+                      particleCount: 100,
+                    });
                     message.success('恭喜你成功开启了宇宙奥秘的大门！');
                   } else {
                     message.error(

@@ -8,7 +8,7 @@ import { log } from '@/utils/log';
 
 const Component: React.FC<IRouteProps> = ({ location }) => {
   const [token, setToken] = useState<number>();
-  const { code } = useModel('code');
+  const { code } = useModel('user');
 
   useEffect(() => {
     let key = location.query.code;

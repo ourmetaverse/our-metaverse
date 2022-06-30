@@ -14,7 +14,7 @@ const pageSize = 10;
 export default (props: IRouteProps) => {
   const nfts = [];
   const [page, setPage] = useState<number>(1);
-  const { code } = useModel('code');
+  const { code } = useModel('user');
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
 

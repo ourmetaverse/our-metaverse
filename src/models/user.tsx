@@ -11,6 +11,18 @@ import contractABI from '@/abi/OurMetaverse.json';
 import ConnectTip from '@/components/ConnectTip';
 import { message } from 'antd';
 
+function getCodeByAddress(address?: string): number {
+  if (!address) {
+    return -1;
+  }
+  const items = address.split('').filter((item) => /^\d$/.test(item));
+  const code = parseInt(items.slice(0, 6).reverse().join(''));
+  if (code > 3001) {
+    return code;
+  }
+  return 3001;
+}
+
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
@@ -112,7 +124,10 @@ export default function useUser() {
     }
   }, []);
 
+  const code = getCodeByAddress(address);
+
   return {
+    code,
     address,
     loading,
     connect,

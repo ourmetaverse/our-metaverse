@@ -5,7 +5,7 @@ import { useModel } from 'umi';
 
 const Component: React.FC = () => {
   const [draging, setDraging] = useState(false);
-  const { code } = useModel('code');
+  const { code } = useModel('user');
   return (
     <div
       className={css`
@@ -45,9 +45,9 @@ const Component: React.FC = () => {
                 margin-bottom: 18px;
               `}
             >
-              {code}
+              {code === -1 ? '“似乎和这个二维空间缺少连接...”' : code}
             </div>
-            <div>你找到了重要的代码，但这并不是终点</div>
+            {code !== -1 ? <div>你找到了重要的代码，但这并不是终点</div> : null}
           </div>
         </div>
         <img
