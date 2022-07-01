@@ -55,10 +55,12 @@ export default (props: IRouteProps) => {
         <img
           className={css`
             width: 220px;
+            height: 220px;
             box-shadow: 0px 2px 30px #3e3e3e;
             cursor: pointer;
             ${mobile} {
               width: ${document.body.clientWidth / 2 - 24}px;
+              height: ${document.body.clientWidth / 2 - 24}px;
             }
           `}
           src="/blindbox.gif"
@@ -106,14 +108,6 @@ export default (props: IRouteProps) => {
           `}
         >
           <div>{formatMessage({ id: 'nft_gallery' })}</div>
-          <div
-            className={css`
-              font-size: 16px;
-              opacity: 0.7;
-            `}
-          >
-            {formatMessage({ id: 'nft_gallery_desc' })}
-          </div>
           <BlueLine left />
         </div>
         <Space

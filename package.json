@@ -39,6 +39,7 @@
     "web3modal": "^1.9.5"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.4.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-slick": "^0.23.8",

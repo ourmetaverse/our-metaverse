@@ -16,6 +16,10 @@ interface AmountObj {
   movie: number;
 }
 
+function getKeyWithCode(code: number): number {
+  return 42 * code * 10000;
+}
+
 const Component: React.FC = () => {
   const { code } = useModel('user');
   const { pc } = useResponsive();
@@ -203,7 +207,8 @@ const Component: React.FC = () => {
           >
             🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉
             <br />
-            加微信 ourmnft 备注上钥匙即有机会获得宇宙空投！
+            加微信 ourmnft 备注上钥匙（{getKeyWithCode(code)}
+            ）即有机会获得宇宙空投！
             <br />
             抓紧哦，不然就被其它冒险家抢先了！
             <img
@@ -234,7 +239,7 @@ const Component: React.FC = () => {
               <Button
                 type="primary"
                 onClick={() => {
-                  if (key === 42 * code * 10000) {
+                  if (key === getKeyWithCode(code)) {
                     setRight(true);
                     confetti({
                       zIndex: 9000,
