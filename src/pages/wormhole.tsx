@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ourmetaverse from '@/docs/our-metaverse.md';
 import { css } from '@emotion/css';
 import { IRouteProps, useModel } from 'umi';
@@ -8,7 +8,7 @@ import { log } from '@/utils/log';
 
 const Component: React.FC<IRouteProps> = ({ location }) => {
   const [token, setToken] = useState<number>();
-  const { code } = useModel('user');
+  const { code, operator } = useModel('user');
 
   useEffect(() => {
     let key = location.query.code;
@@ -16,10 +16,10 @@ const Component: React.FC<IRouteProps> = ({ location }) => {
       const tokenNum = parseInt(key);
       if (tokenNum === code) {
         setToken(tokenNum);
+        log('“我找到了一个虫洞，秘密一定就隐藏在这里！”');
       }
     }
-    log('“我找到了一个虫洞，秘密一定就隐藏在这里！”');
-  }, [location.query.code]);
+  }, [location.query.code, code]);
 
   if (token === undefined) {
     return (
@@ -32,6 +32,14 @@ const Component: React.FC<IRouteProps> = ({ location }) => {
         你的 🔑 好像和锁不匹配... 继续努力寻找吧
       </div>
     );
+  }
+
+  let highlightText = '时间到了';
+  if (operator === '+') {
+    highlightText = '十';
+  }
+  if (operator === '-') {
+    highlightText = '一';
   }
 
   return (
@@ -71,11 +79,18 @@ const Component: React.FC<IRouteProps> = ({ location }) => {
             float: right;
             margin-right: 0;
           }
-          strong {
+          strong,
+          em {
             font-weight: normal;
+            font-style: normal;
           }
           strong::selection {
             background: yellow;
+            color: #0f22ff;
+          }
+          em[data-content='${highlightText}']::selection,
+          em[data-content='上来的守']::selection {
+            background: rgb(255, 85, 0);
             color: #0f22ff;
           }
         `}

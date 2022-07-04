@@ -76,8 +76,10 @@ export default () => {
                 max-width: 100%;
               }
             }
-            strong {
+            strong,
+            em {
               font-weight: normal;
+              font-style: normal;
             }
           `}
         >

@@ -21,7 +21,13 @@ export default ({ zh, en, aiTip, enTip = true }: Props) => {
           <br />
         </>
       ) : null}
-      <ReactMarkdown>{(isZH ? zh : en) || zh}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          em: ({ children }) => <em data-content={children}>{children}</em>,
+        }}
+      >
+        {(isZH ? zh : en) || zh}
+      </ReactMarkdown>
       {aiTip && en && !isZH ? (
         <>
           <Alert

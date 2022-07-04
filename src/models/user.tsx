@@ -23,6 +23,20 @@ function getCodeByAddress(address?: string): number {
   return 3001;
 }
 
+function getOperatorByCode(code: number): '*' | '+' | '-' {
+  const c = code % 3;
+  if (c === 0) {
+    return '*';
+  }
+  if (c === 1) {
+    return '+';
+  }
+  if (c === 2) {
+    return '-';
+  }
+  return '*';
+}
+
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
@@ -125,6 +139,7 @@ export default function useUser() {
   }, []);
 
   const code = getCodeByAddress(address);
+  const operator = getOperatorByCode(code);
 
   return {
     code,
@@ -137,5 +152,6 @@ export default function useUser() {
     provider,
     contractWithSigner,
     ConnectTip,
+    operator,
   };
 }

@@ -1,4 +1,11 @@
+let cleared = false;
+const logs: string[] = [];
+
 export async function log(str: string): Promise<void> {
+  if (!cleared) {
+    logs.push(str);
+    return;
+  }
   console.log(
     `%c ${str}`,
     `
@@ -10,4 +17,10 @@ export async function log(str: string): Promise<void> {
     display: inline-block;
   `,
   );
+}
+
+export function clearInit() {
+  console.clear();
+  cleared = true;
+  logs.forEach(log);
 }

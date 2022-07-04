@@ -1,5 +1,5 @@
 import { configResponsive } from 'ahooks';
-import { log } from '@/utils/log';
+import { log, clearInit } from '@/utils/log';
 
 configResponsive({
   isMobile: 0,
@@ -7,7 +7,7 @@ configResponsive({
 });
 
 setTimeout(() => {
-  console.clear();
+  clearInit();
   log(
     `上一个元宇宙探秘遗留的灰烬 🪐 VmlldyB0aGUgSFRNTCBzb3VyY2UgY29kZSBmb3IgZmluZCBuZXh0IGNsdWU=`,
   );

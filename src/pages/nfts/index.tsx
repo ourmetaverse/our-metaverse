@@ -34,7 +34,7 @@ export default (props: IRouteProps) => {
         setCurrent(token);
       }
     }
-  }, [props.location.query.token, pc]);
+  }, [props.location.query.token, pc, code]);
 
   for (
     let i = (page - 1) * pageSize;

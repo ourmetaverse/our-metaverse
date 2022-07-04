@@ -16,12 +16,19 @@ interface AmountObj {
   movie: number;
 }
 
-function getKeyWithCode(code: number): number {
-  return 42 * code * 10000;
+function getKeyWithCode(code: number, operator: string): number {
+  if (operator === '+') {
+    return (code + 42) * 10000;
+  }
+  if (operator === '-') {
+    return (code - 42) * 10000;
+  }
+  // operator === '*'
+  return code * 42 * 10000;
 }
 
 const Component: React.FC = () => {
-  const { code } = useModel('user');
+  const { code, operator } = useModel('user');
   const { pc } = useResponsive();
   const { formatMessage } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
@@ -207,7 +214,7 @@ const Component: React.FC = () => {
           >
             🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉
             <br />
-            加微信 ourmnft 备注上钥匙（{getKeyWithCode(code)}
+            加微信 ourmnft 备注上钥匙（{getKeyWithCode(code, operator)}
             ）即有机会获得宇宙空投！
             <br />
             抓紧哦，不然就被其它冒险家抢先了！
@@ -239,7 +246,7 @@ const Component: React.FC = () => {
               <Button
                 type="primary"
                 onClick={() => {
-                  if (key === getKeyWithCode(code)) {
+                  if (key === getKeyWithCode(code, operator)) {
                     setRight(true);
                     confetti({
                       zIndex: 9000,
