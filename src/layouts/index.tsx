@@ -53,6 +53,15 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             id: 'microsf',
           })}
         </Link>
+        <img
+          className={css`
+            margin-top: -23px;
+            margin-left: -5px;
+            margin-right: -30px;
+          `}
+          src="/new.png"
+          alt=""
+        />
       </Menu.Item>
       <Menu.Item key="/nfts">
         <Link to="/nfts">
