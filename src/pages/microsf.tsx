@@ -31,6 +31,13 @@ const ShowBox: React.FC<{ title: string; desc: string }> = ({
         height: 360px;
         padding: 57px 40px;
         word-break: break-all;
+        ${mobile} {
+          background-image: none;
+          width: auto;
+          height: auto;
+          padding: 0;
+          margin-bottom: 64px;
+        }
       `}
     >
       <div
@@ -68,6 +75,9 @@ const Component: React.FC = () => {
           padding-top: 120px;
           max-width: 1000px;
           margin: 0 auto;
+          ${mobile} {
+            padding: 120px 16px;
+          }
         `}
       >
         <div
@@ -75,7 +85,15 @@ const Component: React.FC = () => {
             text-align: center;
           `}
         >
-          <img src="/ourmxmicrosf.png" alt="" />
+          <img
+            className={css`
+              ${mobile} {
+                width: 65%;
+              }
+            `}
+            src="/ourmxmicrosf.png"
+            alt=""
+          />
           <div
             className={css`
               margin-top: 60px;
@@ -89,11 +107,23 @@ const Component: React.FC = () => {
                 color: white;
                 margin: -28px 0 -52px 0;
                 font-weight: 900;
+                ${mobile} {
+                  font-size: 32px;
+                }
               `}
             >
               {formatMessage({ id: 'micro_title' })}
             </h2>
-            <img src="/first.png" alt="" />
+            <img
+              className={css`
+                ${mobile} {
+                  width: 100%;
+                  margin-top: 16px;
+                }
+              `}
+              src="/first.png"
+              alt=""
+            />
           </div>
         </div>
 
@@ -136,12 +166,21 @@ const Component: React.FC = () => {
             height: 375px;
             padding-top: 75px;
             margin-top: 45px;
+            ${mobile} {
+              background-image: none;
+              width: auto;
+              height: auto;
+            }
           `}
         >
           <div
             className={css`
               display: flex;
               flex-direction: row;
+              ${mobile} {
+                flex-direction: column;
+                text-align: center;
+              }
             `}
           >
             <div>
@@ -150,7 +189,7 @@ const Component: React.FC = () => {
                   width: 150px;
                   font-size: 30px;
                   line-height: 40px;
-                  margin: 41px 130px 0 90px;
+                  margin: 41px 130px 32px 90px;
                 `}
               >
                 扫码关注 大赛新进展
@@ -171,6 +210,9 @@ const Component: React.FC = () => {
                 className={css`
                   width: 200px;
                   height: 200px;
+                  ${mobile} {
+                    margin-top: 64px;
+                  }
                 `}
                 src="/xiaoyuan.png"
               />
@@ -184,7 +226,15 @@ const Component: React.FC = () => {
             margin-top: 100px;
           `}
         >
-          <img src="/microfoot.png" alt="" />
+          <img
+            className={css`
+              ${mobile} {
+                width: 100%;
+              }
+            `}
+            src="/microfoot.png"
+            alt=""
+          />
         </div>
       </div>
     </div>

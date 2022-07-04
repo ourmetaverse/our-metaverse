@@ -12,6 +12,7 @@ const Component: React.FC = () => {
         width: 200px;
         height: 200px;
         position: relative;
+        margin: 0 auto;
       `}
       onClick={() => {
         log('从三维看二维，我们就是上帝，可以洞察一切！');
