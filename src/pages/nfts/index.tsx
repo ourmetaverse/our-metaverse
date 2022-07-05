@@ -1,4 +1,4 @@
-import { Space, Col, Row, Pagination } from 'antd';
+import { Space, Col, Row, Pagination, Spin, message } from 'antd';
 import { useState, useEffect } from 'react';
 import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
@@ -6,17 +6,36 @@ import { css } from '@emotion/css';
 import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
 import { IRouteProps, history, useIntl, useModel } from 'umi';
-const { useResponsive } = require('ahooks');
+import request from 'umi-request';
+import { useResponsive, useRequest } from 'ahooks';
 import Token from './token';
 
 const pageSize = 10;
 
 export default (props: IRouteProps) => {
-  const nfts = [];
   const [page, setPage] = useState<number>(1);
   const { code } = useModel('user');
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
+  const { data = [], loading } = useRequest(
+    async () => {
+      const { images } = await request(
+        'https://api.our-metaverse.xyz/api/images',
+        {
+          params: {
+            start: (page - 1) * 10,
+          },
+        },
+      );
+      return images;
+    },
+    {
+      onError: (e) => {
+        message.error(e.message);
+      },
+      refreshDeps: [page],
+    },
+  );
 
   const { pc } = useResponsive();
 
@@ -36,14 +55,11 @@ export default (props: IRouteProps) => {
     }
   }, [props.location.query.token, pc, code]);
 
-  for (
-    let i = (page - 1) * pageSize;
-    i < page * pageSize && i < totalSupply;
-    i++
-  ) {
-    nfts.push(
+  const nfts = data.map((url: string, i: number) => {
+    const index = (page - 1) * 10 + i;
+    return (
       <div
-        key={i}
+        key={index}
         className={css`
           margin-bottom: 24px;
           margin-right: 24px;
@@ -63,13 +79,13 @@ export default (props: IRouteProps) => {
               height: ${document.body.clientWidth / 2 - 24}px;
             }
           `}
-          src="/blindbox.gif"
+          src={url}
           alt=""
           onClick={() => {
             if (!pc) {
-              history.push(`nfts/token?token=${i}`);
+              history.push(`nfts/token?token=${index}`);
             } else {
-              history.push(`nfts?token=${i}`);
+              history.push(`nfts?token=${index}`);
             }
           }}
         />
@@ -80,11 +96,11 @@ export default (props: IRouteProps) => {
             margin-top: 8px;
           `}
         >
-          #{i}
+          #{index}
         </div>
-      </div>,
+      </div>
     );
-  }
+  });
 
   return (
     <div
@@ -116,7 +132,13 @@ export default (props: IRouteProps) => {
           `}
           wrap
         >
-          {nfts}
+          {loading ? (
+            <div style={{ height: 587 }}>
+              <Spin />
+            </div>
+          ) : (
+            nfts
+          )}
         </Space>
         <div
           className={css`

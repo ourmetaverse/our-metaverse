@@ -3700,7 +3700,9 @@ module.exports = /******/ (function (modules) {
           e = l(e);
           for (var n = 0; n < e.length; n++) {
             var o = e[n];
-            o.classList ? o.classList.add(t) : (o.className += ' ' + t);
+            if (o) {
+              o.classList ? o.classList.add(t) : (o.className += ' ' + t);
+            }
           }
           return e;
         }
