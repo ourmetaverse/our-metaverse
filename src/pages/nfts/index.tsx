@@ -48,7 +48,7 @@ export default (props: IRouteProps) => {
       } else {
         token = parseInt(token);
         setCurrent(token);
-        setPage(Math.ceil(token / pageSize));
+        setPage(Math.floor(token / pageSize) + 1);
       }
     }
   }, [props.location.query.token, pc, code]);
@@ -157,6 +157,7 @@ export default (props: IRouteProps) => {
         visible={current !== undefined}
         width="1000px"
         onCancel={() => {
+          history.push(`nfts`);
           setCurrent(undefined);
         }}
         footer={false}
