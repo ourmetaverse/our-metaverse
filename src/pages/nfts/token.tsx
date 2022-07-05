@@ -1,13 +1,23 @@
 import { useEffect, useState } from 'react';
 import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
 import { useModel, useIntl, IRouteProps, history } from 'umi';
-import { Button, Input, List, message, Space, Typography, Select } from 'antd';
+import {
+  Button,
+  Input,
+  List,
+  message,
+  Space,
+  Typography,
+  Select,
+  Image,
+} from 'antd';
 import { BigNumber, ethers } from 'ethers';
 import { grantPrice, grantLimitLength } from '@/constants';
 import { css } from '@emotion/css';
 import ImageIcon from '@/components/ImageIcon';
 import { mobile } from '@/utils/css';
-import { useResponsive } from 'ahooks';
+import { useRequest, useResponsive } from 'ahooks';
+import request from 'umi-request';
 
 const { Option } = Select;
 
@@ -49,9 +59,29 @@ export default (props: Props) => {
     'ethereum',
   );
 
-  if (token >= totalSupply) {
-    return <div>{formatMessage({ id: 'empty_token_tip' }, { token })}</div>;
-  }
+  const { data: nftImage } = useRequest(
+    async () => {
+      if (token === undefined || pc) {
+        return '';
+      }
+      const { images = [] } = await request(
+        'https://api.our-metaverse.xyz/api/images',
+        {
+          params: {
+            start: token,
+            len: 1,
+          },
+        },
+      );
+      return images[0];
+    },
+    {
+      onError: (e) => {
+        message.error(e.message);
+      },
+      refreshDeps: [token],
+    },
+  );
 
   useEffect(() => {
     if (pc && props.location?.query.token) {
@@ -96,6 +126,10 @@ export default (props: Props) => {
     );
   }
 
+  if (token >= totalSupply) {
+    return <div>{formatMessage({ id: 'empty_token_tip' }, { token })}</div>;
+  }
+
   return (
     <div
       className={css`
@@ -122,11 +156,11 @@ export default (props: Props) => {
         # {token}
       </div>
       {!pc ? (
-        <img
+        <Image
           className={css`
             width: 100%;
           `}
-          src={`/blindbox.gif`}
+          src={nftImage || `/blindbox2.gif`}
         />
       ) : null}
       <Space

@@ -1,6 +1,5 @@
-import { Space, Col, Row, Pagination, Spin, message } from 'antd';
+import { Space, Col, Row, Pagination, Spin, message, Image } from 'antd';
 import { useState, useEffect } from 'react';
-import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, mobile, primaryColor } from '@/utils/css';
@@ -17,17 +16,14 @@ export default (props: IRouteProps) => {
   const { code } = useModel('user');
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
-  const { data = [], loading } = useRequest(
+  const { data = {}, loading } = useRequest(
     async () => {
-      const { images } = await request(
-        'https://api.our-metaverse.xyz/api/images',
-        {
-          params: {
-            start: (page - 1) * 10,
-          },
+      const res = await request('https://api.our-metaverse.xyz/api/images', {
+        params: {
+          start: (page - 1) * pageSize,
         },
-      );
-      return images;
+      });
+      return res;
     },
     {
       onError: (e) => {
@@ -36,6 +32,7 @@ export default (props: IRouteProps) => {
       refreshDeps: [page],
     },
   );
+  const { images = [], total = 1200 } = data;
 
   const { pc } = useResponsive();
 
@@ -51,12 +48,13 @@ export default (props: IRouteProps) => {
       } else {
         token = parseInt(token);
         setCurrent(token);
+        setPage(Math.ceil(token / pageSize));
       }
     }
   }, [props.location.query.token, pc, code]);
 
-  const nfts = data.map((url: string, i: number) => {
-    const index = (page - 1) * 10 + i;
+  const nfts = images.map((url: string, i: number) => {
+    const index = (page - 1) * pageSize + i;
     return (
       <div
         key={index}
@@ -151,7 +149,7 @@ export default (props: IRouteProps) => {
             pageSize={pageSize}
             showQuickJumper
             onChange={setPage}
-            total={totalSupply}
+            total={total}
           />
         </div>
       </div>
@@ -169,18 +167,22 @@ export default (props: IRouteProps) => {
             padding: 70px;
           `}
         >
-          <Col span={12}>
-            <img
-              className={css`
-                box-shadow: 0px 2px 30px #1443ff;
-                border-radius: 10px;
-              `}
-              width={400}
-              height={400}
-              src="/blindbox.gif"
-              alt=""
-            />
-          </Col>
+          {current !== undefined && current < total ? (
+            <Col span={12}>
+              <Image
+                className={css`
+                  box-shadow: 0px 2px 30px #1443ff;
+                  border-radius: 10px;
+                `}
+                width={400}
+                height={400}
+                src={
+                  images.length ? images[current % pageSize] : '/blindbox2.gif'
+                }
+                alt=""
+              />
+            </Col>
+          ) : null}
           <Col span={12}>
             <div>
               {current !== undefined ? <Token token={current} /> : null}
