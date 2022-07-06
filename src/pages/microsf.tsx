@@ -199,6 +199,9 @@ const Component: React.FC = () => {
             <div
               className={css`
                 margin-right: 83px;
+                ${mobile} {
+                  margin-right: 0px;
+                }
               `}
             >
               <MicrosfCode />
