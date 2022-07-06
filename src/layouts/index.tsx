@@ -58,6 +58,7 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
             margin-top: -23px;
             margin-left: -5px;
             margin-right: -30px;
+            width: 41px;
           `}
           src="/new.png"
           alt=""

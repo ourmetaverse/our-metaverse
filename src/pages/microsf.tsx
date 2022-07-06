@@ -99,7 +99,13 @@ const Component: React.FC = () => {
               margin-top: 60px;
             `}
           >
-            <img src="/xuanshang.png" alt="" />
+            <img
+              className={css`
+                width: 356px;
+              `}
+              src="/xuanshang.png"
+              alt=""
+            />
             <h2
               className={css`
                 transform: rotate(-7deg) skew(-9deg);
@@ -116,6 +122,7 @@ const Component: React.FC = () => {
             </h2>
             <img
               className={css`
+                width: 459px;
                 ${mobile} {
                   width: 100%;
                   margin-top: 16px;
@@ -234,6 +241,7 @@ const Component: React.FC = () => {
         >
           <img
             className={css`
+              width: 553px;
               ${mobile} {
                 width: 100%;
               }
