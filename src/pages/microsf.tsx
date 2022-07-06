@@ -190,6 +190,9 @@ const Component: React.FC = () => {
                   font-size: 30px;
                   line-height: 40px;
                   margin: 41px 130px 32px 90px;
+                  ${mobile} {
+                    margin: 41px auto;
+                  }
                 `}
               >
                 扫码关注 大赛新进展
