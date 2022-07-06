@@ -73,7 +73,7 @@ export default () => {
       `}
     >
       {data.map((item) => (
-        <link rel="prefetch" href={item.hoverIcon} />
+        <link key={item.hoverIcon} rel="prefetch" href={item.hoverIcon} />
       ))}
       <div
         className={css`
