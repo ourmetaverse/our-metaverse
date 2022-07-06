@@ -30,7 +30,7 @@ function getKeyWithCode(code: number, operator: string): number {
 const Component: React.FC = () => {
   const { code, operator } = useModel('user');
   const { pc } = useResponsive();
-  const { formatMessage } = useIntl();
+  const { formatMessage, locale } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
   const [movieMinted, setMovieMinted] = useState<boolean>(false);
   const { address, contract } = useModel('user');
@@ -94,14 +94,39 @@ const Component: React.FC = () => {
 
   if (!contract) {
     return (
-      <div
-        className={css`
-          margin: 0 auto;
-          display: flex;
-          justify-content: center;
-        `}
-      >
-        <ConnectWallet />
+      <div>
+        {locale === 'zh-CN' ? (
+          <div
+            className={css`
+              margin-bottom: 16px;
+            `}
+          >
+            <a
+              className={css`
+                color: white;
+                opacity: 0.7;
+                &:hover {
+                  color: white;
+                  opacity: 1;
+                }
+              `}
+              target="_blank"
+              href="https://www.yuque.com/docs/share/c893e308-681a-48d2-ba65-bd00649550b4?# "
+            >
+              {' '}
+              《如何拥有一个 OurMetaverseDAO NFT》
+            </a>
+          </div>
+        ) : null}
+        <div
+          className={css`
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <ConnectWallet />
+        </div>
       </div>
     );
   }
