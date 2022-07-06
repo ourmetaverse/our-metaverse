@@ -72,6 +72,9 @@ export default () => {
         padding: 150px 16px;
       `}
     >
+      {data.map((item) => (
+        <link rel="prefetch" href={item.hoverIcon} />
+      ))}
       <div
         className={css`
           font-size: 40px;
@@ -171,7 +174,12 @@ export default () => {
           `}
         >
           {isOwner ? (
-            <Image src={wechatLink} placeholder={<Spin />} />
+            <div>
+              <p>
+                加好友请备注入群口令：<strong>我们都是星星的孩子</strong>
+              </p>
+              <Image src={wechatLink} placeholder={<Spin />} />
+            </div>
           ) : (
             formatMessage({ id: 'wechat_tip' })
           )}

@@ -6,21 +6,28 @@ import TranslateTip from '@/components/TranslateTip';
 interface Props {
   zh: string;
   aiTip?: boolean;
+  enTip?: boolean;
   en?: string;
 }
 
-export default ({ zh, en, aiTip }: Props) => {
+export default ({ zh, en, aiTip, enTip = true }: Props) => {
   const { locale, formatMessage } = useIntl();
   const isZH = locale === 'zh-CN';
   return (
     <div>
-      {!en ? (
+      {!en && enTip ? (
         <>
           <TranslateTip />
           <br />
         </>
       ) : null}
-      <ReactMarkdown>{(isZH ? zh : en) || zh}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          em: ({ children }) => <em data-content={children}>{children}</em>,
+        }}
+      >
+        {(isZH ? zh : en) || zh}
+      </ReactMarkdown>
       {aiTip && en && !isZH ? (
         <>
           <Alert

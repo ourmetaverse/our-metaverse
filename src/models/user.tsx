@@ -11,6 +11,32 @@ import contractABI from '@/abi/OurMetaverse.json';
 import ConnectTip from '@/components/ConnectTip';
 import { message } from 'antd';
 
+function getCodeByAddress(address?: string): number {
+  if (!address) {
+    return -1;
+  }
+  const items = address.split('').filter((item) => /^\d$/.test(item));
+  const code = parseInt(items.slice(0, 6).reverse().join(''));
+  if (code > 3001) {
+    return code;
+  }
+  return 3001;
+}
+
+function getOperatorByCode(code: number): '*' | '+' | '-' {
+  const c = code % 3;
+  if (c === 0) {
+    return '*';
+  }
+  if (c === 1) {
+    return '+';
+  }
+  if (c === 2) {
+    return '-';
+  }
+  return '*';
+}
+
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
@@ -112,7 +138,11 @@ export default function useUser() {
     }
   }, []);
 
+  const code = getCodeByAddress(address);
+  const operator = getOperatorByCode(code);
+
   return {
+    code,
     address,
     loading,
     connect,
@@ -122,5 +152,6 @@ export default function useUser() {
     provider,
     contractWithSigner,
     ConnectTip,
+    operator,
   };
 }

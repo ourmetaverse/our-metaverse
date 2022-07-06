@@ -2,6 +2,7 @@ import { useModel } from 'umi';
 import { Button, Divider, message, Space, Input } from 'antd';
 import { toEth } from '@/utils/format';
 import { useState } from 'react';
+import { css } from '@emotion/css';
 
 export default () => {
   const { contract, ConnectTip, contractWithSigner } = useModel('user');
@@ -10,11 +11,23 @@ export default () => {
   const [tokens, setTokens] = useState<string>('');
 
   if (!contract || !contractWithSigner) {
-    return <ConnectTip />;
+    return (
+      <div
+        className={css`
+          padding-top: 120px;
+        `}
+      >
+        <ConnectTip />
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div
+      className={css`
+        padding-top: 120px;
+      `}
+    >
       <Button
         disabled={started}
         onClick={async () => {

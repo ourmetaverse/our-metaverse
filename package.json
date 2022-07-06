@@ -29,15 +29,18 @@
     "@walletconnect/web3-provider": "^1.7.3",
     "ahooks": "^3.3.10",
     "antd": "^4.18.9",
+    "canvas-confetti": "^1.5.1",
     "ethers": "^5.5.4",
     "lottie-react": "^2.2.1",
     "react": "17.x",
     "react-dom": "17.x",
     "react-slick": "^0.29.0",
     "umi": "^3.5.21",
+    "umi-request": "^1.4.0",
     "web3modal": "^1.9.5"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.4.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-slick": "^0.23.8",

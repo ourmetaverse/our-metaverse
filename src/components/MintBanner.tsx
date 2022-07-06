@@ -1,13 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Space, Spin } from 'antd';
+import { Space, Spin, InputNumber, Button, message } from 'antd';
 import { useModel, useIntl } from 'umi';
 import { css } from '@emotion/css';
 import { totalSupply, maxMintPerAddr, contractAddress } from '@/constants';
 import MintButton from '@/components/MintButton';
 import ConnectWallet from './ConnectWallet';
 import { useResponsive } from 'ahooks';
+import { log } from '@/utils/log';
+import Modal from '@/components/Modal';
+import confetti from 'canvas-confetti';
+
+interface AmountObj {
+  common: number;
+  book: number;
+  movie: number;
+}
+
+function getKeyWithCode(code: number, operator: string): number {
+  if (operator === '+') {
+    return (code + 42) * 10000;
+  }
+  if (operator === '-') {
+    return (code - 42) * 10000;
+  }
+  // operator === '*'
+  return code * 42 * 10000;
+}
 
 const Component: React.FC = () => {
+  const { code, operator } = useModel('user');
   const { pc } = useResponsive();
   const { formatMessage } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
@@ -15,6 +36,23 @@ const Component: React.FC = () => {
   const { address, contract } = useModel('user');
   const [progress, setProgress] = useState<number>(0);
   const [numberMinted, setNumberMinted] = useState<number>();
+  const [doorVisible, setDoorVisible] = useState<boolean>(false);
+  const [key, setKey] = useState<number>();
+  const [right, setRight] = useState<boolean>();
+
+  const [mintAmountObj, setMintAmountObj] = useState<AmountObj>({
+    common: 3,
+    book: 0,
+    movie: 0,
+  });
+
+  const updateMintAmountObj = (obj: AmountObj) => {
+    setMintAmountObj(obj);
+    if (obj.common === 1 && obj.book === 1 && obj.movie === 1) {
+      log('一生二，二生三，三生万物...');
+      setDoorVisible(true);
+    }
+  };
 
   async function updateStatus() {
     if (contract) {
@@ -105,12 +143,25 @@ const Component: React.FC = () => {
         <MintButton
           type="common"
           disabled={avaliableCount <= 0}
-          onMinted={updateNumberMinted}
+          onMinted={() => {
+            updateNumberMinted();
+            confetti({
+              zIndex: 9000,
+            });
+          }}
           name={formatMessage({
             id: 'mint_tip',
           })}
           max={avaliableCount}
           maxPerAddr={maxMintPerAddr}
+          defaultNumber={3}
+          onMintAmountChanged={(a) => {
+            log('一生二...');
+            updateMintAmountObj({
+              ...mintAmountObj,
+              common: a,
+            });
+          }}
         />
         <MintButton
           type="book"
@@ -118,9 +169,17 @@ const Component: React.FC = () => {
           onMinted={() => {
             setBookMinted(true);
           }}
+          defaultNumber={0}
           name={formatMessage({
             id: 'mint_book_token',
           })}
+          onMintAmountChanged={(a) => {
+            log('...二生三...');
+            updateMintAmountObj({
+              ...mintAmountObj,
+              book: a,
+            });
+          }}
         />
         <MintButton
           type="movie"
@@ -128,11 +187,85 @@ const Component: React.FC = () => {
           name={formatMessage({
             id: 'mint_movie_token',
           })}
+          defaultNumber={0}
           onMinted={() => {
             setMovieMinted(true);
           }}
+          onMintAmountChanged={(a) => {
+            log('...三生万物...');
+            updateMintAmountObj({
+              ...mintAmountObj,
+              movie: a,
+            });
+          }}
         />
       </Space>
+      <Modal
+        visible={doorVisible}
+        onCancel={() => {
+          setDoorVisible(false);
+        }}
+      >
+        {right ? (
+          <div
+            className={css`
+              text-align: center;
+            `}
+          >
+            🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉
+            <br />
+            加微信 ourmnft 备注上钥匙（{getKeyWithCode(code, operator)}
+            ）即有机会获得宇宙空投！
+            <br />
+            抓紧哦，不然就被其它冒险家抢先了！
+            <img
+              className={css`
+                margin: 16px auto;
+                display: block;
+              `}
+              src="/xiaoyuan.png"
+              alt=""
+            />
+          </div>
+        ) : (
+          <>
+            <h2>宇宙奥秘的大门已经找到！</h2>
+            <h6>伟大的冒险家，去寻找属于你自己的钥匙吧！</h6>
+            <h6>
+              钥匙由两个碎片组成，去找到它们！去寻找合成的方法！密码和答案就隐藏在元宇宙中！
+            </h6>
+            <h6>一个不存在的 NFT 编号将指引你走向通往终极之地的虫洞！</h6>
+            <br />
+            <Space>
+              <InputNumber
+                style={{ width: 200 }}
+                placeholder="你的钥匙"
+                value={key}
+                onChange={setKey}
+              />
+              <Button
+                type="primary"
+                onClick={() => {
+                  if (key === getKeyWithCode(code, operator)) {
+                    setRight(true);
+                    confetti({
+                      zIndex: 9000,
+                      particleCount: 100,
+                    });
+                    message.success('恭喜你成功开启了宇宙奥秘的大门！');
+                  } else {
+                    message.error(
+                      '钥匙错误，冒险家请继续努力哦！抓紧哦，不然有限的奖品就被其它冒险家抢先了！',
+                    );
+                  }
+                }}
+              >
+                开启宇宙之门
+              </Button>
+            </Space>
+          </>
+        )}
+      </Modal>
     </div>
   );
 };

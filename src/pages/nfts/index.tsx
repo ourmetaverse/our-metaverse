@@ -1,44 +1,63 @@
-import { Space, Col, Row, Pagination } from 'antd';
+import { Space, Col, Row, Pagination, Spin, message, Image } from 'antd';
 import { useState, useEffect } from 'react';
-import { totalSupply } from '@/constants';
 import BlueLine from '@/components/BlueLine';
 import { css } from '@emotion/css';
 import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
-import { IRouteProps, history, useIntl } from 'umi';
-const { useResponsive } = require('ahooks');
+import { IRouteProps, history, useIntl, useModel } from 'umi';
+import request from 'umi-request';
+import { useResponsive, useRequest } from 'ahooks';
 import Token from './token';
 
 const pageSize = 10;
 
 export default (props: IRouteProps) => {
-  const nfts = [];
   const [page, setPage] = useState<number>(1);
+  const { code } = useModel('user');
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
+  const { data = {}, loading } = useRequest(
+    async () => {
+      const res = await request('https://api.our-metaverse.xyz/api/images', {
+        params: {
+          start: (page - 1) * pageSize,
+        },
+      });
+      return res;
+    },
+    {
+      onError: (e) => {
+        message.error(e.message);
+      },
+      refreshDeps: [page],
+    },
+  );
+  const { images = [], total = 1200 } = data;
 
   const { pc } = useResponsive();
 
   useEffect(() => {
     let token = props.location.query.token;
     if (token !== undefined) {
+      const tokenNum = parseInt(token);
+      if (tokenNum === code) {
+        history.push(`/wormhole?code=${token}`);
+      }
       if (!pc) {
         history.push(`nfts/token?token=${token}`);
       } else {
         token = parseInt(token);
         setCurrent(token);
+        setPage(Math.floor(token / pageSize) + 1);
       }
     }
-  }, [props.location.query.token, pc]);
+  }, [props.location.query.token, pc, code]);
 
-  for (
-    let i = (page - 1) * pageSize;
-    i < page * pageSize && i < totalSupply;
-    i++
-  ) {
-    nfts.push(
+  const nfts = images.map((url: string, i: number) => {
+    const index = (page - 1) * pageSize + i;
+    return (
       <div
-        key={i}
+        key={index}
         className={css`
           margin-bottom: 24px;
           margin-right: 24px;
@@ -50,19 +69,21 @@ export default (props: IRouteProps) => {
         <img
           className={css`
             width: 220px;
+            height: 220px;
             box-shadow: 0px 2px 30px #3e3e3e;
             cursor: pointer;
             ${mobile} {
               width: ${document.body.clientWidth / 2 - 24}px;
+              height: ${document.body.clientWidth / 2 - 24}px;
             }
           `}
-          src="/blindbox.gif"
+          src={url}
           alt=""
           onClick={() => {
             if (!pc) {
-              history.push(`nfts/token?token=${i}`);
+              history.push(`nfts/token?token=${index}`);
             } else {
-              history.push(`nfts?token=${i}`);
+              history.push(`nfts?token=${index}`);
             }
           }}
         />
@@ -73,11 +94,11 @@ export default (props: IRouteProps) => {
             margin-top: 8px;
           `}
         >
-          #{i}
+          #{index}
         </div>
-      </div>,
+      </div>
     );
-  }
+  });
 
   return (
     <div
@@ -101,14 +122,6 @@ export default (props: IRouteProps) => {
           `}
         >
           <div>{formatMessage({ id: 'nft_gallery' })}</div>
-          <div
-            className={css`
-              font-size: 16px;
-              opacity: 0.7;
-            `}
-          >
-            {formatMessage({ id: 'nft_gallery_desc' })}
-          </div>
           <BlueLine left />
         </div>
         <Space
@@ -117,7 +130,13 @@ export default (props: IRouteProps) => {
           `}
           wrap
         >
-          {nfts}
+          {loading ? (
+            <div style={{ height: 587 }}>
+              <Spin />
+            </div>
+          ) : (
+            nfts
+          )}
         </Space>
         <div
           className={css`
@@ -130,7 +149,7 @@ export default (props: IRouteProps) => {
             pageSize={pageSize}
             showQuickJumper
             onChange={setPage}
-            total={totalSupply}
+            total={total}
           />
         </div>
       </div>
@@ -138,6 +157,7 @@ export default (props: IRouteProps) => {
         visible={current !== undefined}
         width="1000px"
         onCancel={() => {
+          history.push(`nfts`);
           setCurrent(undefined);
         }}
         footer={false}
@@ -148,18 +168,22 @@ export default (props: IRouteProps) => {
             padding: 70px;
           `}
         >
-          <Col span={12}>
-            <img
-              className={css`
-                box-shadow: 0px 2px 30px #1443ff;
-                border-radius: 10px;
-              `}
-              width={400}
-              height={400}
-              src="/blindbox.gif"
-              alt=""
-            />
-          </Col>
+          {current !== undefined && current < total ? (
+            <Col span={12}>
+              <Image
+                className={css`
+                  box-shadow: 0px 2px 30px #1443ff;
+                  border-radius: 10px;
+                `}
+                width={400}
+                height={400}
+                src={
+                  images.length ? images[current % pageSize] : '/blindbox2.gif'
+                }
+                alt=""
+              />
+            </Col>
+          ) : null}
           <Col span={12}>
             <div>
               {current !== undefined ? <Token token={current} /> : null}

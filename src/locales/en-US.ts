@@ -22,6 +22,7 @@ export default {
     'In our contract, we define two special interfaces, buyBookToken and buyMovieToken, which can be called by anyone to get book publishing rights and movie adaptation rights, and the related revenue will be equally distributed to all Holders. This allows Holder to continue to earn revenue as the IP develops.',
   universe: 'Structure',
   read: 'Read',
+  microsf: 'MicroSF',
   read_title: 'Our Metaverse',
   read_subtitle: 'Geneis',
   read_2028:
@@ -151,4 +152,13 @@ export default {
   index_roadmap_in_progress: 'in progress',
   member_title: 'Core Members',
   mint_slogan: 'We are made of star stuff',
+  micro_title: 'MicroSF · OurMetavese',
+  micro_start:
+    '"HanWu·OurMetaverse" is an essay contest launched by OurMetaverseDAO and Little Science Fiction. We hope to improve the story IP of "Our Metaverse" through the contest, and let more people participate in the creation of the story. We will provide cash + NFT to the creators, so that the outstanding authors can participate in the creation of the story, earn income, and become "shareholders" by holding OurMetaverseDAO NFT, practicing Web3 creator economy, and helping the development of science fiction literature!',
+  micro_sf:
+    'Micro Science Fiction is a theme-based science fiction writing platform. It was founded in 2013 and has accumulated a considerable number of readers through micro-science fiction essays and the "Thousand Mile Code" essay contest, which was upgraded to an annual essay contest in 2018. In 2018, "Thousand Mile Code" was upgraded to "Cambium Award" annual essay.',
+  micro_ourm:
+    'OurMetaverseDAO is an exploring decentralized organization, using NFT as a vehicle to explore a new model of Web3 creator economy. OurMetaverse started with the science fiction novel "Our Metaverse - The Beginning" and is a bold attempt of the Web3 creator economy.',
+  micro_detail:
+    "The specific format of the contest is still being developed, and the plan is to solicit several science fiction novels ranging from a few thousand to tens of thousands of words over a period of several months. Similar to other essays in the Cambium Awards, this essay contest is in a limited theme, requiring creation based on the worldview depicted in the creation novel Our Metaverse - The Beginning. But we won't do too many restrictions, you can create a sequel, a prequel, or a spinoff plot. The meta-universe, digital twins, space exploration, etc. mentioned in the novel are all optional for you. We are offering over $20,000 in cash plus dozens of NFTs as rewards, and the possibility of future collections and film adaptations.",
 };
