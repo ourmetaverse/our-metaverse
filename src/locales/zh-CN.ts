@@ -140,7 +140,7 @@ export default {
     '基于世界观组织征文大赛，科幻粮食赋能社区，打造一流的科幻社区。',
   index_roadmap_step_five_1: '星辰大海',
   index_roadmap_step_five_2:
-    '空投出版图书，一起去看电影首映，打造创作者经济范式。',
+    '完善 IP，出版图书，一起去看电影首映，打造创作者经济范式。',
   index_roadmap_in_progress: '进行中',
   member_title: '核心贡献成员',
   mint_slogan: '我们由星辰所铸，如今眺望群星',

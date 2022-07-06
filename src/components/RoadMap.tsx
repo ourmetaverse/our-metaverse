@@ -276,7 +276,7 @@ export default () => {
               {StepContent.map((item, index) => {
                 return (
                   <Step
-                    current={3}
+                    current={4}
                     index={index + 1}
                     name={item.name}
                     title={item.title}
