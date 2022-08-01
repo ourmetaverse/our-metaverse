@@ -4,6 +4,7 @@ export default {
   lang_switch: 'English',
   universe: '宇宙观',
   wihte_paper: 'ERC721M',
+  mint: '铸造',
   erc_title: 'ERC721M - 服务创作者经济',
   erc_subtitle: '让 Web3 助力创作者经济，希望每个创作者都可以收获创作的价值。',
   erc_desc:
@@ -103,7 +104,7 @@ export default {
   index_intro_title_2: '更是 Web3 创作者经济的梦想之旅。',
   index_intro_content:
     'OurMetaverse 以科幻小说《我们的元宇宙·开端》为起点，是 Web3 创作者经济的一次大胆尝试。我们通过定义了 ERC721M 支持了未来整个作品集的著作权管理以及对应权益分成，拥有 NFT 就拥有了未来 IP 发展的持续收益。让我们一起 Write to Earn，期待电影首映的那天！',
-  index_intro_mint: '即刻 Mint',
+  index_intro_mint: '前往铸造 NFT',
   index_intro_read: '阅读创世小说',
   index_intro_tips: '图为小说人物角色设定非最终NFT',
   index_benefit_title_1: '拥有 OurMetaverseDAO NFT',

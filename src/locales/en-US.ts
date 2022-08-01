@@ -3,6 +3,7 @@ export default {
   novel_name: 'Our Metaverse: Genesis',
   lang_switch: '中文',
   wihte_paper: 'ERC721M',
+  mint: 'Mint',
   erc_title: 'ERC721M - Serving the creator economy',
   erc_subtitle:
     'Let Web3 help the creator economy, hoping that every creator can reap the value of their creations.',

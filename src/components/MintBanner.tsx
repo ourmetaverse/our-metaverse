@@ -114,7 +114,7 @@ const Component: React.FC = () => {
               href="https://www.yuque.com/docs/share/c893e308-681a-48d2-ba65-bd00649550b4?# "
             >
               {' '}
-              《如何拥有一个 OurMetaverseDAO NFT》
+              《写给没有以太坊钱包的科幻爱好者们，点我开启 Web3 的大门》
             </a>
           </div>
         ) : null}

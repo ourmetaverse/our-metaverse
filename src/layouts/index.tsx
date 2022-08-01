@@ -31,7 +31,11 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
         </Link>
       </Menu.Item>
       <Menu.Item key="/mint">
-        <Link to="/mint">Mint</Link>
+        <Link to="/mint">
+          {formatMessage({
+            id: 'mint',
+          })}
+        </Link>
       </Menu.Item>
       <Menu.Item key="/read">
         <Link to="/read">
