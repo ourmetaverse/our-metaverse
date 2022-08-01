@@ -112,9 +112,9 @@ export default {
   index_benefit_membership: 'DAO 成员身份',
   index_benefit_membership_content:
     '获得 OurMetaverseDAO 成员的身份，加入专享社区。未来可参与征文大赛决选投票、官方可能发行的新的 NFT 空投、科幻交流等活动。',
-  index_benefit_pfp: '专属 PFP',
+  index_benefit_pfp: '专属头像',
   index_benefit_pfp_content:
-    '拥有对应的 PFP。该系列图片正在基于小说背景创作，还会埋入很多科幻彩蛋哦。所有 NFT 均能收到对应 PFP。',
+    '拥有对应的专属头像。该系列图片基于小说背景创作，还融入了大量科幻元素。一千四百多个元素随机组合而成的形象让你独一无二。',
   index_benefit_grant: '二次创作授权',
   index_benefit_grant_content:
     '拥有 OurMetaverseDAO 作品集中包含的所有作品的数字化形式的修改权和翻译权，可以进行二次创作。二创的商业授权逻辑通过智能合约实现，并定义了 ERC721M 的规范。',
