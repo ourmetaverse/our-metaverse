@@ -85,6 +85,7 @@ export default {
   grant_list: '该 NFT 通过 ERC721M 授权的作品列表',
   withdraw_succeed: '提取成功，请稍后查看。',
   grant_required: '授权内容必填',
+  insufficient_funds: '钱包内没有足够的 ETH',
   grant_limit: '授权内容不得大于 {grantLimitLength}',
   add_grant: '授权',
   grant_validate: '授权内容格式校验错误',

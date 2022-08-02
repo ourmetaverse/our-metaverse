@@ -12,6 +12,7 @@ export default {
   erc_read: 'Read the article',
   erc_contract_title: 'Contract features',
   erc_contract_1: 'Commercial License Management',
+  insufficient_funds: 'Insufficient Funds',
   erc_contract_1_desc:
     'OurMetaverseDAO NFT Holder can get commercial license by calling the contract interface Grant, no fee for the first time, and 0.3ETH fee for each new addition later, providing a way to manage copyright outside CC0, making the flow and development of copyright more convenient, and also bringing Holder continuous revenue.',
   erc_contract_2: 'Mechanism for distributing interests',

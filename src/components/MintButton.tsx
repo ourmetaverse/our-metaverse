@@ -37,6 +37,14 @@ export default function MintButton(props: MintButtonProps) {
   const [minting, setMinting] = useState(false);
   const { signer, contract } = useModel('user');
   const { formatMessage } = useIntl();
+  const formatErrorMessage = function (err: any): string {
+    if (err.code === 'INSUFFICIENT_FUNDS') {
+      return formatMessage({
+        id: 'insufficient_funds',
+      });
+    }
+    return err.data?.message || err.message;
+  };
 
   const setMintAmount = (amount: number) => {
     setAmount(amount);
@@ -249,7 +257,7 @@ export default function MintButton(props: MintButtonProps) {
               title: formatMessage({
                 id: 'mint_failed',
               }),
-              body: err.data?.message || err.message,
+              body: formatErrorMessage(err),
             });
           }
           setMinting(false);
