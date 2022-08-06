@@ -110,9 +110,9 @@ const Component: React.FC<Props> = () => {
                 {formatMessage({ id: 'index_intro_mint' })}
               </IndexBtn>
             </Link>
-            <Link to="/read">
+            <Link to="/microsf">
               <IndexBtn width="215px">
-                {formatMessage({ id: 'index_intro_read' })}
+                {formatMessage({ id: 'index_intro_microsf' })}
               </IndexBtn>
             </Link>
           </Space>

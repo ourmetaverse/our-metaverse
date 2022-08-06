@@ -1,6 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import MicrosfCode from '@/components/MicrosfCode';
+import reward from '@/docs/reward.md';
+import Markdown from '@/components/Markdown';
 import { useIntl } from 'umi';
 import { mobile } from '@/utils/css';
 
@@ -163,8 +165,22 @@ const Component: React.FC = () => {
             margin-top: 100px;
           `}
         >
-          <img src="/micro02.png" alt="" />
-          <p className={pStyle}>{formatMessage({ id: 'micro_detail' })}</p>
+          <img
+            src="/micro02.png"
+            alt=""
+            className={css`
+              margin-bottom: 16px;
+            `}
+          />
+          <Markdown enTip={false} zh={reward} />
+          <video
+            controls
+            className={css`
+              width: 100%;
+              border: 5px solid #fff;
+            `}
+            src="https://gw.alipayobjects.com/v/rms_f2bb5d/afts/video/A*-oAuSrORh9gAAAAAAAAAAAAAARQnAQ/720P"
+          ></video>
         </div>
         <div
           className={css`

@@ -117,6 +117,7 @@ export default {
     'Starting with the science fiction novel Our Metaverse Begins, OurMetaverse is a revolution in the Web3 creator economy. It adds the logic of copyright authorization and equity sharing based on the ERC721 contract. In addition to the corresponding PFP avatar, NFT also owns part of the copyright of a full set of novel works, digital adaptation rights, and sharing rights for book adaptation and film and television adaptation.',
   index_intro_mint: 'Mint Now',
   index_intro_read: 'Read the Novel',
+  index_intro_microsf: 'Rewards',
   index_intro_tips:
     'The picture shows set for the characters of the novel was not the final NFT',
   index_benefit_title_1: 'Equity that can be owned',
