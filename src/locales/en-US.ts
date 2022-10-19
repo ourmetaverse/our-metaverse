@@ -10,6 +10,7 @@ export default {
   erc_desc:
     "OurMetaverseDAO NFT casts a meta-universe science fiction novel as NFT, and provides a mechanism of IP secondary development and equity sharing based on the ERC721 contract, hoping to attract more creators to join to improve the whole IP ecology through this mechanism. The project also proposes the idea of ERC721M, hoping to promote the development of Web3 creators' economy by building ERC721M.",
   erc_read: 'Read the article',
+  faq: 'FAQ',
   erc_contract_title: 'Contract features',
   erc_contract_1: 'Commercial License Management',
   insufficient_funds: 'Insufficient Funds',

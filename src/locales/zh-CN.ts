@@ -99,6 +99,7 @@ export default {
     'NFT 头像艺术品还在设计中，会融入小说背景和科幻元素。我们努力提供酷酷的作品给家人们，敬请期待！',
   wechat_tip: '仅 OurMetaverseDAO 成员可以加入微信群，请先连接钱包认证。',
   jike: '即刻',
+  faq: '问与答',
   mint_banner:
     '项目承诺 Mint 收益的中的 20ETH 都将用于 OurMetaverse DAO 后续的建设。比如图像艺术品设计、征文大赛等。每一个 Mint 都是对本项目最大的支持！点击下面按钮立刻 Mint！',
   index_intro_title_1: '这不仅仅是 NFT，',
