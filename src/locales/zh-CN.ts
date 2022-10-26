@@ -92,7 +92,8 @@ export default {
   donate_tip: '给合约直接转账即可捐款给 OurMetaverseDAO 的所有成员',
   donate: '给 OurMetaverseDAO 捐款',
   ai_translate_tip: '注意：该文章翻译自 AI',
-  wechat: '微信群',
+  wechat: '微信',
+  wechat_group: '成员群',
   nfts: '画廊',
   nft_gallery: 'NFT 画廊',
   nft_gallery_desc:

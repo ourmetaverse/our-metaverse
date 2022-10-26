@@ -28,10 +28,16 @@ export default () => {
 
   const data = [
     {
-      title: formatMessage({ id: 'wechat' }),
+      title: formatMessage({ id: 'wechat_group' }),
       icon: '/wechat.png',
       hoverIcon: '/wechat-hover.png',
       isWeChat: true,
+    },
+    {
+      title: formatMessage({ id: 'wechat' }),
+      icon: '/wechat.png',
+      hoverIcon: '/wechat-hover.png',
+      link: '/xiaoyuan.png',
     },
     // 先不开
     // {

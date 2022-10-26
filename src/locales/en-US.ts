@@ -107,6 +107,7 @@ export default {
   donate: 'Donate to OurMetaverseDAO',
   ai_translate_tip: 'Notice: This document is translate with AI.',
   wechat: 'Wechat',
+  wechat_group: 'Group',
   wechat_tip:
     'Only OurMetaverseDAO members can join the group, connect for verify.',
   jike: 'JiKe',

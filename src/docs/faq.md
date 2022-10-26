@@ -34,6 +34,10 @@ OurMetaverseDAO 的运作目前还在不断探索，这本身就是一个实验�
 
 我们通过 ERC721M 定义了 `grant` 和 `getGrantsWithToken` 接口，它提供了著作权授权的接口定义，其中 grant 可以添加授权，将被授权的内容写入到合约中，`getGrantsWithToken` 则是获取某个 NFT 的授权信息的接口。比如在 OurMetaverseDAO NFT 中现在已经有了实际的例子：OurMetaverseDAO NFT #913 Holder 是一名创业播客，他现在正在制作《我们的元宇宙·开端》小说的广播剧，通过这一条记录就代表了该广播剧已经获得 OurMetaverseDAO 上面作品集的商业授权，可以基于《我们的元宇宙·开端》这篇小说发布商业化的数字艺术作品。具体记录可以在 [https://www.our-metaverse.xyz/nfts/token?token=913](https://www.our-metaverse.xyz/nfts/token?token=913) 查看。
 
+## 0 号和 1 号 NFT 包含哪些权益？
+
+在项目发布时，我们定义了 0 号 NFT 拥有所有作品集的影视改编权，1 号 NFT 拥有图书出版权。按照项目最初的设想，影视改编权是指院线电影和电视连续剧的改编权，不包括网络大电影、动漫这部分权益。图书出版权是指作品集集结出版的权益，但是作品集中作者的作品的其它线下出版权益依然归作者所有，比如在杂志和自己小说作品集中出版的权益。所以参加征文的作者对应作品依然可以在杂志上以自己的署名投稿自己的作品，但是需要遵守项目规定的相关约定。当然，因为版权涉及的细节和边界众多，未来如遇特殊情况则可以由 OurMetaverseDAO 通过投票等方式进行修改和裁决。
+
 ## 如何提取 NFT 的收益？
 
 我们的智能合约定义了 `receiveRewardBalanceWithToken` 接口，通过触发该合约即可提取收益。具体可以参考[合约代码](https://etherscan.io/address/0xEcd0D12E21805803f70de03B72B1C162dB0898d9#code)。比如如果影视改编权被购买每个 NFT 可以获取 0.2ETH 的收益，相当于 20 倍的回报，另外其它授权也会持续不断产生收益，影视改编权的兑现也会有收益，具体可以参考 [ERC721M](/whitepaper) 中的相关说明。
