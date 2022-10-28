@@ -115,7 +115,18 @@ export default (props: Props) => {
   }, [contract, token, pc]);
 
   if (!contract || !contractWithSigner) {
-    return <ConnectTip />;
+    return (
+      <div
+        className={css`
+          ${mobile} {
+            margin: 16px;
+            margin-top: 100px;
+          }
+        `}
+      >
+        <ConnectTip />
+      </div>
+    );
   }
 
   if (token >= totalSupply) {
