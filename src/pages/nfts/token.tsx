@@ -115,15 +115,7 @@ export default (props: Props) => {
   }, [contract, token, pc]);
 
   if (!contract || !contractWithSigner) {
-    return (
-      <div
-        className={css`
-          margin-top: 100px;
-        `}
-      >
-        <ConnectTip />
-      </div>
-    );
+    return <ConnectTip />;
   }
 
   if (token >= totalSupply) {
