@@ -4,6 +4,7 @@ import MicrosfCode from '@/components/MicrosfCode';
 import reward from '@/docs/reward.md';
 import Markdown from '@/components/Markdown';
 import { useIntl } from 'umi';
+import { Button, Modal } from 'antd';
 import { mobile } from '@/utils/css';
 
 const pStyle = css`
@@ -65,6 +66,7 @@ const ShowBox: React.FC<{ title: string; desc: string }> = ({
 
 const Component: React.FC = () => {
   const { formatMessage } = useIntl();
+  const [modal, contextHolder] = Modal.useModal();
 
   return (
     <div
@@ -220,6 +222,30 @@ const Component: React.FC = () => {
               >
                 扫码关注 大赛新进展
                 <img src="/microblueline.png" alt="" />
+                <Button
+                  className={css`
+                    ${mobile} {
+                      margin: 0 auto;
+                    }
+                  `}
+                  type="primary"
+                  onClick={() => {
+                    modal.info({
+                      icon: null,
+                      title: '添加好友回复「小科幻」可加群',
+                      content: (
+                        <img
+                          className={css`
+                            width: 100%;
+                          `}
+                          src="/xiaoyuan.png"
+                        />
+                      ),
+                    });
+                  }}
+                >
+                  点我加群交流故事
+                </Button>
               </div>
             </div>
             <div
@@ -267,6 +293,7 @@ const Component: React.FC = () => {
           />
         </div>
       </div>
+      {contextHolder}
     </div>
   );
 };
