@@ -103,8 +103,8 @@ export default {
   faq: '问与答',
   mint_banner:
     '项目承诺 Mint 收益的中的 20ETH 都将用于 OurMetaverse DAO 后续的建设。比如图像艺术品设计、征文大赛等。每一个 Mint 都是对本项目最大的支持！点击下面按钮立刻 Mint！',
-  index_intro_title_1: '这不仅仅是 NFT，',
-  index_intro_title_2: '更是 Web3 创作者经济的梦想之旅。',
+  index_intro_title_1: '一个科幻 NFT，',
+  index_intro_title_2: '一场 Web3 创作者经济的梦想之旅。',
   index_intro_content:
     'OurMetaverse 以科幻小说《我们的元宇宙·开端》为起点，是 Web3 创作者经济的一次大胆尝试。我们通过定义了 ERC721M 支持了未来整个作品集的著作权管理以及对应权益分成，拥有 NFT 就拥有了未来 IP 发展的持续收益。让我们一起 Write to Earn，期待电影首映的那天！',
   index_intro_mint: '前往铸造 NFT',
