@@ -1,27 +1,34 @@
-import { useEffect, useState } from 'react';
-import { totalSupply, gweiPerETH, moviePrice, bookPrice } from '@/constants';
-import { useModel, useIntl, IRouteProps, history } from 'umi';
+import ImageIcon from '@/components/ImageIcon';
+import {
+  bookPrice,
+  grantLimitLength,
+  grantPrice,
+  gweiPerETH,
+  moviePrice,
+  totalSupply,
+} from '@/constants';
+import { mobile } from '@/utils/css';
+import { css } from '@emotion/css';
+import { useRequest, useResponsive } from 'ahooks';
 import {
   Button,
+  Image,
   Input,
   List,
   message,
+  Select,
   Space,
   Typography,
-  Select,
-  Image,
 } from 'antd';
 import { BigNumber, ethers } from 'ethers';
-import { grantPrice, grantLimitLength } from '@/constants';
-import { css } from '@emotion/css';
-import ImageIcon from '@/components/ImageIcon';
-import { mobile } from '@/utils/css';
-import { useRequest, useResponsive } from 'ahooks';
+import { parse } from 'query-string';
+import { useEffect, useState } from 'react';
+import { history, useIntl, useModel } from 'umi';
 import request from 'umi-request';
 
 const { Option } = Select;
 
-interface Props extends IRouteProps {
+interface Props {
   token?: number;
 }
 
@@ -44,8 +51,11 @@ export default (props: Props) => {
   // props token 存在说明是在 pc 端直接嵌套
   // 否则通过 url 获取 token
   let token = props.token;
+  let tokenFromUrl = parse(location.search).token;
   if (token === undefined) {
-    token = parseInt(props.location.query.token);
+    if (tokenFromUrl !== undefined && typeof tokenFromUrl === 'string') {
+      token = parseInt(tokenFromUrl);
+    }
   }
   const { pc } = useResponsive();
   const [rewardBalance, setRewardBalance] = useState<number>(0);
@@ -84,8 +94,8 @@ export default (props: Props) => {
   );
 
   useEffect(() => {
-    if (pc && props.location?.query.token) {
-      history.push(`/nfts?token=${token}`);
+    if (pc && tokenFromUrl) {
+      history.push(`/nfts?token=${tokenFromUrl}`);
     }
     if (contract) {
       contract
@@ -129,7 +139,7 @@ export default (props: Props) => {
     );
   }
 
-  if (token >= totalSupply) {
+  if (token && token >= totalSupply) {
     return <div>{formatMessage({ id: 'empty_token_tip' }, { token })}</div>;
   }
 

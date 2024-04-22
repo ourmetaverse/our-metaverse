@@ -1,19 +1,20 @@
-import { Space, Col, Row, Pagination, Spin, message, Image } from 'antd';
-import { useState, useEffect } from 'react';
 import BlueLine from '@/components/BlueLine';
-import { css } from '@emotion/css';
-import { maxWidth, mobile, primaryColor } from '@/utils/css';
 import Modal from '@/components/Modal';
-import { IRouteProps, history, useIntl, useModel } from 'umi';
+import { maxWidth, mobile, primaryColor } from '@/utils/css';
+import { css } from '@emotion/css';
+import { useRequest, useResponsive } from 'ahooks';
+import { Col, Image, message, Pagination, Row, Space, Spin } from 'antd';
+import { parse } from 'query-string';
+import { useEffect, useState } from 'react';
+import { history, useIntl, useLocation } from 'umi';
 import request from 'umi-request';
-import { useResponsive, useRequest } from 'ahooks';
 import Token from './token';
 
 const pageSize = 10;
 
-export default (props: IRouteProps) => {
+export default () => {
   const [page, setPage] = useState<number>(1);
-  const { code } = useModel('user');
+  const location = useLocation();
   const { formatMessage } = useIntl();
   const [current, setCurrent] = useState<number | undefined>();
   const { data = {}, loading } = useRequest(
@@ -37,21 +38,17 @@ export default (props: IRouteProps) => {
   const { pc } = useResponsive();
 
   useEffect(() => {
-    let token = props.location.query.token;
-    if (token !== undefined) {
-      const tokenNum = parseInt(token);
-      if (tokenNum === code) {
-        history.push(`/wormhole?code=${token}`);
-      }
+    let token = parse(location.search).token;
+    if (token !== undefined && typeof token === 'string') {
       if (!pc) {
-        history.push(`nfts/token?token=${token}`);
+        history.push(`/nfts/token?token=${token}`);
       } else {
-        token = parseInt(token);
-        setCurrent(token);
-        setPage(Math.floor(token / pageSize) + 1);
+        const tokenNum = parseInt(token);
+        setCurrent(tokenNum);
+        setPage(Math.floor(tokenNum / pageSize) + 1);
       }
     }
-  }, [props.location.query.token, pc, code]);
+  }, [location.search, pc]);
 
   const nfts = images.map((url: string, i: number) => {
     const index = (page - 1) * pageSize + i;
@@ -155,6 +152,11 @@ export default (props: IRouteProps) => {
       </div>
       <Modal
         visible={current !== undefined}
+        styles={{
+          content: {
+            padding: 0,
+          },
+        }}
         width="1000px"
         onCancel={() => {
           history.push(`nfts`);

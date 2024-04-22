@@ -1,19 +1,14 @@
 import { defineConfig } from 'umi';
-import { primaryColor } from './src/utils/css';
 
 export default defineConfig({
-  nodeModulesTransform: {
-    type: 'none',
-  },
-  fastRefresh: {},
+  model: {},
+  fastRefresh: true,
   locale: {},
   antd: {
     dark: true, // 开启暗色主题
   },
-  theme: {
-    'primary-color': primaryColor,
-    'menu-dark-item-active-bg': 'transparent',
-    'modal-content-bg': '#0C1742',
+  alias: {
+    'ethers-v5': 'ethers',
   },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,
@@ -23,7 +18,10 @@ export default defineConfig({
     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
   ],
   exportStatic: {},
-  favicon: '/favicon.png',
+  jsMinifierOptions: {
+    target: ['chrome80', 'es2020'],
+  },
+  favicons: ['/favicon.png'],
   metas: [
     {
       name: 'description',
@@ -35,4 +33,9 @@ export default defineConfig({
     },
   ],
   title: 'OurMetaverse',
+  chainWebpack(config) {
+    config.module.rule('asset').exclude.add(/\.md$/).end();
+
+    config.module.rule('md').test(/\.md$/).use('raw').loader('raw-loader');
+  },
 });

@@ -20,7 +20,7 @@ export async function log(str: string): Promise<void> {
 }
 
 export function clearInit() {
-  console.clear();
+  // console.clear(); game ended, not clear now.
   cleared = true;
   logs.forEach(log);
 }
