@@ -33,7 +33,7 @@
     "antd": "^5.0.0",
     "canvas-confetti": "^1.5.1",
     "ethers": "^5.5.4",
-    "lottie-react": "^2.2.1",
+    "lottie-react": "^2.4.0",
     "react": "18.x",
     "react-dom": "18.x",
     "react-slick": "^0.29.0",
