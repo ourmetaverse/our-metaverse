@@ -1,12 +1,12 @@
-import React from 'react';
-import { Typography, Space } from 'antd';
-import { css } from '@emotion/css';
-import { Link, useIntl } from 'umi';
 import BlueLine from '@/components/BlueLine';
-import IndexBtn from '@/components/IndexBtn';
-import { mobile, maxWidth } from '@/utils/css';
-import { useResponsive } from 'ahooks';
 import DownArrow from '@/components/DownArrow';
+import IndexBtn from '@/components/IndexBtn';
+import { maxWidth, mobile } from '@/utils/css';
+import { css } from '@emotion/css';
+import { useResponsive } from 'ahooks';
+import { Space, Typography } from 'antd';
+import React from 'react';
+import { Link, useIntl } from 'umi';
 import StarCanvas from './StarCanvas';
 
 interface Props {}
@@ -60,7 +60,7 @@ const Component: React.FC<Props> = () => {
           `)}
         >
           <Typography>
-            <div title="F12 Get The EGG">
+            <div>
               <div
                 className={css`
                   background: linear-gradient(150deg, #0f22ff, #ffffff);

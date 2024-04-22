@@ -1,5 +1,4 @@
 import { defineConfig } from 'umi';
-import { primaryColor } from './src/utils/css';
 
 export default defineConfig({
   model: {},
@@ -8,10 +7,8 @@ export default defineConfig({
   antd: {
     dark: true, // 开启暗色主题
   },
-  theme: {
-    'primary-color': primaryColor,
-    'menu-dark-item-active-bg': 'transparent',
-    'modal-content-bg': '#0C1742',
+  alias: {
+    'ethers-v5': 'ethers',
   },
   define: {
     CHAIN_ID: process.env.CHAIN_ID,
@@ -33,4 +30,9 @@ export default defineConfig({
     },
   ],
   title: 'OurMetaverse',
+  chainWebpack(config) {
+    config.module.rule('asset').exclude.add(/\.md$/).end();
+
+    config.module.rule('md').test(/\.md$/).use('raw').loader('raw-loader');
+  },
 });

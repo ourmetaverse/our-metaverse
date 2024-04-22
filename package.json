@@ -21,6 +21,8 @@
     ]
   },
   "dependencies": {
+    "@ant-design/web3": "^1.10.0",
+    "@ant-design/web3-ethers": "^1.0.0",
     "@coinbase/wallet-sdk": "^3.1.0",
     "@emotion/css": "^11.7.1",
     "@emotion/react": "^11.8.1",
@@ -28,25 +30,25 @@
     "@toruslabs/torus-embed": "^1.22.6",
     "@walletconnect/web3-provider": "^1.7.3",
     "ahooks": "^3.3.10",
-    "antd": "^4.18.9",
+    "antd": "^5.0.0",
     "canvas-confetti": "^1.5.1",
     "ethers": "^5.5.4",
     "lottie-react": "^2.2.1",
-    "react": "17.x",
-    "react-dom": "17.x",
+    "react": "18.x",
+    "react-dom": "18.x",
     "react-slick": "^0.29.0",
-    "umi-request": "^1.4.0",
-    "web3modal": "^1.9.5"
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
-    "@umijs/max": "^4.0.0",
     "@types/canvas-confetti": "^1.4.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-slick": "^0.23.8",
+    "@umijs/max": "^4.0.0",
     "@umijs/test": "^3.5.21",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
+    "raw-loader": "^4.0.2",
     "react-markdown": "^8.0.0",
     "typescript": "^4.1.2",
     "typescript-styled-plugin": "^0.18.2",
@@ -54,5 +56,6 @@
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
-  }
+  },
+  "repository": "git@github.com:yutingzhao1991/our-metaverse.git"
 }

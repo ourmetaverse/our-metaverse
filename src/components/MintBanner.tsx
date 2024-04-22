@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Space, Spin, InputNumber, Button, message } from 'antd';
-import { useModel, useIntl } from 'umi';
-import { css } from '@emotion/css';
-import { totalSupply, maxMintPerAddr, contractAddress } from '@/constants';
 import MintButton from '@/components/MintButton';
-import ConnectWallet from './ConnectWallet';
-import { useResponsive } from 'ahooks';
-import { log } from '@/utils/log';
 import Modal from '@/components/Modal';
+import { contractAddress, maxMintPerAddr, totalSupply } from '@/constants';
+import { log } from '@/utils/log';
+import { css } from '@emotion/css';
+import { useResponsive } from 'ahooks';
+import { Button, InputNumber, message, Space, Spin } from 'antd';
 import confetti from 'canvas-confetti';
+import React, { useEffect, useState } from 'react';
+import { useIntl, useModel } from 'umi';
+import ConnectWallet from './ConnectWallet';
 
 interface AmountObj {
   common: number;
@@ -16,19 +16,7 @@ interface AmountObj {
   movie: number;
 }
 
-function getKeyWithCode(code: number, operator: string): number {
-  if (operator === '+') {
-    return (code + 42) * 10000;
-  }
-  if (operator === '-') {
-    return (code - 42) * 10000;
-  }
-  // operator === '*'
-  return code * 42 * 10000;
-}
-
 const Component: React.FC = () => {
-  const { code, operator } = useModel('user');
   const { pc } = useResponsive();
   const { formatMessage, locale } = useIntl();
   const [bookMinted, setBookMinted] = useState<boolean>(false);
@@ -91,6 +79,8 @@ const Component: React.FC = () => {
   useEffect(() => {
     updateNumberMinted();
   }, [contract, address]);
+
+  console.log('get contract', contract);
 
   if (!contract) {
     return (
@@ -237,12 +227,7 @@ const Component: React.FC = () => {
               text-align: center;
             `}
           >
-            🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉
-            <br />
-            加微信 ourmnft 备注上钥匙（{getKeyWithCode(code, operator)}
-            ）即有机会获得宇宙空投！
-            <br />
-            抓紧哦，不然就被其它冒险家抢先了！
+            🎉🎉🎉 恭喜你找到了正确的钥匙 🎉🎉🎉 但是活动已经结束了，感谢参与。
             <img
               className={css`
                 margin: 16px auto;
@@ -271,18 +256,7 @@ const Component: React.FC = () => {
               <Button
                 type="primary"
                 onClick={() => {
-                  if (key === getKeyWithCode(code, operator)) {
-                    setRight(true);
-                    confetti({
-                      zIndex: 9000,
-                      particleCount: 100,
-                    });
-                    message.success('恭喜你成功开启了宇宙奥秘的大门！');
-                  } else {
-                    message.error(
-                      '钥匙错误，冒险家请继续努力哦！抓紧哦，不然有限的奖品就被其它冒险家抢先了！',
-                    );
-                  }
+                  message.warning('活动已结束');
                 }}
               >
                 开启宇宙之门

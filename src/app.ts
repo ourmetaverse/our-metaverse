@@ -1,4 +1,6 @@
+import ConnectProvider from '@/components/ConnectProvider';
 import { log } from '@/utils/log';
+import React from 'react';
 
 export function onRouteChange({ location }: { location: any }) {
   if (location.pathname === '/') {
@@ -27,4 +29,8 @@ export function onRouteChange({ location }: { location: any }) {
   if (location.pathname === '/wormhole') {
     log('“哇！发现了神秘的区域，这是一个虫洞！”');
   }
+}
+
+export function rootContainer(container: any) {
+  return React.createElement(ConnectProvider, null, container);
 }

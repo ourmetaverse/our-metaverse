@@ -1,11 +1,11 @@
-import { message, Image, Spin } from 'antd';
-import { useIntl, useModel } from 'umi';
-import { wechatLink } from '@/constants';
 import BlueLine from '@/components/BlueLine';
-import React, { useEffect, useState } from 'react';
-import { css } from '@emotion/css';
-import { primaryColor, mobile } from '@/utils/css';
 import Modal from '@/components/Modal';
+import { wechatLink } from '@/constants';
+import { mobile, primaryColor } from '@/utils/css';
+import { css } from '@emotion/css';
+import { Image, message, Spin } from 'antd';
+import { useEffect, useState } from 'react';
+import { useIntl, useModel } from 'umi';
 
 export default () => {
   const { formatMessage } = useIntl();
@@ -27,18 +27,18 @@ export default () => {
   }, [contract, address]);
 
   const data = [
-    {
-      title: formatMessage({ id: 'wechat_group' }),
-      icon: '/wechat.png',
-      hoverIcon: '/wechat-hover.png',
-      isWeChat: true,
-    },
-    {
-      title: formatMessage({ id: 'wechat' }),
-      icon: '/wechat.png',
-      hoverIcon: '/wechat-hover.png',
-      link: '/xiaoyuan.png',
-    },
+    // {
+    //   title: formatMessage({ id: 'wechat_group' }),
+    //   icon: '/wechat.png',
+    //   hoverIcon: '/wechat-hover.png',
+    //   isWeChat: true,
+    // },
+    // {
+    //   title: formatMessage({ id: 'wechat' }),
+    //   icon: '/wechat.png',
+    //   hoverIcon: '/wechat-hover.png',
+    //   link: '/xiaoyuan.png',
+    // },
     // 先不开
     // {
     //   title: 'Discord',
