@@ -2,10 +2,8 @@ import { defineConfig } from 'umi';
 import { primaryColor } from './src/utils/css';
 
 export default defineConfig({
-  nodeModulesTransform: {
-    type: 'none',
-  },
-  fastRefresh: {},
+  model: {},
+  fastRefresh: true,
   locale: {},
   antd: {
     dark: true, // 开启暗色主题
@@ -23,7 +21,7 @@ export default defineConfig({
     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
   ],
   exportStatic: {},
-  favicon: '/favicon.png',
+  favicons: ['/favicon.png'],
   metas: [
     {
       name: 'description',

@@ -1,13 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "CHAIN_ID=mainnet umi dev",
-    "start": "CHAIN_ID=mainnet umi dev",
-    "start:local": "CHAIN_ID=local umi dev",
-    "start:rinkeby": "CHAIN_ID=rinkeby umi dev",
-    "build": "CHAIN_ID=mainnet umi build",
-    "build:rinkeby": "CHAIN_ID=rinkeby umi build",
-    "postinstall": "umi generate tmp",
+    "dev": "CHAIN_ID=mainnet max dev",
+    "start": "CHAIN_ID=mainnet max dev",
+    "start:local": "CHAIN_ID=local max dev",
+    "start:rinkeby": "CHAIN_ID=rinkeby max dev",
+    "build": "CHAIN_ID=mainnet max build",
+    "build:rinkeby": "CHAIN_ID=rinkeby max build",
+    "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -35,16 +35,15 @@
     "react": "17.x",
     "react-dom": "17.x",
     "react-slick": "^0.29.0",
-    "umi": "^3.5.21",
     "umi-request": "^1.4.0",
     "web3modal": "^1.9.5"
   },
   "devDependencies": {
+    "@umijs/max": "^4.0.0",
     "@types/canvas-confetti": "^1.4.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-slick": "^0.23.8",
-    "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.21",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",

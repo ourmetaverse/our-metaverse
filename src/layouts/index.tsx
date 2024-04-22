@@ -1,20 +1,26 @@
-import { Layout, Menu, Drawer } from 'antd';
-import { Link, useIntl, setLocale, getLocale, IRouteComponentProps } from 'umi';
-import { css } from '@emotion/css';
-import { MenuOutlined } from '@ant-design/icons';
 import ConnectWallet from '@/components/ConnectWallet';
-import { mobile, primaryColor, maxWidth, navHeight } from '@/utils/css';
-import { useResponsive } from 'ahooks';
-import { useEffect, useState } from 'react';
 import Footer from '@/components/Footer';
+import { maxWidth, mobile, navHeight, primaryColor } from '@/utils/css';
+import { MenuOutlined } from '@ant-design/icons';
+import { css } from '@emotion/css';
+import { useResponsive } from 'ahooks';
+import { Drawer, Layout, Menu } from 'antd';
+import { useEffect, useState } from 'react';
+import {
+  getLocale,
+  IRouteComponentProps,
+  Link,
+  Outlet,
+  setLocale,
+  useIntl,
+  useLocation,
+} from 'umi';
 
 const { Header, Content } = Layout;
 
-const CommonLayout: React.FC<IRouteComponentProps> = ({
-  children,
-  location,
-}) => {
+const CommonLayout: React.FC<IRouteComponentProps> = () => {
   const [visible, setVisible] = useState(false);
+  const location = useLocation();
   const { formatMessage } = useIntl();
   const { pc } = useResponsive();
   const isCN = getLocale() === 'zh-CN';
@@ -232,7 +238,9 @@ const CommonLayout: React.FC<IRouteComponentProps> = ({
           </Menu>
         </Drawer>
       </Header>
-      <Content>{children}</Content>
+      <Content>
+        <Outlet />
+      </Content>
       {location.pathname !== '/' ? <Footer /> : null}
     </Layout>
   );
