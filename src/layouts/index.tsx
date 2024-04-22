@@ -6,19 +6,11 @@ import { css } from '@emotion/css';
 import { useResponsive } from 'ahooks';
 import { Drawer, Layout, Menu } from 'antd';
 import { useEffect, useState } from 'react';
-import {
-  getLocale,
-  IRouteComponentProps,
-  Link,
-  Outlet,
-  setLocale,
-  useIntl,
-  useLocation,
-} from 'umi';
+import { getLocale, Link, Outlet, setLocale, useIntl, useLocation } from 'umi';
 
 const { Header, Content } = Layout;
 
-const CommonLayout: React.FC<IRouteComponentProps> = () => {
+const CommonLayout: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const location = useLocation();
   const { formatMessage } = useIntl();
