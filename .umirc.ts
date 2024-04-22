@@ -18,6 +18,9 @@ export default defineConfig({
     'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
   ],
   exportStatic: {},
+  jsMinifierOptions: {
+    target: ['chrome80', 'es2020'],
+  },
   favicons: ['/favicon.png'],
   metas: [
     {
