@@ -19,7 +19,7 @@ export default () => {
   const [current, setCurrent] = useState<number | undefined>();
   const { data = {}, loading } = useRequest(
     async () => {
-      const res = await request('https://api.our-metaverse.xyz/api/images', {
+      const res = await request('https://server-pink-rho.vercel.app/api/images', {
         params: {
           start: (page - 1) * pageSize,
         },
