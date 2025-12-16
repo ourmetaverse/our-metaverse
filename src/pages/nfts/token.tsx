@@ -75,7 +75,7 @@ export default (props: Props) => {
         return '';
       }
       const { images = [] } = await request(
-        'https://api.our-metaverse.xyz/api/images',
+        'https://api-our-metaverse.vercel.app/api/images',
         {
           params: {
             start: token,
